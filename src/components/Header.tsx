@@ -214,14 +214,21 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button variant="whatsapp" size="sm" className="flex items-center space-x-2">
+            <Button 
+              variant="whatsapp" 
+              size="sm" 
+              className="flex items-center space-x-2"
+              onClick={() => window.open('https://wa.me/5218180290061', '_blank')}
+            >
               <Phone className="h-4 w-4" />
               <span>WhatsApp</span>
             </Button>
-            <Button variant="cta" size="sm" className="flex items-center space-x-2">
-              <Calendar className="h-4 w-4" />
-              <span>Agendar Consulta</span>
-            </Button>
+            <Link to="/contacto">
+              <Button variant="cta" size="sm" className="flex items-center space-x-2">
+                <Calendar className="h-4 w-4" />
+                <span>Agendar Consulta</span>
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -238,14 +245,21 @@ const Header = () => {
           <div className="lg:hidden py-4 border-t border-gray-light bg-white">
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <Button variant="whatsapp" size="sm" className="flex items-center justify-center space-x-2">
+                <Button 
+                  variant="whatsapp" 
+                  size="sm" 
+                  className="flex items-center justify-center space-x-2"
+                  onClick={() => window.open('https://wa.me/5218180290061', '_blank')}
+                >
                   <Phone className="h-4 w-4" />
                   <span>WhatsApp</span>
                 </Button>
-                <Button variant="cta" size="sm" className="flex items-center justify-center space-x-2">
-                  <Calendar className="h-4 w-4" />
-                  <span>Agendar</span>
-                </Button>
+                <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>
+                  <Button variant="cta" size="sm" className="flex items-center justify-center space-x-2">
+                    <Calendar className="h-4 w-4" />
+                    <span>Agendar</span>
+                  </Button>
+                </Link>
               </div>
               
               {/* Mobile Navigation Links */}
