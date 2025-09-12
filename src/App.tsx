@@ -40,8 +40,57 @@ import Contacto from "./pages/recursos-contacto/Contacto";
 import Equipo from "./pages/recursos-contacto/Equipo";
 import FAQ from "./pages/recursos-contacto/FAQ";
 import Politicas from "./pages/recursos-contacto/Politicas";
+import useAnchorNavigation from "./hooks/useAnchorNavigation";
 
 const queryClient = new QueryClient();
+
+const AppContent = () => {
+  useAnchorNavigation();
+
+  return (
+    <Routes>
+      <Route path="/" element={<Index />} />
+      
+      {/* Consultoría ESG Routes */}
+      <Route path="/consultoria-esg/cumplimiento-nis-2025" element={<CumplimientoNIS2025 />} />
+      <Route path="/consultoria-esg/certificacion-gri" element={<CertificacionGRI />} />
+      <Route path="/consultoria-esg/auditoria-sostenibilidad" element={<AuditoriaSostenibilidad />} />
+      <Route path="/consultoria-esg/reportes-esg" element={<ReportesESG />} />
+      <Route path="/consultoria-esg/capacitacion-esg" element={<CapacitacionESG />} />
+      
+      {/* Coaching Ejecutivo Routes */}
+      <Route path="/coaching-ejecutivo/liderazgo-sostenible" element={<LiderazgoSostenible />} />
+      <Route path="/coaching-ejecutivo/transicion-laboral" element={<TransicionLaboral />} />
+      <Route path="/coaching-ejecutivo/habilidades-directivas" element={<HabilidadesDirectivas />} />
+      <Route path="/coaching-ejecutivo/equipos-gerenciales" element={<EquiposGerenciales />} />
+      
+      {/* Servicios Empresariales Routes */}
+      <Route path="/servicios-empresariales/auditoria-comercial" element={<AuditoriaComercial />} />
+      <Route path="/servicios-empresariales/smart-sales" element={<SmartSales />} />
+      <Route path="/servicios-empresariales/gestion-sucursales" element={<GestionSucursales />} />
+      <Route path="/servicios-empresariales/consultoria-mdies" element={<ConsultoriaMDIES />} />
+      
+      {/* Coaching Familiar Routes */}
+      <Route path="/coaching-familiar/coach-tu-hijo" element={<CoachTuHijo />} />
+      <Route path="/coaching-familiar/orientacion-vocacional" element={<OrientacionVocacional />} />
+      <Route path="/coaching-familiar/dinamicas-familiares" element={<DinamicasFamiliares />} />
+      
+      {/* Recursos y Contacto Routes */}
+      <Route path="/recursos/blog" element={<BlogESG />} />
+      <Route path="/recursos/webinars" element={<Webinars />} />
+      <Route path="/recursos/herramientas" element={<Herramientas />} />
+      <Route path="/recursos/casos-exito" element={<CasosExito />} />
+      <Route path="/recursos/certificaciones" element={<Certificaciones />} />
+      <Route path="/contacto" element={<Contacto />} />
+      <Route path="/equipo" element={<Equipo />} />
+      <Route path="/faq" element={<FAQ />} />
+      <Route path="/politicas" element={<Politicas />} />
+      
+      {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+};
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -49,47 +98,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          
-          {/* Consultoría ESG Routes */}
-          <Route path="/consultoria-esg/cumplimiento-nis-2025" element={<CumplimientoNIS2025 />} />
-          <Route path="/consultoria-esg/certificacion-gri" element={<CertificacionGRI />} />
-          <Route path="/consultoria-esg/auditoria-sostenibilidad" element={<AuditoriaSostenibilidad />} />
-          <Route path="/consultoria-esg/reportes-esg" element={<ReportesESG />} />
-          <Route path="/consultoria-esg/capacitacion-esg" element={<CapacitacionESG />} />
-          
-          {/* Coaching Ejecutivo Routes */}
-          <Route path="/coaching-ejecutivo/liderazgo-sostenible" element={<LiderazgoSostenible />} />
-          <Route path="/coaching-ejecutivo/transicion-laboral" element={<TransicionLaboral />} />
-          <Route path="/coaching-ejecutivo/habilidades-directivas" element={<HabilidadesDirectivas />} />
-          <Route path="/coaching-ejecutivo/equipos-gerenciales" element={<EquiposGerenciales />} />
-          
-          {/* Servicios Empresariales Routes */}
-          <Route path="/servicios-empresariales/auditoria-comercial" element={<AuditoriaComercial />} />
-          <Route path="/servicios-empresariales/smart-sales" element={<SmartSales />} />
-          <Route path="/servicios-empresariales/gestion-sucursales" element={<GestionSucursales />} />
-          <Route path="/servicios-empresariales/consultoria-mdies" element={<ConsultoriaMDIES />} />
-          
-          {/* Coaching Familiar Routes */}
-          <Route path="/coaching-familiar/coach-tu-hijo" element={<CoachTuHijo />} />
-          <Route path="/coaching-familiar/orientacion-vocacional" element={<OrientacionVocacional />} />
-          <Route path="/coaching-familiar/dinamicas-familiares" element={<DinamicasFamiliares />} />
-          
-          {/* Recursos y Contacto Routes */}
-          <Route path="/recursos/blog" element={<BlogESG />} />
-          <Route path="/recursos/webinars" element={<Webinars />} />
-          <Route path="/recursos/herramientas" element={<Herramientas />} />
-          <Route path="/recursos/casos-exito" element={<CasosExito />} />
-          <Route path="/recursos/certificaciones" element={<Certificaciones />} />
-          <Route path="/contacto" element={<Contacto />} />
-          <Route path="/equipo" element={<Equipo />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/politicas" element={<Politicas />} />
-          
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

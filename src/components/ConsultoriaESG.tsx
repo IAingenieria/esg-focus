@@ -75,7 +75,7 @@ const ConsultoriaESG = () => {
   ];
 
   return (
-    <section id="esg" className="py-20 bg-gradient-subtle">
+    <section id="consultoria-esg" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
