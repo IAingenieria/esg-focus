@@ -1,21 +1,22 @@
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Linkedin, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const servicios = [
-    "Cumplimiento NIS 2025",
-    "Certificación GRI",
-    "Coaching Ejecutivo",
-    "Auditoría Sostenibilidad",
-    "Coaching Familiar"
+    { name: "Cumplimiento NIS 2025", href: "/consultoria-esg/cumplimiento-nis-2025" },
+    { name: "Certificación GRI", href: "/consultoria-esg/certificacion-gri" },
+    { name: "Coaching Ejecutivo", href: "/coaching-ejecutivo/liderazgo-sostenible" },
+    { name: "Auditoría Sostenibilidad", href: "/consultoria-esg/auditoria-sostenibilidad" },
+    { name: "Coaching Familiar", href: "/coaching-familiar/coach-tu-hijo" }
   ];
 
   const recursos = [
-    "Diagnóstico ESG Gratuito",
-    "Blog Sostenibilidad",
-    "Casos de Éxito",
-    "Eventos y Webinars",
-    "Newsletter"
+    { name: "Diagnóstico ESG Gratuito", href: "/contacto" },
+    { name: "Blog Sostenibilidad", href: "/recursos/blog" },
+    { name: "Casos de Éxito", href: "/recursos/casos-exito" },
+    { name: "Eventos y Webinars", href: "/recursos/webinars" },
+    { name: "Newsletter", href: "/recursos/blog" }
   ];
 
   return (
@@ -50,13 +51,13 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Servicios</h4>
             <ul className="space-y-2">
               {servicios.map((servicio) => (
-                <li key={servicio}>
-                  <a 
-                    href="#" 
+                <li key={servicio.name}>
+                  <Link 
+                    to={servicio.href}
                     className="text-sm text-white/80 hover:text-green-success transition-smooth"
                   >
-                    {servicio}
-                  </a>
+                    {servicio.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -67,13 +68,13 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Recursos</h4>
             <ul className="space-y-2">
               {recursos.map((recurso) => (
-                <li key={recurso}>
-                  <a 
-                    href="#" 
+                <li key={recurso.name}>
+                  <Link 
+                    to={recurso.href}
                     className="text-sm text-white/80 hover:text-green-success transition-smooth"
                   >
-                    {recurso}
-                  </a>
+                    {recurso.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -126,15 +127,15 @@ const Footer = () => {
             © 2025 Focus Coach & Consulting. Todos los derechos reservados.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-sm text-white/60 hover:text-green-success transition-smooth">
+            <Link to="/politicas" className="text-sm text-white/60 hover:text-green-success transition-smooth">
               Aviso de Privacidad
-            </a>
-            <a href="#" className="text-sm text-white/60 hover:text-green-success transition-smooth">
+            </Link>
+            <Link to="/politicas" className="text-sm text-white/60 hover:text-green-success transition-smooth">
               Términos de Servicio
-            </a>
-            <a href="#" className="text-sm text-white/60 hover:text-green-success transition-smooth">
+            </Link>
+            <Link to="/politicas" className="text-sm text-white/60 hover:text-green-success transition-smooth">
               Política de Cookies
-            </a>
+            </Link>
           </div>
         </div>
       </div>

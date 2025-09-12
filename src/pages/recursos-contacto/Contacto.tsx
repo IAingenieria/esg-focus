@@ -256,7 +256,7 @@ const Contacto = () => {
                       className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
                     />
                     <label htmlFor="privacy" className="ml-2 text-sm text-gray-text">
-                      Acepto la <a href="#" className="text-primary hover:underline">política de privacidad</a> y el tratamiento de mis datos personales
+                      Acepto la <Link to="/politicas" className="text-primary hover:underline">política de privacidad</Link> y el tratamiento de mis datos personales
                     </label>
                   </div>
                   
