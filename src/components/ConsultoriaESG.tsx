@@ -88,7 +88,7 @@ const ConsultoriaESG = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
           {services.map((service) => (
-            <Card key={service.id} className={`h-full shadow-card hover:shadow-hero transition-all duration-300 transform hover:-translate-y-2 ${service.urgent ? 'border-yellow-accent border-2' : ''} ${service.premium ? 'border-primary border-2' : ''}`}>
+                      <Card id={service.id} key={service.id} className={`h-full shadow-card hover:shadow-hero transition-all duration-300 transform hover:-translate-y-2 ${service.urgent ? 'border-yellow-accent border-2' : ''} ${service.premium ? 'border-primary border-2' : ''}`}>
               <CardHeader className="relative">
                 {service.urgent && (
                   <Badge className="absolute -top-3 -right-3 bg-yellow-accent text-navy font-bold animate-pulse">
