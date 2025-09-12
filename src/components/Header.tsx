@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Phone, Calendar } from "lucide-react";
@@ -7,6 +7,20 @@ import focusLogo from "@/assets/focus-logo.png";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const headerRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
+        setOpenDropdown(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   const consultoriaESGItems = [
     { name: "Cumplimiento NIS 2025", href: "/consultoria-esg/cumplimiento-nis-2025" },
@@ -52,7 +66,7 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-light z-50 shadow-card">
+    <header ref={headerRef} className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-light z-50 shadow-card">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -66,16 +80,15 @@ const Header = () => {
             <div className="relative group">
               <button
                 className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onMouseEnter={() => setOpenDropdown("esg")}
+                onClick={() => handleDropdownToggle("esg")}
               >
                 <span>Consultoría ESG</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
                   openDropdown === "esg" ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
                 {consultoriaESGItems.map((item) => (
                   <Link
@@ -94,16 +107,15 @@ const Header = () => {
             <div className="relative group">
               <button
                 className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onMouseEnter={() => setOpenDropdown("coaching")}
+                onClick={() => handleDropdownToggle("coaching")}
               >
                 <span>Coaching Ejecutivo</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
                   openDropdown === "coaching" ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
                 {coachingEjecutivoItems.map((item) => (
                   <Link
@@ -122,16 +134,15 @@ const Header = () => {
             <div className="relative group">
               <button
                 className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onMouseEnter={() => setOpenDropdown("servicios")}
+                onClick={() => handleDropdownToggle("servicios")}
               >
                 <span>Servicios</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
                   openDropdown === "servicios" ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
                 {serviciosItems.map((item) => (
                   <Link
@@ -150,16 +161,15 @@ const Header = () => {
             <div className="relative group">
               <button
                 className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onMouseEnter={() => setOpenDropdown("familiar")}
+                onClick={() => handleDropdownToggle("familiar")}
               >
                 <span>Coaching Familiar</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
                   openDropdown === "familiar" ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
                 {coachingFamiliarItems.map((item) => (
                   <Link
@@ -178,16 +188,15 @@ const Header = () => {
             <div className="relative group">
               <button
                 className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onMouseEnter={() => setOpenDropdown("recursos")}
+                onClick={() => handleDropdownToggle("recursos")}
               >
                 <span>Recursos</span>
                 <ChevronDown className="h-4 w-4" />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 ${
+                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
                   openDropdown === "recursos" ? "opacity-100 visible" : "opacity-0 invisible"
                 }`}
-                onMouseLeave={() => setOpenDropdown(null)}
               >
                 {recursosItems.map((item) => (
                   <Link
