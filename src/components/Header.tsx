@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown, Phone, Calendar } from "lucide-react";
 import focusLogo from "@/assets/focus-logo.png";
@@ -8,38 +9,42 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
   const consultoriaESGItems = [
-    { name: "Cumplimiento NIS 2025", href: "#nis-2025" },
-    { name: "Certificación GRI", href: "#gri" },
-    { name: "Auditoría Sostenibilidad", href: "#auditoria" },
-    { name: "Reportes ESG", href: "#reportes" },
-    { name: "Capacitación ESG", href: "#capacitacion" },
+    { name: "Cumplimiento NIS 2025", href: "/consultoria-esg/cumplimiento-nis-2025" },
+    { name: "Certificación GRI", href: "/consultoria-esg/certificacion-gri" },
+    { name: "Auditoría Sostenibilidad", href: "/consultoria-esg/auditoria-sostenibilidad" },
+    { name: "Reportes ESG", href: "/consultoria-esg/reportes-esg" },
+    { name: "Capacitación ESG", href: "/consultoria-esg/capacitacion-esg" },
   ];
 
   const coachingEjecutivoItems = [
-    { name: "Liderazgo Sostenible", href: "#liderazgo" },
-    { name: "Transición Laboral", href: "#transicion" },
-    { name: "Habilidades Directivas", href: "#habilidades" },
-    { name: "Equipos Gerenciales", href: "#equipos" },
+    { name: "Liderazgo Sostenible", href: "/coaching-ejecutivo/liderazgo-sostenible" },
+    { name: "Transición Laboral", href: "/coaching-ejecutivo/transicion-laboral" },
+    { name: "Habilidades Directivas", href: "/coaching-ejecutivo/habilidades-directivas" },
+    { name: "Equipos Gerenciales", href: "/coaching-ejecutivo/equipos-gerenciales" },
   ];
 
   const serviciosItems = [
-    { name: "Auditoría Comercial", href: "#auditoria-comercial" },
-    { name: "Smart Sales", href: "#smart-sales" },
-    { name: "Gestión Sucursales", href: "#sucursales" },
-    { name: "Consultoría MDIES", href: "#mdies" },
+    { name: "Auditoría Comercial", href: "/servicios-empresariales/auditoria-comercial" },
+    { name: "Smart Sales", href: "/servicios-empresariales/smart-sales" },
+    { name: "Gestión Sucursales", href: "/servicios-empresariales/gestion-sucursales" },
+    { name: "Consultoría MDIES", href: "/servicios-empresariales/consultoria-mdies" },
   ];
 
   const coachingFamiliarItems = [
-    { name: "Coach de Tu Hijo", href: "#coach-hijo" },
-    { name: "Orientación Vocacional", href: "#orientacion" },
-    { name: "Dinámicas Familiares", href: "#dinamicas" },
+    { name: "Coach de Tu Hijo", href: "/coaching-familiar/coach-tu-hijo" },
+    { name: "Orientación Vocacional", href: "/coaching-familiar/orientacion-vocacional" },
+    { name: "Dinámicas Familiares", href: "/coaching-familiar/dinamicas-familiares" },
   ];
 
   const recursosItems = [
-    { name: "Diagnóstico ESG Gratuito", href: "#diagnostico" },
-    { name: "Blog Sostenibilidad", href: "#blog" },
-    { name: "Casos de Éxito", href: "#casos" },
-    { name: "Eventos", href: "#eventos" },
+    { name: "Blog ESG", href: "/recursos/blog" },
+    { name: "Webinars", href: "/recursos/webinars" },
+    { name: "Herramientas", href: "/recursos/herramientas" },
+    { name: "Casos de Éxito", href: "/recursos/casos-exito" },
+    { name: "Certificaciones", href: "/recursos/certificaciones" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Contacto", href: "/contacto" },
+    { name: "Equipo", href: "/equipo" },
   ];
 
   const handleDropdownToggle = (dropdown: string) => {
@@ -51,9 +56,9 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <Link to="/" className="flex items-center space-x-3">
             <img src={focusLogo} alt="Focus Coach & Consulting" className="h-12 w-auto" />
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
@@ -73,13 +78,14 @@ const Header = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {consultoriaESGItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
+                    onClick={() => setOpenDropdown(null)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -100,13 +106,14 @@ const Header = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {coachingEjecutivoItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
+                    onClick={() => setOpenDropdown(null)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -127,13 +134,14 @@ const Header = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {serviciosItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
+                    onClick={() => setOpenDropdown(null)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -154,13 +162,14 @@ const Header = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {coachingFamiliarItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
+                    onClick={() => setOpenDropdown(null)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -181,13 +190,14 @@ const Header = () => {
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 {recursosItems.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
+                    onClick={() => setOpenDropdown(null)}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -231,21 +241,21 @@ const Header = () => {
               
               {/* Mobile Navigation Links */}
               <div className="space-y-3">
-                <a href="#esg" className="block text-navy hover:text-primary font-medium transition-smooth">
-                  Consultoría ESG
-                </a>
-                <a href="#coaching" className="block text-navy hover:text-primary font-medium transition-smooth">
-                  Coaching Ejecutivo
-                </a>
-                <a href="#servicios" className="block text-navy hover:text-primary font-medium transition-smooth">
-                  Servicios Empresariales
-                </a>
-                <a href="#familiar" className="block text-navy hover:text-primary font-medium transition-smooth">
-                  Coaching Familiar
-                </a>
-                <a href="#recursos" className="block text-navy hover:text-primary font-medium transition-smooth">
-                  Recursos
-                </a>
+                <Link to="/contacto" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
+                  Contacto
+                </Link>
+                <Link to="/equipo" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
+                  Equipo
+                </Link>
+                <Link to="/recursos/blog" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
+                  Blog ESG
+                </Link>
+                <Link to="/recursos/casos-exito" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
+                  Casos de Éxito
+                </Link>
+                <Link to="/faq" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
+                  FAQ
+                </Link>
               </div>
             </div>
           </div>
