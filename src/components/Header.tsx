@@ -1,26 +1,12 @@
-import { useState, useEffect, useRef } from "react";
+import { Fragment, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown, Phone, Calendar } from "lucide-react";
+import { Menu as HeadlessMenu, Transition, Disclosure } from "@headlessui/react";
+import { Menu as MenuIcon, X, ChevronDown, Phone, Calendar } from "lucide-react";
 import focusLogo from "@/assets/focus-logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const headerRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (headerRef.current && !headerRef.current.contains(event.target as Node)) {
-        setOpenDropdown(null);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
 
   const consultoriaESGItems = [
     { name: "Cumplimiento NIS 2025", href: "/consultoria-esg/cumplimiento-nis-2025" },
@@ -61,12 +47,9 @@ const Header = () => {
     { name: "Equipo", href: "/equipo" },
   ];
 
-  const handleDropdownToggle = (dropdown: string) => {
-    setOpenDropdown(openDropdown === dropdown ? null : dropdown);
-  };
 
   return (
-    <header ref={headerRef} className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-light z-50 shadow-card">
+    <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-light z-50 shadow-card">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -74,142 +57,47 @@ const Header = () => {
             <img src={focusLogo} alt="Focus Coach & Consulting" className="h-12 w-auto" />
           </Link>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            {/* Consultoría ESG */}
-            <div className="relative group">
-              <button
-                className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onClick={() => handleDropdownToggle("esg")}
-              >
-                <span>Consultoría ESG</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
-                  openDropdown === "esg" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                {consultoriaESGItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Coaching Ejecutivo */}
-            <div className="relative group">
-              <button
-                className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onClick={() => handleDropdownToggle("coaching")}
-              >
-                <span>Coaching Ejecutivo</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
-                  openDropdown === "coaching" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                {coachingEjecutivoItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Servicios Empresariales */}
-            <div className="relative group">
-              <button
-                className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onClick={() => handleDropdownToggle("servicios")}
-              >
-                <span>Servicios</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
-                  openDropdown === "servicios" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                {serviciosItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Coaching Familiar */}
-            <div className="relative group">
-              <button
-                className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onClick={() => handleDropdownToggle("familiar")}
-              >
-                <span>Coaching Familiar</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
-                  openDropdown === "familiar" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                {coachingFamiliarItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
-
-            {/* Recursos */}
-            <div className="relative group">
-              <button
-                className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium"
-                onClick={() => handleDropdownToggle("recursos")}
-              >
-                <span>Recursos</span>
-                <ChevronDown className="h-4 w-4" />
-              </button>
-              <div
-                className={`absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-card border border-gray-light py-2 transition-all duration-200 z-50 ${
-                  openDropdown === "recursos" ? "opacity-100 visible" : "opacity-0 invisible"
-                }`}
-              >
-                {recursosItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="block px-4 py-3 text-sm text-gray-text hover:text-navy hover:bg-gray-light transition-smooth"
-                    onClick={() => setOpenDropdown(null)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </div>
-            </div>
+          <nav className="hidden lg:flex items-center space-x-1">
+            {[ 
+              { title: "Consultoría ESG", items: consultoriaESGItems },
+              { title: "Coaching Ejecutivo", items: coachingEjecutivoItems },
+              { title: "Servicios", items: serviciosItems },
+              { title: "Coaching Familiar", items: coachingFamiliarItems },
+              { title: "Recursos", items: recursosItems },
+            ].map((menu) => (
+              <HeadlessMenu as="div" className="relative text-left" key={menu.title}>
+                <HeadlessMenu.Button className="flex items-center space-x-1 text-navy hover:text-primary transition-smooth font-medium px-3 py-2 rounded-md">
+                  <span>{menu.title}</span>
+                  <ChevronDown className="h-4 w-4" />
+                </HeadlessMenu.Button>
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
+                >
+                  <HeadlessMenu.Items className="absolute right-0 mt-2 w-64 origin-top-right bg-white rounded-lg shadow-card border border-gray-light py-2 focus:outline-none z-50">
+                    {menu.items.map((item) => (
+                      <HeadlessMenu.Item key={item.name}>
+                        {({ active }) => (
+                          <Link
+                            to={item.href}
+                            className={`block px-4 py-3 text-sm transition-smooth ${
+                              active ? 'bg-gray-light text-navy' : 'text-gray-text'
+                            }`}
+                          >
+                            {item.name}
+                          </Link>
+                        )}
+                      </HeadlessMenu.Item>
+                    ))}
+                  </HeadlessMenu.Items>
+                </Transition>
+              </HeadlessMenu>
+            ))}
           </nav>
 
           {/* CTA Buttons */}
@@ -236,53 +124,85 @@ const Header = () => {
             className="lg:hidden text-navy hover:text-primary transition-smooth"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMenuOpen ? <X className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-gray-light bg-white">
-            <div className="space-y-4">
+        <Transition
+          show={isMenuOpen}
+          as={Fragment}
+          enter="transition-opacity duration-200 ease-out"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="transition-opacity duration-150 ease-in"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="lg:hidden absolute top-full left-0 w-full bg-white border-t border-gray-light shadow-lg">
+            <div className="px-4 pt-4 pb-8">
               <div className="grid grid-cols-2 gap-4 mb-6">
-                <Button 
-                  variant="whatsapp" 
-                  size="sm" 
-                  className="flex items-center justify-center space-x-2"
-                  onClick={() => window.open('https://wa.me/5218180290061', '_blank')}
-                >
-                  <Phone className="h-4 w-4" />
-                  <span>WhatsApp</span>
-                </Button>
-                <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="cta" size="sm" className="flex items-center justify-center space-x-2">
-                    <Calendar className="h-4 w-4" />
-                    <span>Agendar</span>
+                  <Button 
+                    variant="whatsapp" 
+                    size="sm" 
+                    className="flex items-center justify-center space-x-2"
+                    onClick={() => window.open('https://wa.me/5218180290061', '_blank')}
+                  >
+                    <Phone className="h-4 w-4" />
+                    <span>WhatsApp</span>
                   </Button>
-                </Link>
+                  <Link to="/contacto" onClick={() => setIsMenuOpen(false)}>
+                    <Button variant="cta" size="sm" className="w-full flex items-center justify-center space-x-2">
+                      <Calendar className="h-4 w-4" />
+                      <span>Agendar</span>
+                    </Button>
+                  </Link>
               </div>
-              
-              {/* Mobile Navigation Links */}
-              <div className="space-y-3">
-                <Link to="/contacto" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
-                  Contacto
-                </Link>
-                <Link to="/equipo" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
-                  Equipo
-                </Link>
-                <Link to="/recursos/blog" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
-                  Blog ESG
-                </Link>
-                <Link to="/recursos/casos-exito" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
-                  Casos de Éxito
-                </Link>
-                <Link to="/faq" className="block text-navy hover:text-primary font-medium transition-smooth" onClick={() => setIsMenuOpen(false)}>
-                  FAQ
-                </Link>
+
+              <div className="space-y-1">
+                {[ 
+                  { title: "Consultoría ESG", items: consultoriaESGItems },
+                  { title: "Coaching Ejecutivo", items: coachingEjecutivoItems },
+                  { title: "Servicios", items: serviciosItems },
+                  { title: "Coaching Familiar", items: coachingFamiliarItems },
+                  { title: "Recursos", items: recursosItems },
+                ].map((section) => (
+                  <Disclosure as="div" key={section.title}>
+                    {({ open }) => (
+                      <>
+                        <Disclosure.Button className="w-full flex justify-between items-center py-3 text-left text-navy font-medium hover:text-primary transition-smooth">
+                          <span>{section.title}</span>
+                          <ChevronDown className={`h-5 w-5 transition-transform ${open ? 'transform rotate-180' : ''}`} />
+                        </Disclosure.Button>
+                        <Transition
+                          enter="transition duration-100 ease-out"
+                          enterFrom="transform scale-95 opacity-0"
+                          enterTo="transform scale-100 opacity-100"
+                          leave="transition duration-75 ease-out"
+                          leaveFrom="transform scale-100 opacity-100"
+                          leaveTo="transform scale-95 opacity-0"
+                        >
+                          <Disclosure.Panel as="div" className="pl-4 pb-2 space-y-1">
+                            {section.items.map((item) => (
+                              <Link
+                                key={item.name}
+                                to={item.href}
+                                className="block py-2 text-gray-text hover:text-navy transition-smooth"
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {item.name}
+                              </Link>
+                            ))}
+                          </Disclosure.Panel>
+                        </Transition>
+                      </>
+                    )}
+                  </Disclosure>
+                ))}
               </div>
             </div>
           </div>
-        )}
+        </Transition>
       </div>
     </header>
   );
