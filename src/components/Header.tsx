@@ -81,7 +81,7 @@ const Header = () => {
                 >
                   <HeadlessMenu.Items className="absolute right-0 mt-2 w-64 origin-top-right bg-white rounded-lg shadow-card border border-gray-light py-2 focus:outline-none z-50">
                     {menu.items.map((item) => (
-                      <HeadlessMenu.Item key={item.name}>
+                      <HeadlessMenu.Item key={item.name} as={Fragment}>
                         {({ active }) => (
                           <Link
                             to={item.href}
