@@ -45,7 +45,7 @@ import useAnchorNavigation from "./hooks/useAnchorNavigation";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  useAnchorNavigation();
+  // useAnchorNavigation();
 
   return (
     <Routes>
