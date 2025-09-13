@@ -2,6 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
@@ -44,6 +45,26 @@ import Politicas from "./pages/recursos-contacto/Politicas";
 const queryClient = new QueryClient();
 
 const AppContent = () => {
+  useEffect(() => {
+    const fixNavigation = (e: Event) => {
+      e.stopPropagation();
+    };
+
+    // We use a timeout to ensure this runs after the conflicting script
+    setTimeout(() => {
+      const navLinks = document.querySelectorAll('header a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', fixNavigation, true); // Use capture phase
+      });
+    }, 100);
+
+    return () => {
+      const navLinks = document.querySelectorAll('header a');
+      navLinks.forEach(link => {
+        link.removeEventListener('click', fixNavigation, true);
+      });
+    };
+  }, []);
 
   return (
     <Routes>
