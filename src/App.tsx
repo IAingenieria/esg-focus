@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -40,12 +40,10 @@ import Contacto from "./pages/recursos-contacto/Contacto";
 import Equipo from "./pages/recursos-contacto/Equipo";
 import FAQ from "./pages/recursos-contacto/FAQ";
 import Politicas from "./pages/recursos-contacto/Politicas";
-import useAnchorNavigation from "./hooks/useAnchorNavigation";
 
 const queryClient = new QueryClient();
 
 const AppContent = () => {
-  // useAnchorNavigation();
 
   return (
     <Routes>
@@ -97,9 +95,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <HashRouter>
+      <BrowserRouter>
         <AppContent />
-      </HashRouter>
+      </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
 );
