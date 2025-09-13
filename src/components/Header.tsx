@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu as HeadlessMenu, Transition, Disclosure } from "@headlessui/react";
 import { Menu as MenuIcon, X, ChevronDown, Phone, Calendar } from "lucide-react";
-import focusLogo from "@/assets/focus-logo.png";
+import focusLogo from "@/assets/focus-logo-v2.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
