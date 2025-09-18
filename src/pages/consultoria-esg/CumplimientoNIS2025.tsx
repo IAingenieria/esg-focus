@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Shield, CheckCircle, Clock, Phone, Calendar, ArrowRight } from "lucide-react";
 
 const CumplimientoNIS2025 = () => {
@@ -67,7 +68,7 @@ const CumplimientoNIS2025 = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Clock className="h-4 w-4 mr-2" />
               Regulación Obligatoria 2025
             </Badge>
@@ -78,10 +79,12 @@ const CumplimientoNIS2025 = () => {
               Implementación completa de las nuevas regulaciones mexicanas con garantía de cumplimiento total
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Agendar Consulta Gratuita
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Consulta Gratuita
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 WhatsApp Directo
@@ -148,14 +151,16 @@ const CumplimientoNIS2025 = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    className="w-full" 
-                    variant={plan.popular ? "cta" : "outline"}
-                    size="lg"
-                  >
-                    Comenzar Ahora
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
+                  <Link to="/diagnostico-esg" className="w-full">
+                    <Button 
+                      className="w-full" 
+                      variant={plan.popular ? "cta" : "outline"}
+                      size="lg"
+                    >
+                      Comenzar Ahora
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -216,10 +221,12 @@ const CumplimientoNIS2025 = () => {
               No esperes hasta el último momento. Comienza tu proceso de cumplimiento hoy.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Consulta Gratuita
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Consulta Gratuita
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 +52 818 029 0061

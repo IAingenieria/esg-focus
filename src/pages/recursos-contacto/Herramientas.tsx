@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Wrench, Download, Star, Users, CheckCircle, ArrowRight, Calculator, FileText, BarChart } from "lucide-react";
 
 const Herramientas = () => {
@@ -161,7 +162,7 @@ const Herramientas = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Wrench className="h-4 w-4 mr-2" />
               Recursos Prácticos
             </Badge>
@@ -172,14 +173,18 @@ const Herramientas = () => {
               Recursos descargables para acelerar tu implementación de sostenibilidad
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Download className="h-5 w-5 mr-2" />
-                Explorar Herramientas
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white text-navy hover:bg-gray-50">
-                <Wrench className="h-5 w-5 mr-2" />
-                Herramientas Premium
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Wrench className="h-5 w-5 mr-2" />
+                  Ver Herramientas
+                </Button>
+              </Link>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white text-navy hover:bg-gray-50">
+                  <Wrench className="h-5 w-5 mr-2" />
+                  Herramientas Premium
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -260,15 +265,17 @@ const Herramientas = () => {
                     <p className="text-xs text-gray-text mb-4">
                       <strong>Requisitos:</strong> {tool.requirements}
                     </p>
-                    <Button 
-                      className="w-full" 
-                      variant={tool.premium ? "cta" : "outline"}
-                      size="sm"
-                    >
-                      <Download className="h-4 w-4 mr-2" />
-                      {tool.premium ? "Comprar y Descargar" : "Descargar Gratis"}
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
+                    <Link to="/diagnostico-esg" className="w-full">
+                      <Button 
+                        className="w-full" 
+                        variant={tool.premium ? "cta" : "outline"}
+                        size="sm"
+                      >
+                        <Download className="h-4 w-4 mr-2" />
+                        {tool.premium ? "Comprar y Descargar" : "Descargar Gratis"}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -295,10 +302,12 @@ const Herramientas = () => {
                   <Badge className={`${category.color} text-sm`}>
                     {category.count} herramientas
                   </Badge>
-                  <Button variant="ghost" size="sm" className="mt-4 w-full">
-                    Ver Herramientas
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
+                  <Link to="/diagnostico-esg" className="w-full">
+                    <Button variant="ghost" size="sm" className="mt-4 w-full">
+                      Ver Herramientas
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -393,10 +402,12 @@ const Herramientas = () => {
                 </CardContent>
               </Card>
             </div>
-            <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-              <Wrench className="h-5 w-5 mr-2" />
-              Solicitar Herramienta Personalizada
-            </Button>
+            <Link to="/diagnostico-esg">
+              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                <Wrench className="h-5 w-5 mr-2" />
+                Solicitar Herramienta Personalizada
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
@@ -412,14 +423,18 @@ const Herramientas = () => {
               Descarga nuestras herramientas y comienza a ver resultados inmediatamente
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Download className="h-5 w-5 mr-2" />
-                Descargar Herramientas Gratuitas
-              </Button>
-              <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
-                <Wrench className="h-5 w-5 mr-2" />
-                Consultar Herramientas Premium
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Download className="h-5 w-5 mr-2" />
+                  Descargar Herramientas Gratuitas
+                </Button>
+              </Link>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
+                  <Wrench className="h-5 w-5 mr-2" />
+                  Consultar Herramientas Premium
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

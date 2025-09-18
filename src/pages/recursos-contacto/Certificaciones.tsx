@@ -172,7 +172,7 @@ const Certificaciones = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Award className="h-4 w-4 mr-2" />
               Certificaciones Profesionales
             </Badge>

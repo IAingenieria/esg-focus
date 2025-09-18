@@ -20,7 +20,7 @@ const Equipo = () => {
         "Conferencista internacional reconocida",
         "Miembro del Consejo Nacional de ESG México"
       ],
-      email: "maria.gonzalez@focusesgpros.com",
+      email: "maria.gonzalez@esgconsultores.com.mx",
       phone: "+52 818 029 0062",
       linkedin: "maria-gonzalez-esg"
     },
@@ -37,7 +37,7 @@ const Equipo = () => {
         "Redujo emisiones en 35% promedio en clientes",
         "Certificó 80+ empresas en estándares internacionales"
       ],
-      email: "carlos.ruiz@focusesgpros.com",
+      email: "carlos.ruiz@esgconsultores.com.mx",
       phone: "+52 818 029 0063",
       linkedin: "carlos-ruiz-esg"
     },
@@ -54,7 +54,7 @@ const Equipo = () => {
         "Formó 500+ líderes en sostenibilidad",
         "Reconocida como Top Coach México 2023"
       ],
-      email: "ana.martinez@focusesgpros.com",
+      email: "ana.martinez@esgconsultores.com.mx",
       phone: "+52 818 029 0064",
       linkedin: "ana-martinez-coach"
     }
@@ -145,7 +145,7 @@ const Equipo = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Users className="h-4 w-4 mr-2" />
               Conoce a Nuestro Equipo
             </Badge>

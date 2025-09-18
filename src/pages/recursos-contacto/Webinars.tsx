@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Video, Calendar, Users, Clock, Play, Download, Star, ArrowRight } from "lucide-react";
 
 const Webinars = () => {
@@ -46,53 +47,6 @@ const Webinars = () => {
     }
   ];
 
-  const pastWebinars = [
-    {
-      title: "Auditorías ESG: Preparación y Mejores Prácticas",
-      description: "Todo lo que necesitas saber para superar una auditoría de sostenibilidad",
-      date: "15 Diciembre 2024",
-      instructor: "Ing. Patricia Morales",
-      duration: "75 minutos",
-      views: 1250,
-      rating: 4.8,
-      downloadable: true,
-      premium: false
-    },
-    {
-      title: "Certificación GRI: Proceso Completo",
-      description: "Guía paso a paso para obtener la certificación internacional GRI",
-      date: "8 Diciembre 2024",
-      instructor: "Dr. Luis Hernández",
-      duration: "90 minutos",
-      views: 980,
-      rating: 4.9,
-      downloadable: true,
-      premium: true
-    },
-    {
-      title: "Reportes ESG Corporativos: Estándares Internacionales",
-      description: "Cómo crear reportes que cumplan con los estándares globales",
-      date: "1 Diciembre 2024",
-      instructor: "Mtra. Sofia López",
-      duration: "85 minutos",
-      views: 1100,
-      rating: 4.7,
-      downloadable: true,
-      premium: false
-    },
-    {
-      title: "Liderazgo Sostenible en Tiempos de Crisis",
-      description: "Estrategias para mantener el compromiso ESG durante desafíos económicos",
-      date: "24 Noviembre 2024",
-      instructor: "Dr. Roberto Díaz",
-      duration: "70 minutos",
-      views: 850,
-      rating: 4.6,
-      downloadable: true,
-      premium: true
-    }
-  ];
-
   const instructors = [
     {
       name: "Dr. María González",
@@ -125,7 +79,7 @@ const Webinars = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Video className="h-4 w-4 mr-2" />
               Formación Online
             </Badge>
@@ -136,14 +90,18 @@ const Webinars = () => {
               Formación especializada con expertos líderes en sostenibilidad empresarial
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Ver Próximos Webinars
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white text-navy hover:bg-gray-50">
-                <Play className="h-5 w-5 mr-2" />
-                Webinars Grabados
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Ver Próximos Webinars
+                </Button>
+              </Link>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white text-navy hover:bg-gray-50">
+                  <Play className="h-5 w-5 mr-2" />
+                  Webinars Grabados
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -228,14 +186,16 @@ const Webinars = () => {
                         </CardContent>
                       </Card>
 
-                      <Button 
-                        size="lg" 
-                        variant={webinar.featured ? "cta" : "outline"} 
-                        className="w-full"
-                      >
-                        <Calendar className="h-5 w-5 mr-2" />
-                        Registrarse Gratis
-                      </Button>
+                      <Link to="/diagnostico-esg" className="w-full">
+                        <Button 
+                          size="lg" 
+                          variant={webinar.featured ? "cta" : "outline"} 
+                          className="w-full"
+                        >
+                          <Calendar className="h-5 w-5 mr-2" />
+                          Registrarse Gratis
+                        </Button>
+                      </Link>
                     </div>
                   </div>
                 </CardContent>
@@ -245,76 +205,6 @@ const Webinars = () => {
         </div>
       </section>
 
-      {/* Past Webinars */}
-      <section className="py-20 bg-gray-light/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Webinars Grabados</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Accede a nuestra biblioteca de contenido especializado disponible 24/7
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {pastWebinars.map((webinar, index) => (
-              <Card key={index} className="border-gray-light hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-navy mb-2">{webinar.title}</h3>
-                      <p className="text-gray-text text-sm mb-3">{webinar.description}</p>
-                    </div>
-                    {webinar.premium && (
-                      <Badge className="bg-gold text-white ml-2">Premium</Badge>
-                    )}
-                  </div>
-                  
-                  <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
-                    <div className="flex items-center">
-                      <Calendar className="h-4 w-4 text-primary mr-2" />
-                      <span>{webinar.date}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 text-primary mr-2" />
-                      <span>{webinar.duration}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Play className="h-4 w-4 text-primary mr-2" />
-                      <span>{webinar.views.toLocaleString()} vistas</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Star className="h-4 w-4 text-yellow-500 mr-2" />
-                      <span>{webinar.rating}/5</span>
-                    </div>
-                  </div>
-
-                  <div className="mb-4 pb-4 border-b border-gray-light">
-                    <p className="text-sm text-gray-text">
-                      <strong>Instructor:</strong> {webinar.instructor}
-                    </p>
-                  </div>
-
-                  <div className="flex gap-2">
-                    <Button 
-                      variant={webinar.premium ? "cta" : "outline"} 
-                      size="sm" 
-                      className="flex-1"
-                    >
-                      <Play className="h-4 w-4 mr-2" />
-                      {webinar.premium ? "Ver (Premium)" : "Ver Gratis"}
-                    </Button>
-                    {webinar.downloadable && (
-                      <Button variant="outline" size="sm">
-                        <Download className="h-4 w-4" />
-                      </Button>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Instructors */}
       <section className="py-20">
@@ -403,14 +293,18 @@ const Webinars = () => {
               Únete a miles de profesionales que ya están transformando sus organizaciones
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Registrarse Ahora
-              </Button>
-              <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
-                <Video className="h-5 w-5 mr-2" />
-                Solicitar Webinar Privado
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Registrarse Ahora
+                </Button>
+              </Link>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
+                  <Video className="h-5 w-5 mr-2" />
+                  Solicitar Webinar Privado
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

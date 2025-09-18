@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Phone, Calendar } from "lucide-react";
-import focusLogo from "@/assets/focus-logo-v2.png";
+import { Phone, Calendar, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import focusLogo from "@/assets/focus-logo-new.png";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -31,8 +33,6 @@ const menuItems = [
     subItems: [
       { title: "Liderazgo Sostenible", href: "/coaching-ejecutivo/liderazgo-sostenible", description: "Desarrolla líderes con visión de futuro.", },
       { title: "Transición Laboral", href: "/coaching-ejecutivo/transicion-laboral", description: "Apoyo profesional en cambios de carrera.", },
-      { title: "Habilidades Directivas", href: "/coaching-ejecutivo/habilidades-directivas", description: "Potencia tus competencias de gestión.", },
-      { title: "Equipos Gerenciales", href: "/coaching-ejecutivo/equipos-gerenciales", description: "Fortalece el rendimiento de tu equipo directivo.", },
     ],
   },
   {
@@ -42,7 +42,6 @@ const menuItems = [
       { title: "Auditoría Comercial", href: "/servicios-empresariales/auditoria-comercial", description: "Optimiza tu estrategia y procesos de venta.", },
       { title: "Smart Sales", href: "/servicios-empresariales/smart-sales", description: "Implementa un enfoque de ventas inteligente.", },
       { title: "Gestión Sucursales", href: "/servicios-empresariales/gestion-sucursales", description: "Mejora la eficiencia de tus puntos de venta.", },
-      { title: "Consultoría MDIES", href: "/servicios-empresariales/consultoria-mdies", description: "Asesoría experta para el crecimiento de tu negocio.", },
     ],
   },
   {
@@ -59,7 +58,6 @@ const menuItems = [
     href: "/recursos",
     subItems: [
       { title: "Diagnóstico ESG Gratuito", href: "/recursos/herramientas", description: "Evalúa la madurez ESG de tu organización.", },
-      { title: "Blog Sostenibilidad", href: "/recursos/blog", description: "Artículos y noticias sobre sostenibilidad y ESG.", },
       { title: "Casos de Éxito", href: "/recursos/casos-exito", description: "Conoce cómo hemos ayudado a otras empresas.", },
       { title: "Eventos", href: "/recursos/webinars", description: "Participa en nuestros webinars y talleres.", },
     ],
@@ -67,6 +65,7 @@ const menuItems = [
 ];
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <header className="fixed top-0 w-full bg-white/95 backdrop-blur-md border-b border-gray-light z-50 shadow-card">
       <div className="container mx-auto px-4">
@@ -119,15 +118,16 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button 
-              variant="whatsapp" 
-              size="sm" 
-              className="flex items-center space-x-2"
-              onClick={() => window.open('https://wa.me/5218180290061', '_blank')}
-            >
-              <Phone className="h-4 w-4" />
-              <span>WhatsApp</span>
-            </Button>
+            <Link to="/diagnostico-esg">
+              <Button 
+                variant="whatsapp" 
+                size="sm" 
+                className="flex items-center space-x-2"
+              >
+                <Phone className="h-4 w-4" />
+                <span>Contáctanos</span>
+              </Button>
+            </Link>
             <Link to="/agendar">
               <Button variant="cta" size="sm" className="flex items-center space-x-2">
                 <Calendar className="h-4 w-4" />
@@ -136,6 +136,69 @@ const Header = () => {
             </Link>
           </div>
 
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden">
+            <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon">
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Abrir menú</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[340px] p-0">
+                <SheetHeader className="p-6 border-b">
+                  <SheetTitle>
+                    <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center space-x-3">
+                      <img src={focusLogo} alt="Focus Coach & Consulting" className="h-10 w-auto" />
+                    </Link>
+                  </SheetTitle>
+                </SheetHeader>
+                <div className="p-6 h-[calc(100vh-160px)] overflow-y-auto">
+                  <Accordion type="single" collapsible className="w-full">
+                    {menuItems.map((item) => (
+                      <AccordionItem value={item.title} key={item.title}>
+                        <AccordionTrigger className="text-base font-semibold">{item.title}</AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="flex flex-col space-y-2 pl-2 border-l border-gray-light ml-2">
+                            {item.subItems?.map((subItem) => (
+                              <li key={subItem.title}>
+                                <Link
+                                  to={subItem.href}
+                                  className="block p-2 text-muted-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                                  onClick={() => setIsMobileMenuOpen(false)}
+                                >
+                                  {subItem.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+                <div className="p-6 border-t absolute bottom-0 w-full bg-white">
+                  <div className="flex flex-col space-y-3">
+                      <Link to="/diagnostico-esg" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Button 
+                          variant="whatsapp" 
+                          className="w-full flex items-center justify-center space-x-2"
+                        >
+                          <Phone className="h-4 w-4" />
+                          <span>Contáctanos</span>
+                        </Button>
+                      </Link>
+                      <Link to="/agendar" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
+                        <Button variant="cta" className="w-full flex items-center justify-center space-x-2">
+                          <Calendar className="h-4 w-4" />
+                          <span>Agendar Consulta</span>
+                        </Button>
+                      </Link>
+                  </div>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>

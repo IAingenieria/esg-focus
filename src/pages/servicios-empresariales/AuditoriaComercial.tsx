@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { TrendingUp, Target, Users, Clock, CheckCircle, Phone, Calendar, ArrowRight, BarChart3 } from "lucide-react";
 
 const AuditoriaComercial = () => {
@@ -87,7 +88,7 @@ const AuditoriaComercial = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Target className="h-4 w-4 mr-2" />
               Resultados Garantizados
             </Badge>
@@ -98,10 +99,12 @@ const AuditoriaComercial = () => {
               Optimiza tu proceso de ventas y aumenta la conversión con nuestra auditoría especializada
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Agendar Auditoría
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Auditoría
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 WhatsApp Directo
@@ -170,10 +173,12 @@ const AuditoriaComercial = () => {
                 <p className="text-lg text-gray-text mb-8">
                   Análisis integral de tu operación comercial con plan de mejora específico
                 </p>
-                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                  Comenzar Auditoría
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
+                <Link to="/diagnostico-esg">
+                  <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                    Comenzar Auditoría
+                    <ArrowRight className="h-5 w-5 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -284,10 +289,12 @@ const AuditoriaComercial = () => {
                     <div className="text-sm text-gray-text mt-2">Por escrito</div>
                   </div>
                 </div>
-                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                  Solicitar Auditoría Ahora
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
+                <Link to="/diagnostico-esg">
+                  <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                    Solicitar Auditoría Ahora
+                    <ArrowRight className="h-5 w-5 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -305,10 +312,12 @@ const AuditoriaComercial = () => {
               Descubre las oportunidades ocultas en tu proceso comercial y aumenta tus resultados
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Agendar Auditoría
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Auditoría
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 +52 818 029 0061

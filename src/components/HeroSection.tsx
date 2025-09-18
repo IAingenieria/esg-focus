@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Clock, CheckCircle, Award, Users, Calendar, Download } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -8,8 +9,8 @@ const HeroSection = () => {
   const [daysLeft, setDaysLeft] = useState(0);
 
   useEffect(() => {
-    // Calculate days until January 1, 2025
-    const targetDate = new Date("2025-01-01");
+    // Calculate days until January 1, 2026
+    const targetDate = new Date("2026-01-01");
     const today = new Date();
     const timeDiff = targetDate.getTime() - today.getTime();
     const daysDiff = Math.max(0, Math.ceil(timeDiff / (1000 * 3600 * 24)));
@@ -46,7 +47,7 @@ const HeroSection = () => {
         <div className="mb-8 flex justify-center">
           <Badge variant="destructive" className="bg-yellow-accent text-navy font-bold text-lg px-6 py-3 rounded-full animate-pulse flex items-center space-x-2">
             <Clock className="h-5 w-5" />
-            <span>FALTAN {daysLeft} DÍAS PARA CUMPLIMIENTO OBLIGATORIO NIS 2025</span>
+            <span>Faltan {daysLeft} días para tu declaración NIS 2025: ¿Tu empresa está preparada?</span>
           </Badge>
         </div>
 
@@ -76,14 +77,17 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-          <Button variant="urgent" size="xl" className="flex items-center space-x-3 text-xl">
-            <Download className="h-6 w-6" />
-            <span>Diagnóstico ESG Gratuito - 15 Minutos</span>
-          </Button>
-          <Button variant="hero" size="xl" className="flex items-center space-x-3 text-xl">
-            <Calendar className="h-6 w-6" />
-            <span>Agenda Consulta Estratégica</span>
-          </Button>
+          <Link to="/diagnostico-esg">
+            <Button variant="cta" size="lg">
+              Diagnóstico Gratuito
+            </Button>
+          </Link>
+          <Link to="/diagnostico-esg">
+            <Button variant="hero" size="xl" className="flex items-center space-x-3 text-xl">
+              <Calendar className="h-6 w-6" />
+              <span>Agenda Consulta Estratégica</span>
+            </Button>
+          </Link>
         </div>
 
         {/* Credentials */}

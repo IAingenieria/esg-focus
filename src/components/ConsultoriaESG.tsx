@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { CheckCircle, Clock, Shield, TrendingUp, FileText, GraduationCap } from "lucide-react";
 
 const ConsultoriaESG = () => {
@@ -225,12 +226,16 @@ const ConsultoriaESG = () => {
                 )}
 
                 <div className="flex flex-col gap-3">
-                  <Button variant={service.urgent ? "urgent" : service.premium ? "cta" : "default"} className="w-full">
-                    Solicitar Información
-                  </Button>
-                  <Button variant="outline" size="sm" className="w-full">
-                    Ver Detalles
-                  </Button>
+                  <Link to="/diagnostico-esg" className="w-full">
+                    <Button variant={service.urgent ? "urgent" : service.premium ? "cta" : "default"} className="w-full">
+                      Solicitar Información
+                    </Button>
+                  </Link>
+                  <Link to="/diagnostico-esg" className="w-full">
+                    <Button variant="outline" size="sm" className="w-full">
+                      Ver Detalles
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -245,12 +250,16 @@ const ConsultoriaESG = () => {
               Agenda una consulta gratuita de 15 minutos y descubre cómo podemos ayudarte
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="urgent" size="lg">
-                Diagnóstico ESG Gratuito
-              </Button>
-              <Button variant="hero" size="lg">
-                Agendar Consulta
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button variant="urgent" size="lg">
+                  Diagnóstico ESG Gratuito
+                </Button>
+              </Link>
+              <Link to="/diagnostico-esg">
+                <Button variant="hero" size="lg">
+                  Agendar Consulta
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

@@ -41,7 +41,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2 text-sm">
                 <Mail className="h-4 w-4 text-green-success" />
-                <span>oriosn@gmail.com</span>
+                <span>info@esgconsultores.com.mx</span>
               </div>
             </div>
           </div>
@@ -95,10 +95,12 @@ const Footer = () => {
                 <MessageCircle className="h-4 w-4 mr-2" />
                 WhatsApp Directo
               </Button>
-              <Button variant="outline" size="sm" className="w-full justify-start">
-                <Linkedin className="h-4 w-4 mr-2" />
-                LinkedIn
-              </Button>
+              <a href="https://mx.linkedin.com/in/olegario-rios" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button variant="outline" size="sm" className="w-full justify-start">
+                  <Linkedin className="h-4 w-4 mr-2" />
+                  LinkedIn
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -111,12 +113,16 @@ const Footer = () => {
               Obtén tu diagnóstico ESG gratuito y descubre cómo cumplir con las regulaciones NIS 2025
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="urgent" size="lg">
-                Diagnóstico Gratuito
-              </Button>
-              <Button variant="hero" size="lg">
-                Agendar Consulta
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button variant="urgent" size="lg">
+                  Diagnóstico Gratuito
+                </Button>
+              </Link>
+              <Link to="/contacto">
+                <Button variant="hero" size="lg">
+                  Agendar Consulta
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

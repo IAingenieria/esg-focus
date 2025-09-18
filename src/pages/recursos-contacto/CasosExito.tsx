@@ -138,7 +138,7 @@ const CasosExito = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Trophy className="h-4 w-4 mr-2" />
               Historias de Éxito
             </Badge>
@@ -149,14 +149,18 @@ const CasosExito = () => {
               Descubre cómo hemos transformado empresas con estrategias ESG efectivas
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Target className="h-5 w-5 mr-2" />
-                Ver Casos Detallados
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white text-navy hover:bg-gray-50">
-                <Calendar className="h-5 w-5 mr-2" />
-                Solicitar Consulta
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Target className="h-5 w-5 mr-2" />
+                  Ver Casos Detallados
+                </Button>
+              </Link>
+              <Link to="/contacto">
+                <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white text-navy hover:bg-gray-50">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Solicitar Consulta
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -412,14 +416,18 @@ const CasosExito = () => {
               Únete a las empresas líderes que ya están transformando su futuro con ESG
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Target className="h-5 w-5 mr-2" />
-                Iniciar Transformación
-              </Button>
-              <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Agendar Consulta Gratuita
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Target className="h-5 w-5 mr-2" />
+                  Iniciar Transformación
+                </Button>
+              </Link>
+              <Link to="/contacto">
+                <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Consulta Gratuita
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

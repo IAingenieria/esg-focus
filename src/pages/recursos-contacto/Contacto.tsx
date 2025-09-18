@@ -2,159 +2,27 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Phone, Mail, MapPin, Clock, MessageCircle, Calendar, Send, User } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Contacto = () => {
-  const contactMethods = [
-    {
-      method: "WhatsApp Business",
-      value: "+52 818 029 0061",
-      description: "Respuesta inmediata en horario laboral",
-      icon: MessageCircle,
-      primary: true,
-      available: "Lun-Vie 8:00-18:00"
-    },
-    {
-      method: "Teléfono Directo",
-      value: "+52 81 8029 0061",
-      description: "Llamadas directas para consultas urgentes",
-      icon: Phone,
-      available: "Lun-Vie 9:00-17:00"
-    },
-    {
-      method: "Email Corporativo",
-      value: "contacto@focusesgpros.com",
-      description: "Para consultas detalladas y propuestas",
-      icon: Mail,
-      available: "Respuesta en 24 hrs"
-    },
-    {
-      method: "Oficinas Monterrey",
-      value: "Av. Constitución 1234, Col. Centro",
-      description: "Citas presenciales con cita previa",
-      icon: MapPin,
-      available: "Lun-Vie 9:00-17:00"
-    }
-  ];
-
-  const team = [
-    {
-      name: "Dr. María González",
-      position: "Directora General",
-      specialization: "Estrategia ESG y Compliance",
-      email: "maria.gonzalez@focusesgpros.com",
-      phone: "+52 818 029 0062"
-    },
-    {
-      name: "Ing. Carlos Ruiz",
-      position: "Director de Consultoría",
-      specialization: "Implementación y Auditorías",
-      email: "carlos.ruiz@focusesgpros.com",
-      phone: "+52 818 029 0063"
-    },
-    {
-      name: "Lic. Ana Martínez",
-      position: "Directora de Coaching",
-      specialization: "Desarrollo Organizacional",
-      email: "ana.martinez@focusesgpros.com",
-      phone: "+52 818 029 0064"
-    }
-  ];
-
-  const offices = [
-    {
-      city: "Monterrey (Sede Principal)",
-      address: "Av. Constitución 1234, Col. Centro, 64000 Monterrey, N.L.",
-      phone: "+52 81 8029 0061",
-      hours: "Lun-Vie: 9:00-17:00, Sáb: 9:00-13:00"
-    },
-    {
-      city: "Ciudad de México",
-      address: "Av. Reforma 456, Col. Juárez, 06600 CDMX",
-      phone: "+52 55 5555 0061",
-      hours: "Lun-Vie: 9:00-17:00"
-    },
-    {
-      city: "Guadalajara",
-      address: "Av. Chapultepec 789, Col. Americana, 44160 Guadalajara, Jal.",
-      phone: "+52 33 3333 0061",
-      hours: "Lun-Vie: 9:00-17:00"
-    }
-  ];
 
   return (
     <>
-      
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
-              <Phone className="h-4 w-4 mr-2" />
-              Estamos Aquí para Ayudarte
-            </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               <span className="text-primary">Contacto</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-light">
               Conecta con nuestros expertos y comienza tu transformación ESG hoy mismo
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <MessageCircle className="h-5 w-5 mr-2" />
-                WhatsApp Directo
-              </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-4 bg-white text-navy hover:bg-gray-50">
-                <Calendar className="h-5 w-5 mr-2" />
-                Agendar Reunión
-              </Button>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Contact Methods */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Múltiples Formas de Contactarnos</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Elige el método que más te convenga para iniciar la conversación
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {contactMethods.map((contact, index) => (
-              <Card key={index} className={`text-center ${contact.primary ? 'border-primary shadow-xl scale-105' : 'border-gray-light'} hover:shadow-lg transition-all duration-300`}>
-                {contact.primary && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                    Recomendado
-                  </Badge>
-                )}
-                <CardContent className="p-8">
-                  <div className={`w-16 h-16 ${contact.primary ? 'bg-primary' : 'bg-primary/10'} rounded-full flex items-center justify-center mx-auto mb-6`}>
-                    <contact.icon className={`h-8 w-8 ${contact.primary ? 'text-white' : 'text-primary'}`} />
-                  </div>
-                  <h3 className="text-lg font-semibold text-navy mb-2">{contact.method}</h3>
-                  <p className="text-primary font-medium mb-3">{contact.value}</p>
-                  <p className="text-gray-text text-sm mb-4">{contact.description}</p>
-                  <div className="flex items-center justify-center text-xs text-gray-text">
-                    <Clock className="h-3 w-3 mr-1" />
-                    {contact.available}
-                  </div>
-                  <Button 
-                    variant={contact.primary ? "cta" : "outline"} 
-                    size="sm" 
-                    className="w-full mt-4"
-                  >
-                    Contactar
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Contact Form */}
       <section className="py-20 bg-gray-light/30">
@@ -269,85 +137,7 @@ const Contacto = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Nuestro Equipo Directivo</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Contacta directamente con nuestros líderes especializados
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {team.map((member, index) => (
-              <Card key={index} className="text-center border-gray-light hover:shadow-lg transition-all duration-300">
-                <CardContent className="p-8">
-                  <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <User className="h-10 w-10 text-primary" />
-                  </div>
-                  <h3 className="text-xl font-bold text-navy mb-2">{member.name}</h3>
-                  <p className="text-primary font-medium mb-2">{member.position}</p>
-                  <p className="text-gray-text text-sm mb-6">{member.specialization}</p>
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center justify-center">
-                      <Mail className="h-4 w-4 text-primary mr-2" />
-                      <a href={`mailto:${member.email}`} className="text-gray-text hover:text-primary">
-                        {member.email}
-                      </a>
-                    </div>
-                    <div className="flex items-center justify-center">
-                      <Phone className="h-4 w-4 text-primary mr-2" />
-                      <a href={`tel:${member.phone}`} className="text-gray-text hover:text-primary">
-                        {member.phone}
-                      </a>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      {/* Offices */}
-      <section className="py-20 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Nuestras Oficinas</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Presencia nacional para estar cerca de nuestros clientes
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {offices.map((office, index) => (
-              <Card key={index} className="border-primary/20 bg-white">
-                <CardContent className="p-8">
-                  <div className="flex items-center mb-4">
-                    <MapPin className="h-6 w-6 text-primary mr-3" />
-                    <h3 className="text-lg font-bold text-navy">{office.city}</h3>
-                  </div>
-                  <div className="space-y-3 text-sm">
-                    <p className="text-gray-text">{office.address}</p>
-                    <div className="flex items-center">
-                      <Phone className="h-4 w-4 text-primary mr-2" />
-                      <span className="text-gray-text">{office.phone}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="h-4 w-4 text-primary mr-2" />
-                      <span className="text-gray-text">{office.hours}</span>
-                    </div>
-                  </div>
-                  <Button variant="outline" size="sm" className="w-full mt-6">
-                    Ver en Mapa
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-20">

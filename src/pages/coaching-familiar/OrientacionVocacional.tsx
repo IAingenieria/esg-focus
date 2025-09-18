@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Compass, Users, Zap, Search, Target, CheckCircle, Phone, Calendar, ArrowRight, Brain } from "lucide-react";
 
 const OrientacionVocacional = () => {
@@ -127,7 +128,7 @@ const OrientacionVocacional = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Compass className="h-4 w-4 mr-2" />
               Encuentra tu Camino
             </Badge>
@@ -138,10 +139,12 @@ const OrientacionVocacional = () => {
               Descubre tu vocación verdadera y diseña el camino hacia tu futuro profesional ideal
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Iniciar Proceso
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Iniciar Proceso
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 WhatsApp Directo
@@ -197,14 +200,16 @@ const OrientacionVocacional = () => {
                     <p className="text-xs text-gray-text mb-3">
                       <strong>Ideal para:</strong> {option.ideal}
                     </p>
-                    <Button 
-                      className="w-full" 
-                      variant={option.popular ? "cta" : "outline"}
-                      size="sm"
-                    >
-                      Seleccionar
-                      <ArrowRight className="h-3 w-3 ml-1" />
-                    </Button>
+                    <Link to="/diagnostico-esg" className="w-full">
+                      <Button 
+                        className="w-full" 
+                        variant={option.popular ? "cta" : "outline"}
+                        size="sm"
+                      >
+                        Seleccionar
+                        <ArrowRight className="h-3 w-3 ml-1" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -355,10 +360,12 @@ const OrientacionVocacional = () => {
               Toma la decisión más importante de tu vida con el apoyo de expertos
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Iniciar Proceso
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Iniciar Proceso
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 +52 818 029 0061

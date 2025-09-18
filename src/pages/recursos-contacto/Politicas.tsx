@@ -123,7 +123,7 @@ const Politicas = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Shield className="h-4 w-4 mr-2" />
               Transparencia y Confianza
             </Badge>
@@ -328,7 +328,7 @@ const Politicas = () => {
                     Para ejercer tus derechos, contáctanos en:
                   </p>
                   <p className="text-primary font-medium mb-6">
-                    privacidad@focusesgpros.com
+                    privacidad@esgconsultores.com.mx
                   </p>
                   <Button variant="cta" size="lg">
                     Ejercer Mis Derechos
@@ -401,21 +401,21 @@ const Politicas = () => {
                 <CardContent className="p-6 text-center">
                   <FileText className="h-8 w-8 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold text-navy mb-2">Oficial de Privacidad</h3>
-                  <p className="text-gray-text text-sm">privacidad@focusesgpros.com</p>
+                  <p className="text-gray-text text-sm">privacidad@esgconsultores.com.mx</p>
                 </CardContent>
               </Card>
               <Card className="border-gray-light">
                 <CardContent className="p-6 text-center">
                   <Shield className="h-8 w-8 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold text-navy mb-2">Seguridad de Datos</h3>
-                  <p className="text-gray-text text-sm">seguridad@focusesgpros.com</p>
+                  <p className="text-gray-text text-sm">seguridad@esgconsultores.com.mx</p>
                 </CardContent>
               </Card>
               <Card className="border-gray-light">
                 <CardContent className="p-6 text-center">
                   <Lock className="h-8 w-8 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold text-navy mb-2">Cumplimiento</h3>
-                  <p className="text-gray-text text-sm">cumplimiento@focusesgpros.com</p>
+                  <p className="text-gray-text text-sm">cumplimiento@esgconsultores.com.mx</p>
                 </CardContent>
               </Card>
             </div>

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Building2, BarChart3, Users, Cog, CheckCircle, Phone, Calendar, ArrowRight, Target } from "lucide-react";
 
 const GestionSucursales = () => {
@@ -101,7 +102,7 @@ const GestionSucursales = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Building2 className="h-4 w-4 mr-2" />
               Múltiples Ubicaciones
             </Badge>
@@ -112,13 +113,15 @@ const GestionSucursales = () => {
               Estandariza y optimiza la operación de todas tus sucursales para resultados consistentes
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Diagnóstico Gratuito
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Diagnóstico
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
-                WhatsApp Directo
+                +52 818 029 0061
               </Button>
             </div>
           </div>
@@ -184,14 +187,16 @@ const GestionSucursales = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button 
-                    className="w-full" 
-                    variant={tier.popular ? "cta" : "outline"}
-                    size="lg"
-                  >
-                    Seleccionar Plan
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
+                  <Link to="/diagnostico-esg" className="w-full">
+                    <Button 
+                      className="w-full" 
+                      variant={tier.popular ? "cta" : "outline"}
+                      size="sm"
+                    >
+                      Seleccionar Plan
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
@@ -330,11 +335,11 @@ const GestionSucursales = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" variant="cta" className="text-lg px-8 py-4">
                 <Calendar className="h-5 w-5 mr-2" />
-                Diagnóstico Gratuito
+                Agendar Diagnóstico
               </Button>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
-                +52 818 029 0061
+                WhatsApp Directo
               </Button>
             </div>
           </div>

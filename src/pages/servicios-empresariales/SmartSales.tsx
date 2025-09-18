@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Brain, Search, Eye, FileText, Handshake, Users, Monitor, MapPin, CheckCircle, Phone, Calendar, ArrowRight, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SmartSales = () => {
   const modalities = [
@@ -106,7 +107,7 @@ const SmartSales = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <TrendingUp className="h-4 w-4 mr-2" />
               Resultados Comprobados
             </Badge>
@@ -117,10 +118,12 @@ const SmartSales = () => {
               Metodología avanzada de ventas consultivas basada en 5 pilares fundamentales
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Iniciar Programa
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Sesión Estratégica
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 WhatsApp Directo
@@ -250,14 +253,16 @@ const SmartSales = () => {
                     <p className="text-xs text-gray-text mb-3">
                       <strong>Ideal para:</strong> {modality.ideal}
                     </p>
-                    <Button 
-                      className="w-full" 
-                      variant={modality.popular ? "cta" : "outline"}
-                      size="sm"
-                    >
-                      Seleccionar
-                      <ArrowRight className="h-3 w-3 ml-1" />
-                    </Button>
+                    <Link to="/diagnostico-esg" className="w-full">
+                      <Button 
+                        className="w-full" 
+                        variant={modality.popular ? "cta" : "outline"}
+                        size="sm"
+                      >
+                        Seleccionar
+                        <ArrowRight className="h-3 w-3 ml-1" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -357,10 +362,12 @@ const SmartSales = () => {
               Únete a los vendedores que han multiplicado sus resultados con Smart Sales
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Iniciar Programa
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Agendar Sesión Estratégica
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 +52 818 029 0061

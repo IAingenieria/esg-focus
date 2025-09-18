@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { HelpCircle, Search, MessageCircle, Phone, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 
@@ -163,7 +164,7 @@ const FAQ = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <HelpCircle className="h-4 w-4 mr-2" />
               Centro de Ayuda
             </Badge>
@@ -342,7 +343,7 @@ const FAQ = () => {
                 <HelpCircle className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="text-xl font-semibold text-navy mb-2">Soporte Técnico</h3>
                 <p className="text-gray-text mb-4">Para dudas sobre herramientas y recursos</p>
-                <p className="text-primary font-medium mb-4">soporte@focusesgpros.com</p>
+                <p className="text-primary font-medium mb-4">soporte@esgconsultores.com.mx</p>
                 <Button variant="outline" size="sm" className="w-full">
                   Enviar Email
                 </Button>
@@ -363,10 +364,12 @@ const FAQ = () => {
               Nuestro equipo está disponible para resolver todas tus dudas y guiarte en el proceso
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <MessageCircle className="h-5 w-5 mr-2" />
-                Consulta Gratuita
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <MessageCircle className="h-5 w-5 mr-2" />
+                  Consulta Gratuita
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 WhatsApp: +52 818 029 0061

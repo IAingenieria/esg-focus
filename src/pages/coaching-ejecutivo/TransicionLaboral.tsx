@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { TrendingUp, Search, Briefcase, Target, CheckCircle, Phone, Calendar, ArrowRight, DollarSign } from "lucide-react";
 
 const TransicionLaboral = () => {
@@ -77,7 +78,7 @@ const TransicionLaboral = () => {
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+            <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <DollarSign className="h-4 w-4 mr-2" />
               Salarios 15-25% Superiores
             </Badge>
@@ -88,10 +89,12 @@ const TransicionLaboral = () => {
               Especialízate en posiciones ESG con salarios superiores y mayor proyección profesional
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Evaluación Gratuita
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Evaluación Gratuita
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 WhatsApp Directo
@@ -172,10 +175,12 @@ const TransicionLaboral = () => {
                 <p className="text-lg text-gray-text mb-8">
                   Enfoque especializado en posiciones con responsabilidades ESG
                 </p>
-                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                  Comenzar Transición
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
+                <Link to="/diagnostico-esg">
+                  <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                    Comenzar Transición
+                    <ArrowRight className="h-5 w-5 ml-2" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -327,10 +332,12 @@ const TransicionLaboral = () => {
               Da el siguiente paso hacia una carrera más exitosa y mejor remunerada
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Evaluación Gratuita
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Evaluación Gratuita
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 +52 818 029 0061
