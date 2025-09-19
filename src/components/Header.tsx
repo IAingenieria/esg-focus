@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Phone, Calendar, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import focusLogo from "@/assets/focus-logo-new.png";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -62,6 +61,10 @@ const menuItems = [
       { title: "Eventos", href: "/recursos/webinars", description: "Participa en nuestros webinars y talleres.", },
     ],
   },
+  {
+    title: "Certificaciones",
+    href: "/certificaciones",
+  },
 ];
 
 const Header = () => {
@@ -72,7 +75,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src={focusLogo} alt="Focus Coach & Consulting" className="h-12 w-auto" />
+            <img src="/assets/focus-logo-new.png" alt="Focus Coach & Consulting" className="h-12 w-auto" />
           </Link>
 
           {/* Navigation Menu */}
@@ -81,35 +84,46 @@ const Header = () => {
               <NavigationMenuList>
                 {menuItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
-                    <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                        <li className="row-span-3">
-                          <NavigationMenuLink asChild>
-                            <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                              href={item.href}
-                            >
-                              <div className="mb-2 mt-4 text-lg font-medium">
-                                {item.title}
-                              </div>
-                              <p className="text-sm leading-tight text-muted-foreground">
-                                Descubre nuestros servicios de {item.title.toLowerCase()}.
-                              </p>
-                            </a>
-                          </NavigationMenuLink>
-                        </li>
-                        {item.subItems?.map((subItem) => (
-                          <ListItem
-                            key={subItem.title}
-                            title={subItem.title}
-                            href={subItem.href}
-                          >
-                            {subItem.description}
-                          </ListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
+                    {item.subItems ? (
+                      <>
+                        <NavigationMenuTrigger>{item.title}</NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                            <li className="row-span-3">
+                              <NavigationMenuLink asChild>
+                                <a
+                                  className="flex h-full w-full select-none flex-col justify-between rounded-md bg-gradient-to-br from-navy to-navy/90 p-6 no-underline outline-none focus:shadow-md"
+                                  href={item.href}
+                                >
+                                  <img src="/assets/focus-logo-new.png" alt="Focus Logo" className="h-10 w-auto" />
+                                  <div>
+                                    <div className="mb-2 mt-4 text-lg font-medium text-white">
+                                      {item.title}
+                                    </div>
+                                    <p className="text-sm leading-tight text-gray-light/90">
+                                      Descubre nuestros servicios de {item.title.toLowerCase()}.
+                                    </p>
+                                  </div>
+                                </a>
+                              </NavigationMenuLink>
+                            </li>
+                            {item.subItems.map((subItem) => (
+                              <ListItem
+                                key={subItem.title}
+                                title={subItem.title}
+                                href={subItem.href}
+                              >
+                                {subItem.description}
+                              </ListItem>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </>
+                    ) : (
+                      <Link to={item.href} className="font-medium text-sm px-4 py-2 text-gray-text hover:text-primary transition-colors">
+                        {item.title}
+                      </Link>
+                    )}
                   </NavigationMenuItem>
                 ))}
               </NavigationMenuList>
@@ -149,32 +163,43 @@ const Header = () => {
                 <SheetHeader className="p-6 border-b">
                   <SheetTitle>
                     <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center space-x-3">
-                      <img src={focusLogo} alt="Focus Coach & Consulting" className="h-10 w-auto" />
+                      <img src="/assets/focus-logo-new.png" alt="Focus Coach & Consulting" className="h-10 w-auto" />
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
                 <div className="p-6 h-[calc(100vh-160px)] overflow-y-auto">
                   <Accordion type="single" collapsible className="w-full">
-                    {menuItems.map((item) => (
-                      <AccordionItem value={item.title} key={item.title}>
-                        <AccordionTrigger className="text-base font-semibold">{item.title}</AccordionTrigger>
-                        <AccordionContent>
-                          <ul className="flex flex-col space-y-2 pl-2 border-l border-gray-light ml-2">
-                            {item.subItems?.map((subItem) => (
-                              <li key={subItem.title}>
-                                <Link
-                                  to={subItem.href}
-                                  className="block p-2 text-muted-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
-                                  onClick={() => setIsMobileMenuOpen(false)}
-                                >
-                                  {subItem.title}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
+                    {menuItems.map((item) =>
+                      item.subItems ? (
+                        <AccordionItem value={item.title} key={item.title}>
+                          <AccordionTrigger className="text-base font-semibold">{item.title}</AccordionTrigger>
+                          <AccordionContent>
+                            <ul className="flex flex-col space-y-2 pl-2 border-l border-gray-light ml-2">
+                              {item.subItems.map((subItem) => (
+                                <li key={subItem.title}>
+                                  <Link
+                                    to={subItem.href}
+                                    className="block p-2 text-muted-foreground hover:text-primary hover:bg-accent rounded-md transition-colors"
+                                    onClick={() => setIsMobileMenuOpen(false)}
+                                  >
+                                    {subItem.title}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </AccordionContent>
+                        </AccordionItem>
+                      ) : (
+                        <Link
+                          key={item.title}
+                          to={item.href}
+                          className="flex items-center text-base font-semibold py-4 border-b"
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item.title}
+                        </Link>
+                      )
+                    )}
                   </Accordion>
                 </div>
                 <div className="p-6 border-t absolute bottom-0 w-full bg-white">

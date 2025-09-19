@@ -42,6 +42,9 @@ import Politicas from "./pages/recursos-contacto/Politicas";
 import Agendar from "./pages/recursos-contacto/Agendar";
 import DiagnosticoESG from "./pages/recursos-contacto/DiagnosticoESG";
 
+// Certificaciones Pages
+import CertificacionesIndex from "./pages/certificaciones/Index";
+
 const queryClient = new QueryClient();
 
 const AppContent = () => {
@@ -98,6 +101,10 @@ const AppContent = () => {
           <Route path="/politicas" element={<Politicas />} />
           <Route path="/agendar" element={<Agendar />} />
           <Route path="/diagnostico-esg" element={<DiagnosticoESG />} />
+
+          {/* Certificaciones Route */}
+          <Route path="/certificaciones" element={<CertificacionesIndex />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
