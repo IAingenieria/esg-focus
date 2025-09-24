@@ -77,17 +77,17 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-          <Link to="/diagnostico-esg">
+          <a href="https://asesorsostenible.com/" target="_blank" rel="noopener noreferrer">
             <Button variant="cta" size="lg">
               Diagnóstico Gratuito
             </Button>
-          </Link>
-          <Link to="/diagnostico-esg">
+          </a>
+          <a href="http://127.0.0.1:51694/agendar">
             <Button variant="hero" size="xl" className="flex items-center space-x-3 text-xl">
               <Calendar className="h-6 w-6" />
               <span>Agenda Consulta Estratégica</span>
             </Button>
-          </Link>
+          </a>
         </div>
 
         {/* Credentials */}

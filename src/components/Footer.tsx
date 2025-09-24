@@ -113,16 +113,16 @@ const Footer = () => {
               Obtén tu diagnóstico ESG gratuito y descubre cómo cumplir con las regulaciones NIS 2025
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/diagnostico-esg">
+              <a href="https://asesorsostenible.com/" target="_blank" rel="noopener noreferrer">
                 <Button variant="urgent" size="lg">
                   Diagnóstico Gratuito
                 </Button>
-              </Link>
-              <Link to="/contacto">
+              </a>
+              <a href="http://127.0.0.1:51694/agendar">
                 <Button variant="hero" size="lg">
                   Agendar Consulta
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

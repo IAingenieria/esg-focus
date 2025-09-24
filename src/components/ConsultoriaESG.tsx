@@ -250,16 +250,16 @@ const ConsultoriaESG = () => {
               Agenda una consulta gratuita de 15 minutos y descubre cómo podemos ayudarte
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/diagnostico-esg">
+              <a href="https://asesorsostenible.com/" target="_blank" rel="noopener noreferrer">
                 <Button variant="urgent" size="lg">
                   Diagnóstico ESG Gratuito
                 </Button>
-              </Link>
-              <Link to="/diagnostico-esg">
+              </a>
+              <a href="http://127.0.0.1:51694/agendar">
                 <Button variant="hero" size="lg">
                   Agendar Consulta
                 </Button>
-              </Link>
+              </a>
             </div>
           </div>
         </div>

@@ -1,5 +1,7 @@
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -51,6 +53,8 @@ const employeeCountOptions = [
 ];
 
 const DiagnosticoESG = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -65,8 +69,19 @@ const DiagnosticoESG = () => {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    // Handle form submission
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    emailjs.send(serviceId, templateId, values as Record<string, unknown>, publicKey)
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+        setIsSubmitted(true);
+      })
+      .catch((err) => {
+        console.log('FAILED...', err);
+        alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+      });
   }
 
   return (
@@ -194,7 +209,9 @@ const DiagnosticoESG = () => {
                 />
               </div>
               <div className="text-center pt-4">
-                <Button type="submit" size="lg" variant="cta">ENVIAR</Button>
+                <Button type="submit" size="lg" variant="cta" disabled={isSubmitted}>
+                  {isSubmitted ? "Gracias" : "ENVIAR"}
+                </Button>
               </div>
             </form>
           </Form>
