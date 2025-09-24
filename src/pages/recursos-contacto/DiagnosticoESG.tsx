@@ -73,7 +73,17 @@ const DiagnosticoESG = () => {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-    emailjs.send(serviceId, templateId, values as Record<string, unknown>, publicKey)
+    const templateParams = {
+      company: values.companyName,
+      name: values.responsibleName,
+      email: values.email,
+      phone: values.phone,
+      position: values.position,
+      industry: values.industry,
+      employees: values.employeeCount,
+    };
+
+    emailjs.send(serviceId, templateId, templateParams, publicKey)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         setIsSubmitted(true);
