@@ -105,28 +105,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-12 py-8 border-t border-white/20">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-4 text-yellow-accent">¿Listo para Transformar tu Empresa?</h3>
-            <p className="text-white/80 mb-6 max-w-2xl mx-auto">
-              Obtén tu diagnóstico ESG gratuito y descubre cómo cumplir con las regulaciones NIS 2025
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://asesorsostenible.com/" target="_blank" rel="noopener noreferrer">
-                <Button variant="urgent" size="lg">
-                  Diagnóstico Gratuito
-                </Button>
-              </a>
-              <a href="http://127.0.0.1:51694/agendar">
-                <Button variant="hero" size="lg">
-                  Agendar Consulta
-                </Button>
-              </a>
-            </div>
-          </div>
-        </div>
-
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-white/60">
