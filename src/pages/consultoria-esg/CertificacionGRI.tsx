@@ -128,11 +128,27 @@ const CertificacionGRI = () => {
                 <h2 className="text-4xl font-bold text-navy mb-6">
                   Inversión en Certificación GRI
                 </h2>
-                <div className="mb-8">
-                  <span className="text-5xl font-bold text-navy">$180,000</span>
-                  <span className="text-2xl text-gray-text mx-4">-</span>
-                  <span className="text-5xl font-bold text-navy">$350,000</span>
-                  <div className="text-xl text-gray-text mt-2">MXN</div>
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
+                  <Card className="border-gray-light">
+                    <CardHeader className="text-center pb-4">
+                      <CardTitle className="text-2xl font-bold text-navy">MIPYMES</CardTitle>
+                      <CardDescription className="text-gray-text">Micro, pequeñas y medianas empresas</CardDescription>
+                      <div className="mt-4">
+                        <span className="text-4xl font-bold text-navy">$20,000</span>
+                        <span className="text-gray-text ml-2">MXN</span>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                  <Card className="border-gray-light">
+                    <CardHeader className="text-center pb-4">
+                      <CardTitle className="text-2xl font-bold text-navy">Empresas Medianas y Grandes</CardTitle>
+                      <CardDescription className="text-gray-text">Más de 250 empleados</CardDescription>
+                      <div className="mt-4">
+                        <span className="text-3xl font-bold text-navy">de $50,000 hasta $180,000</span>
+                        <span className="text-gray-text ml-2">MXN</span>
+                      </div>
+                    </CardHeader>
+                  </Card>
                 </div>
                 <p className="text-xl text-gray-text mb-8">
                   El precio varía según el tamaño de la empresa y complejidad del proyecto

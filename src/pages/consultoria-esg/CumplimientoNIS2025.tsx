@@ -41,20 +41,20 @@ const CumplimientoNIS2025 = () => {
   const pricing = [
     {
       type: "PYMES",
-      price: "85,000",
+      price: "35,000",
       description: "Hasta 50 empleados",
       features: ["Diagnóstico completo", "4 fases incluidas", "Garantía total", "Soporte 6 meses"]
     },
     {
       type: "Medianas",
-      price: "150,000", 
+      price: "60,000", 
       description: "51-250 empleados",
       features: ["Diagnóstico avanzado", "4 fases incluidas", "Garantía total", "Soporte 12 meses"],
       popular: true
     },
     {
       type: "Corporativos",
-      price: "250,000",
+      price: "180,000",
       description: "Más de 250 empleados", 
       features: ["Diagnóstico ejecutivo", "4 fases incluidas", "Garantía total", "Soporte 18 meses"]
     }
@@ -73,7 +73,7 @@ const CumplimientoNIS2025 = () => {
               Regulación Obligatoria 2025
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Cumplimiento <span className="text-primary">NIS 2025</span>
+              Cumplimiento <span className="text-primary">NIS 2024</span>
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-light">
               Implementación completa de las nuevas regulaciones mexicanas con garantía de cumplimiento total
@@ -123,6 +123,8 @@ const CumplimientoNIS2025 = () => {
             <h2 className="text-4xl font-bold text-navy mb-6">Inversión por Tamaño de Empresa</h2>
             <p className="text-xl text-gray-text max-w-3xl mx-auto">
               Precios fijos con todo incluido. Sin sorpresas, sin costos ocultos.
+              <br />
+              No incluye Certificación Internacional
             </p>
           </div>
           
@@ -215,7 +217,7 @@ const CumplimientoNIS2025 = () => {
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto text-white">
             <h2 className="text-4xl font-bold mb-6">
-              ¿Listo para Cumplir con NIS 2025?
+              ¿Listo para Cumplir con NIS 2024?
             </h2>
             <p className="text-xl mb-8 text-gray-light">
               No esperes hasta el último momento. Comienza tu proceso de cumplimiento hoy.

@@ -25,7 +25,7 @@ const HeroSection = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Empresas Transformadas" },
+    { number: "300+", label: "Empresas Transformadas" },
     { number: "14", label: "Años de Experiencia" },
     { number: "100%", label: "Garantía NIS" },
     { number: "$580K", label: "Multa por Incumplimiento" },

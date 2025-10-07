@@ -8,7 +8,7 @@ const ConsultoriaESG = () => {
   const services = [
     {
       id: "nis-2025",
-      title: "Cumplimiento NIS 2025",
+      title: "Cumplimiento NIS 2024",
       description: "Implementación completa de las nuevas regulaciones mexicanas",
       prices: {
         pymes: "85,000",
@@ -26,7 +26,7 @@ const ConsultoriaESG = () => {
       title: "Certificación Internacional GRI",
       description: "Acceso a mercados internacionales y tasas preferenciales",
       prices: {
-        range: "180,000 - 350,000"
+        range: "50,000 - 180,000"
       },
       duration: "4-6 meses",
       benefits: ["Acceso mercados internacionales", "Tasas preferenciales", "Credibilidad global"],
@@ -39,7 +39,7 @@ const ConsultoriaESG = () => {
       title: "Auditoría de Sostenibilidad",
       description: "Evaluación 360° integral de tu empresa",
       prices: {
-        range: "65,000 - 120,000"
+        range: "40,000 - 90,000"
       },
       duration: "6-8 semanas",
       deliverables: ["Reporte ejecutivo", "Dashboard interactivo", "Plan de mejora", "Benchmark sectorial"],
@@ -50,7 +50,7 @@ const ConsultoriaESG = () => {
       title: "Reportes ESG Corporativos",
       description: "Reportes profesionales para diferentes necesidades",
       options: [
-        { name: "NIS Básico", price: "25,000" },
+        { name: "NIS Básico", price: "20,000" },
         { name: "GRI Estándar", price: "85,000" },
         { name: "Integrado Premium", price: "150,000" },
         { name: "Sectorial", price: "120,000" }

@@ -153,11 +153,11 @@ const TransicionLaboral = () => {
               <CardContent className="p-12 text-center">
                 <TrendingUp className="h-16 w-16 text-primary mx-auto mb-6" />
                 <h2 className="text-4xl font-bold text-navy mb-6">
-                  Programa de Transición Laboral
+                  Programa de Transición Laboral Ejecutiva
                 </h2>
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
                   <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">$65,000</div>
+                    <div className="text-4xl font-bold text-primary mb-2">$25,000</div>
                     <div className="text-gray-text">MXN</div>
                     <div className="text-sm text-gray-text mt-2">Inversión total</div>
                   </div>
