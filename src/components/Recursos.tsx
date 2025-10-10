@@ -9,7 +9,7 @@ const Recursos = () => {
   // Data from BlogESG.tsx
   const featuredPosts = [
     {
-      title: "Guía Completa NIS 2025: Todo lo que Necesitas Saber",
+      title: "Guía Completa NIS 2024: Todo lo que Necesitas Saber",
       excerpt: "Análisis detallado de las nuevas regulaciones mexicanas y cómo preparar tu empresa para el cumplimiento.",
       author: "Dr. María González",
       date: "15 Dic 2024",
@@ -40,7 +40,7 @@ const Recursos = () => {
 
   const recentPosts = [
     {
-      title: "Tendencias ESG 2025: Lo que Viene",
+      title: "Tendencias ESG 2024: Lo que Viene",
       excerpt: "Predicciones y tendencias clave que marcarán el futuro de la sostenibilidad empresarial.",
       author: "Dr. Luis Hernández",
       date: "8 Dic 2024",
@@ -60,9 +60,9 @@ const Recursos = () => {
   // Data from Webinars.tsx
   const upcomingWebinars = [
     {
-      title: "NIS 2025: Implementación Práctica en 90 Días",
+      title: "NIS 2024: Implementación Práctica en 90 Días",
       description: "Roadmap completo para cumplir con las nuevas regulaciones mexicanas antes del deadline",
-      date: "28 Enero 2025",
+      date: "28 Enero 2024",
       time: "10:00 AM - 11:30 AM",
       duration: "90 minutos",
       instructor: "Dr. María González",
@@ -75,7 +75,7 @@ const Recursos = () => {
     {
       title: "ROI del ESG: Métricas que Importan",
       description: "Cómo medir y comunicar el impacto financiero de tus iniciativas de sostenibilidad",
-      date: "5 Febrero 2025",
+      date: "5 Febrero 2024",
       time: "2:00 PM - 3:30 PM",
       duration: "90 minutos",
       instructor: "Ing. Carlos Ruiz",
@@ -205,7 +205,7 @@ const Recursos = () => {
       category: "Consultoría ESG",
       questions: [
         {
-          question: "¿Qué incluye el servicio de Cumplimiento NIS 2025?",
+          question: "¿Qué incluye el servicio de Cumplimiento NIS 2024?",
           answer: "Incluye diagnóstico completo, diseño de estrategia, implementación de procesos, capacitación del equipo, documentación requerida y acompañamiento hasta la certificación. Garantizamos 100% de cumplimiento o devolvemos la inversión."
         }
       ]

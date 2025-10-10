@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Shield, CheckCircle, Clock, Phone, Calendar, ArrowRight } from "lucide-react";
 
-const CumplimientoNIS2025 = () => {
+const CumplimientoNIS2024 = () => {
   const phases = [
     {
       phase: "Fase 1",
@@ -70,7 +70,7 @@ const CumplimientoNIS2025 = () => {
           <div className="max-w-4xl mx-auto text-center text-white">
             <Badge className="mb-6 bg-white/10 text-white border-white/20">
               <Clock className="h-4 w-4 mr-2" />
-              Regulación Obligatoria 2025
+              Regulación Obligatoria 2024
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Cumplimiento <span className="text-primary">NIS 2024</span>
@@ -105,7 +105,7 @@ const CumplimientoNIS2025 = () => {
                   Garantía de Cumplimiento Total
                 </h2>
                 <p className="text-xl text-gray-text mb-6">
-                  "Si no pasas la auditoría NIS 2025, devuelvo el 100% de tu inversión"
+                  "Si no pasas la auditoría NIS 2024, devuelvo el 100% de tu inversión"
                 </p>
                 <Badge variant="outline" className="text-lg px-6 py-2 border-primary text-primary">
                   Garantía por Escrito
@@ -243,4 +243,4 @@ const CumplimientoNIS2025 = () => {
   );
 };
 
-export default CumplimientoNIS2025;
+export default CumplimientoNIS2024;

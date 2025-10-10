@@ -65,7 +65,7 @@ const Herramientas = () => {
       premium: true
     },
     {
-      name: "Checklist NIS 2025",
+      name: "Checklist NIS 2024",
       description: "Lista de verificación completa para cumplir con las nuevas regulaciones mexicanas",
       category: "Compliance",
       type: "PDF Interactivo",

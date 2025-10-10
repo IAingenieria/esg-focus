@@ -33,7 +33,7 @@ const Equipo = () => {
       certifications: ["ISO 14001", "OHSAS 18001", "Carbon Footprint Specialist"],
       achievements: [
         "Dirigió 200+ proyectos de implementación ESG",
-        "Especialista en NIS 2025 y regulaciones mexicanas",
+        "Especialista en NIS 2024 y regulaciones mexicanas",
         "Redujo emisiones en 35% promedio en clientes",
         "Certificó 80+ empresas en estándares internacionales"
       ],

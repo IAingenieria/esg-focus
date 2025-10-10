@@ -4,7 +4,7 @@ import { Phone, Mail, MapPin, Linkedin, MessageCircle } from "lucide-react";
 
 const Footer = () => {
   const servicios = [
-    { name: "Cumplimiento NIS 2025", href: "/consultoria-esg/cumplimiento-nis-2025" },
+    { name: "Cumplimiento NIS 2024", href: "/consultoria-esg/cumplimiento-nis-2024" },
     { name: "Certificación GRI", href: "/consultoria-esg/certificacion-gri" },
     { name: "Coaching Ejecutivo", href: "/coaching-ejecutivo/liderazgo-sostenible" },
     { name: "Auditoría Sostenibilidad", href: "/consultoria-esg/auditoria-sostenibilidad" },
@@ -108,7 +108,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-white/60">
-            © 2025 Focus Coach & Consulting. Todos los derechos reservados.
+            © 2024 Focus Coach & Consulting. Todos los derechos reservados.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/politicas" className="text-sm text-white/60 hover:text-green-success transition-smooth">

@@ -78,7 +78,7 @@ const AppContent = () => {
       <main className="flex-grow pt-20"> {/* pt-20 to offset fixed header */}
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/consultoria-esg/cumplimiento-nis-2025" element={<CumplimientoNIS2025 />} />
+          <Route path="/consultoria-esg/cumplimiento-nis-2024" element={<CumplimientoNIS2025 />} />
           <Route path="/consultoria-esg/certificacion-gri" element={<CertificacionGRI />} />
           <Route path="/consultoria-esg/auditoria-sostenibilidad" element={<AuditoriaSostenibilidad />} />
           <Route path="/consultoria-esg/reportes-esg" element={<ReportesESG />} />

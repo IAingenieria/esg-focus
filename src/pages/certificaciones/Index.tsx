@@ -55,10 +55,10 @@ const certifications = [
     ]
   },
   {
-    title: "NIS 2025 - Normas de Información de Sostenibilidad",
+    title: "NIS 2024 - Normas de Información de Sostenibilidad",
     subtitle: "Certificación Actualizada en Información Financiera y de Sostenibilidad",
-    description: "Capacitación más reciente (enero 2025) en el marco regulatorio mexicano para integración de información financiera y de sostenibilidad, otorgada por el IMCP y CINIF.",
-    image: "/assets/certificado-nis-2025.png",
+    description: "Capacitación más reciente (enero 2024) en el marco regulatorio mexicano para integración de información financiera y de sostenibilidad, otorgada por el IMCP y CINIF.",
+    image: "/assets/certificado-nis-2024.png",
     points: [
       { title: "Marco Regulatorio Vigente", text: "Conocimiento de las normativas mexicanas más recientes en sostenibilidad" },
       { title: "Integración Financiera-Sostenibilidad", text: "Unificación de reportes bajo nuevos estándares" },
@@ -184,7 +184,7 @@ const CertificacionesPage = () => {
                 </div>
                 <ul className="space-y-4 text-lg">
                     <li className="flex items-start"><Award className="h-6 w-6 text-primary mr-3 mt-1" /><span><span className="font-bold">Deducibilidad Fiscal Garantizada:</span> Todos los servicios de capacitación son 100% deducibles gracias al registro STPS.</span></li>
-                    <li className="flex items-start"><Award className="h-6 w-6 text-primary mr-3 mt-1" /><span><span className="font-bold">Cobertura Regulatoria Completa:</span> Cumplimiento con estándares internacionales (GRI, IASE) y normativa mexicana (NIS 2025).</span></li>
+                    <li className="flex items-start"><Award className="h-6 w-6 text-primary mr-3 mt-1" /><span><span className="font-bold">Cobertura Regulatoria Completa:</span> Cumplimiento con estándares internacionales (GRI, IASE) y normativa mexicana (NIS 2024).</span></li>
                     <li className="flex items-start"><Award className="h-6 w-6 text-primary mr-3 mt-1" /><span><span className="font-bold">Liderazgo Transformacional Certificado:</span> Master Coach con 300 horas de formación y autorización gubernamental.</span></li>
                     <li className="flex items-start"><Award className="h-6 w-6 text-primary mr-3 mt-1" /><span><span className="font-bold">Respaldo Institucional Múltiple:</span> Validación por organismos internacionales, nacionales y el Gobierno Federal.</span></li>
                 </ul>

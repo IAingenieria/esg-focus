@@ -39,8 +39,8 @@ const CertificationsCarousel = () => {
             </div>
             <div className="flex-shrink-0">
               <img 
-                src="/assets/certificado-nis-2025.png" 
-                alt="Certificado NIS 2025 - Normas de Información de Sostenibilidad" 
+              src="/assets/certificado-nis-2025.png"
+                alt="Certificado NIS 2024 - Normas de Información de Sostenibilidad" 
                 className="h-32 w-auto object-contain bg-white/10 p-4 rounded-lg backdrop-blur-sm"
               />
             </div>
@@ -75,8 +75,8 @@ const CertificationsCarousel = () => {
             </div>
             <div className="flex-shrink-0">
               <img 
-                src="/assets/certificado-nis-2025.png" 
-                alt="Certificado NIS 2025 - Normas de Información de Sostenibilidad" 
+              src="/assets/certificado-nis-2025.png"
+                alt="Certificado NIS 2024 - Normas de Información de Sostenibilidad" 
                 className="h-32 w-auto object-contain bg-white/10 p-4 rounded-lg backdrop-blur-sm"
               />
             </div>

@@ -7,7 +7,7 @@ import { CheckCircle, Clock, Shield, TrendingUp, FileText, GraduationCap } from 
 const ConsultoriaESG = () => {
   const services = [
     {
-      id: "nis-2025",
+      id: "nis-2024",
       title: "Cumplimiento NIS 2024",
       description: "Implementación completa de las nuevas regulaciones mexicanas",
       prices: {

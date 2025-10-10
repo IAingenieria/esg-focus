@@ -9,9 +9,9 @@ import { Video, Calendar, Users, Clock, Play, Download, Star, ArrowRight } from 
 const Webinars = () => {
   const upcomingWebinars = [
     {
-      title: "NIS 2025: Implementación Práctica en 90 Días",
+      title: "NIS 2024: Implementación Práctica en 90 Días",
       description: "Roadmap completo para cumplir con las nuevas regulaciones mexicanas antes del deadline",
-      date: "28 Enero 2025",
+      date: "28 Enero 2024",
       time: "10:00 AM - 11:30 AM",
       duration: "90 minutos",
       instructor: "Dr. María González",
@@ -24,7 +24,7 @@ const Webinars = () => {
     {
       title: "ROI del ESG: Métricas que Importan",
       description: "Cómo medir y comunicar el impacto financiero de tus iniciativas de sostenibilidad",
-      date: "5 Febrero 2025",
+      date: "5 Febrero 2024",
       time: "2:00 PM - 3:30 PM",
       duration: "90 minutos",
       instructor: "Ing. Carlos Ruiz",
@@ -36,7 +36,7 @@ const Webinars = () => {
     {
       title: "ESG para PyMEs: Primeros Pasos",
       description: "Estrategias accesibles para pequeñas y medianas empresas que inician en ESG",
-      date: "12 Febrero 2025",
+      date: "12 Febrero 2024",
       time: "11:00 AM - 12:00 PM",
       duration: "60 minutos",
       instructor: "Lic. Ana Martínez",
@@ -51,7 +51,7 @@ const Webinars = () => {
     {
       name: "Dr. María González",
       title: "Directora de Compliance ESG",
-      expertise: "Regulaciones, NIS 2025, Auditorías",
+      expertise: "Regulaciones, NIS 2024, Auditorías",
       experience: "15+ años",
       webinars: 28
     },

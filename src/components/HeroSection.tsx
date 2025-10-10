@@ -47,7 +47,7 @@ const HeroSection = () => {
         <div className="mb-8 flex justify-center">
           <Badge variant="destructive" className="bg-yellow-accent text-navy font-bold text-lg px-6 py-3 rounded-full animate-pulse flex items-center space-x-2">
             <Clock className="h-5 w-5" />
-            <span>Faltan {daysLeft} días para tu declaración NIS 2025: ¿Tu empresa está preparada?</span>
+            <span>Faltan {daysLeft} días para tu declaración NIS 2024: ¿Tu empresa está preparada?</span>
           </Badge>
         </div>
 
@@ -62,14 +62,14 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto leading-relaxed">
-          Cumple las nuevas regulaciones NIS 2025 y convierte la sostenibilidad en ventaja competitiva
+          Cumple las nuevas regulaciones NIS 2024 y convierte la sostenibilidad en ventaja competitiva
         </p>
 
         {/* Urgency Section */}
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-10 max-w-4xl mx-auto border border-white/20">
           <h2 className="text-2xl font-bold mb-4 text-yellow-accent">⚠️ REGULACIÓN OBLIGATORIA</h2>
           <div className="space-y-3 text-lg">
-            <p>• Desde el 1 de enero de 2025, las empresas mexicanas DEBEN reportar 30 indicadores ESG obligatorios</p>
+            <p>• Desde el 1 de enero de 2024, las empresas mexicanas DEBEN reportar 30 indicadores ESG obligatorios</p>
             <p>• Multas hasta <span className="font-bold text-yellow-accent">$580,000 MXN</span> por incumplimiento</p>
             <p>• Exclusión de licitaciones públicas sin certificación ESG</p>
           </div>

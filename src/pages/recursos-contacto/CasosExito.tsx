@@ -10,10 +10,10 @@ const CasosExito = () => {
     company: "Grupo Industrial Mexicano S.A.",
     sector: "Manufactura",
     size: "500+ empleados",
-    challenge: "Cumplimiento NIS 2025 en tiempo récord",
+    challenge: "Cumplimiento NIS 2024 en tiempo récord",
     solution: "Implementación integral ESG en 4 meses",
     results: [
-      "100% cumplimiento NIS 2025",
+      "100% cumplimiento NIS 2024",
       "35% reducción en consumo energético",
       "Certificación GRI obtenida",
       "ROI del 240% en primer año"
@@ -21,7 +21,7 @@ const CasosExito = () => {
     timeline: "4 meses",
     investment: "$180,000 MXN",
     roi: "240%",
-    testimonial: "Focus ESG Pros transformó completamente nuestra operación. No solo cumplimos con NIS 2025, sino que mejoramos nuestra eficiencia operativa significativamente.",
+    testimonial: "Focus ESG Pros transformó completamente nuestra operación. No solo cumplimos con NIS 2024, sino que mejoramos nuestra eficiencia operativa significativamente.",
     contact: "Ing. María Rodríguez, Directora de Sostenibilidad"
   };
 

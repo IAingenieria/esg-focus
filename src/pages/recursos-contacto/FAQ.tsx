@@ -33,7 +33,7 @@ const FAQ = () => {
         },
         {
           question: "¿Cuánto tiempo toma implementar una estrategia ESG?",
-          answer: "Depende del alcance y complejidad. Una implementación básica toma 3-4 meses, mientras que una transformación completa puede requerir 6-12 meses. Ofrecemos planes acelerados de 90 días para necesidades urgentes como NIS 2025."
+          answer: "Depende del alcance y complejidad. Una implementación básica toma 3-4 meses, mientras que una transformación completa puede requerir 6-12 meses. Ofrecemos planes acelerados de 90 días para necesidades urgentes como NIS 2024."
         },
         {
           question: "¿Ofrecen servicios en toda la República Mexicana?",
@@ -45,7 +45,7 @@ const FAQ = () => {
       category: "Consultoría ESG",
       questions: [
         {
-          question: "¿Qué incluye el servicio de Cumplimiento NIS 2025?",
+          question: "¿Qué incluye el servicio de Cumplimiento NIS 2024?",
           answer: "Incluye diagnóstico completo, diseño de estrategia, implementación de procesos, capacitación del equipo, documentación requerida y acompañamiento hasta la certificación. Garantizamos 100% de cumplimiento o devolvemos la inversión."
         },
         {
@@ -130,7 +130,7 @@ const FAQ = () => {
       questions: [
         {
           question: "¿Las herramientas descargables son realmente gratuitas?",
-          answer: "Sí, ofrecemos herramientas básicas completamente gratuitas como calculadoras de huella de carbono, checklists NIS 2025 y templates de reportes. Las herramientas premium tienen costo adicional."
+          answer: "Sí, ofrecemos herramientas básicas completamente gratuitas como calculadoras de huella de carbono, checklists NIS 2024 y templates de reportes. Las herramientas premium tienen costo adicional."
         },
         {
           question: "¿Los webinars quedan grabados?",
