@@ -9,7 +9,7 @@ const ReportesESG = () => {
   const reportTypes = [
     {
       type: "NIS Básico",
-      price: "25,000",
+      price: "20,000",
       description: "Cumplimiento básico de regulaciones mexicanas",
       features: ["Reporte NIS estándar", "Métricas básicas", "Formato regulatorio", "Entrega digital"],
       timeline: "8 semanas",
@@ -17,7 +17,7 @@ const ReportesESG = () => {
     },
     {
       type: "GRI Estándar", 
-      price: "85,000",
+      price: "50,000",
       description: "Reporte internacional con estándares GRI",
       features: ["Reporte GRI completo", "Análisis de materialidad", "Verificación externa", "Comunicación stakeholders"],
       timeline: "12 semanas",
@@ -26,7 +26,7 @@ const ReportesESG = () => {
     },
     {
       type: "Integrado Premium",
-      price: "150,000", 
+      price: "90,000", 
       description: "Reporte integrado financiero y ESG",
       features: ["Reporte integrado", "Análisis financiero ESG", "Dashboard ejecutivo", "Estrategia comunicación"],
       timeline: "14 semanas",

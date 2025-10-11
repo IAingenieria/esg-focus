@@ -147,67 +147,6 @@ const Politicas = () => {
         </div>
       </section>
 
-      {/* Policies Overview */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Nuestras Políticas</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Documentos que rigen nuestra relación contigo y garantizan la protección de tus derechos
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {policies.map((policy, index) => (
-              <Card key={index} className="border-gray-light hover:shadow-lg transition-all duration-300">
-                <CardHeader className="pb-4">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className="p-3 bg-primary/10 rounded-lg">
-                        <policy.icon className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-xl text-navy">{policy.title}</CardTitle>
-                        <div className="flex items-center mt-2">
-                          <Calendar className="h-4 w-4 text-gray-400 mr-2" />
-                          <span className="text-sm text-gray-text">Actualizado: {policy.lastUpdated}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <CardDescription className="mt-3">{policy.description}</CardDescription>
-                </CardHeader>
-                
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-navy mb-3">Secciones principales:</h4>
-                    <ul className="space-y-2">
-                      {policy.sections.map((section, idx) => (
-                        <li key={idx} className="flex items-center text-sm">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-gray-text">{section}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="flex gap-2 pt-4 border-t border-gray-light">
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Eye className="h-4 w-4 mr-2" />
-                      Ver Completo
-                    </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <Download className="h-4 w-4 mr-2" />
-                      Descargar PDF
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Data Protection Principles */}
       <section className="py-20 bg-gray-light/30">
         <div className="container mx-auto px-4">
@@ -328,7 +267,7 @@ const Politicas = () => {
                     Para ejercer tus derechos, contáctanos en:
                   </p>
                   <p className="text-primary font-medium mb-6">
-                    privacidad@esgconsultores.com.mx
+                    info@esgconsultores.com.mx
                   </p>
                   <Button variant="cta" size="lg">
                     Ejercer Mis Derechos
@@ -401,7 +340,7 @@ const Politicas = () => {
                 <CardContent className="p-6 text-center">
                   <FileText className="h-8 w-8 text-primary mx-auto mb-4" />
                   <h3 className="font-semibold text-navy mb-2">Oficial de Privacidad</h3>
-                  <p className="text-gray-text text-sm">privacidad@esgconsultores.com.mx</p>
+                  <p className="text-gray-text text-sm">info@esgconsultores.com.mx</p>
                 </CardContent>
               </Card>
               <Card className="border-gray-light">

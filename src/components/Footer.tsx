@@ -11,18 +11,11 @@ const Footer = () => {
     { name: "Coaching Familiar", href: "/coaching-familiar/coach-tu-hijo" }
   ];
 
-  const recursos = [
-    { name: "Diagnóstico ESG Gratuito", href: "/contacto" },
-    { name: "Blog Sostenibilidad", href: "/recursos/blog" },
-    { name: "Casos de Éxito", href: "/recursos/casos-exito" },
-    { name: "Eventos y Webinars", href: "/recursos/webinars" },
-    { name: "Newsletter", href: "/recursos/blog" }
-  ];
 
   return (
     <footer className="bg-navy text-white">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Empresa */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-yellow-accent">FOCUS</h3>
@@ -57,23 +50,6 @@ const Footer = () => {
                     className="text-sm text-white/80 hover:text-green-success transition-smooth"
                   >
                     {servicio.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Recursos */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-white">Recursos</h4>
-            <ul className="space-y-2">
-              {recursos.map((recurso) => (
-                <li key={recurso.name}>
-                  <Link 
-                    to={recurso.href}
-                    className="text-sm text-white/80 hover:text-green-success transition-smooth"
-                  >
-                    {recurso.name}
                   </Link>
                 </li>
               ))}

@@ -51,20 +51,20 @@ const AuditoriaSostenibilidad = () => {
   const pricingTiers = [
     {
       type: "Básica",
-      price: "65,000",
+      price: "20,000",
       description: "Para PYMES hasta 50 empleados",
       features: ["Evaluación 360°", "Reporte ejecutivo", "Plan de mejora básico", "1 sesión de seguimiento"]
     },
     {
       type: "Estándar",
-      price: "90,000",
+      price: "40,000",
       description: "Para empresas medianas",
       features: ["Evaluación 360°", "Dashboard interactivo", "Plan de mejora detallado", "Benchmark sectorial", "3 sesiones seguimiento"],
       popular: true
     },
     {
       type: "Premium",
-      price: "120,000",
+      price: "65,000",
       description: "Para corporativos",
       features: ["Evaluación 360°", "Dashboard avanzado", "Plan estratégico", "Benchmark personalizado", "6 meses de soporte"]
     }

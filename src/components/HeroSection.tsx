@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
-import { Clock, CheckCircle, Award, Users, Calendar, Download } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
+import { Clock, CheckCircle, Award, Users, Calendar, Download, X } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   const [daysLeft, setDaysLeft] = useState(0);
+  const [selectedCertificate, setSelectedCertificate] = useState<{ name: string; certificate: string } | null>(null);
 
   useEffect(() => {
     // Calculate days until January 1, 2026
@@ -18,10 +20,10 @@ const HeroSection = () => {
   }, []);
 
   const credentials = [
-    { name: "GRI Certified", icon: Award },
-    { name: "IASE Certified", icon: CheckCircle },
-    { name: "WABC Coach", icon: Users },
-    { name: "AIAC Master", icon: Award },
+    { name: "GRI Certified", icon: Award, certificate: "/assets/certificado-gri.jpg" },
+    { name: "IASE Certified", icon: CheckCircle, certificate: "/assets/certificado-iase.png" },
+    { name: "WABC Coach", icon: Users, certificate: "/assets/master-coach.jpg" },
+    { name: "AIAC Master", icon: Award, certificate: "/assets/master-coach.jpg" },
   ];
 
   const stats = [
@@ -53,7 +55,7 @@ const HeroSection = () => {
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          El <span className="text-yellow-accent">Único Consultor ESG</span>
+        <span className="text-yellow-accent">Consultor ESG</span>
           <br />
           Certificado Internacionalmente
           <br />
@@ -98,7 +100,8 @@ const HeroSection = () => {
               <Badge
                 key={credential.name}
                 variant="outline"
-                className="bg-white/10 border-white/30 text-white px-4 py-2 text-sm flex items-center space-x-2"
+                className="bg-green-success border-green-success text-white px-4 py-2 text-sm flex items-center space-x-2 hover:bg-green-success/90 transition-smooth cursor-pointer"
+                onClick={() => setSelectedCertificate(credential)}
               >
                 <credential.icon className="h-4 w-4" />
                 <span>{credential.name}</span>
@@ -132,6 +135,24 @@ const HeroSection = () => {
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
+
+      {/* Certificate Modal */}
+      <Dialog open={!!selectedCertificate} onOpenChange={() => setSelectedCertificate(null)}>
+        <DialogContent className="max-w-4xl w-full p-0 overflow-hidden">
+          <DialogHeader className="p-6 pb-4">
+            <DialogTitle className="text-2xl font-bold text-navy">
+              {selectedCertificate?.name}
+            </DialogTitle>
+          </DialogHeader>
+          <div className="relative w-full">
+            <img
+              src={selectedCertificate?.certificate}
+              alt={selectedCertificate?.name}
+              className="w-full h-auto object-contain"
+            />
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
