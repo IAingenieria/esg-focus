@@ -84,10 +84,10 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-white/60">
-            © 2024 Focus Coach & Consulting. Todos los derechos reservados.
+            © 2025 Focus Coach & Consultoría. Todos los derechos reservados.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link to="/politicas" className="text-sm text-white/60 hover:text-green-success transition-smooth">
+            <Link to="/aviso-privacidad" className="text-sm text-white/60 hover:text-green-success transition-smooth">
               Aviso de Privacidad
             </Link>
             <Link to="/politicas" className="text-sm text-white/60 hover:text-green-success transition-smooth">

@@ -237,8 +237,6 @@ const CumplimientoNIS2024 = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -122,7 +120,6 @@ const OrientacionVocacional = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
@@ -139,10 +136,10 @@ const OrientacionVocacional = () => {
               Descubre tu vocación verdadera y diseña el camino hacia tu futuro profesional ideal
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/diagnostico-esg">
+              <Link to="/agendar">
                 <Button size="lg" variant="cta" className="text-lg px-8 py-4">
                   <Calendar className="h-5 w-5 mr-2" />
-                  Iniciar Proceso
+                  Agenda Consulta Estratégica
                 </Button>
               </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
@@ -374,8 +371,6 @@ const OrientacionVocacional = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

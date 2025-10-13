@@ -84,12 +84,12 @@ const HeroSection = () => {
               Diagnóstico Gratuito
             </Button>
           </a>
-          <a href="http://127.0.0.1:51694/agendar">
+          <Link to="/agendar">
             <Button variant="hero" size="xl" className="flex items-center space-x-3 text-xl">
               <Calendar className="h-6 w-6" />
               <span>Agenda Consulta Estratégica</span>
             </Button>
-          </a>
+          </Link>
         </div>
 
         {/* Credentials */}

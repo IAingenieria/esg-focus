@@ -1,5 +1,4 @@
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -58,7 +57,6 @@ const CertificacionGRI = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <Header />
       
       {/* Hero Section */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
@@ -298,8 +296,6 @@ const CertificacionGRI = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   );
 };

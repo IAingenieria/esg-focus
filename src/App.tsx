@@ -41,6 +41,7 @@ import FAQ from "./pages/recursos-contacto/FAQ";
 import Politicas from "./pages/recursos-contacto/Politicas";
 import Agendar from "./pages/recursos-contacto/Agendar";
 import DiagnosticoESG from "./pages/recursos-contacto/DiagnosticoESG";
+import AvisoPrivacidad from "./pages/recursos-contacto/AvisoPrivacidad";
 
 // Certificaciones Pages
 import CertificacionesIndex from "./pages/certificaciones/Index";
@@ -99,6 +100,7 @@ const AppContent = () => {
           <Route path="/equipo" element={<Equipo />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/politicas" element={<Politicas />} />
+          <Route path="/aviso-privacidad" element={<AvisoPrivacidad />} />
           <Route path="/agendar" element={<Agendar />} />
           <Route path="/diagnostico-esg" element={<DiagnosticoESG />} />
 

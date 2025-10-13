@@ -255,11 +255,11 @@ const ConsultoriaESG = () => {
                   Diagnóstico ESG Gratuito
                 </Button>
               </a>
-              <a href="http://127.0.0.1:51694/agendar">
+              <Link to="/agendar">
                 <Button variant="hero" size="lg">
                   Agendar Consulta
                 </Button>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
