@@ -144,7 +144,7 @@ const NIS2025Landing = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
             <div className="text-white">
-              <Badge className="mb-6 bg-destructive/20 text-destructive border-destructive/30 animate-pulse">
+              <Badge className="mb-6 bg-white text-destructive border-destructive/30 animate-pulse">
                 <Clock className="h-4 w-4 mr-2" />
                 Fecha límite regulatoria
               </Badge>
@@ -416,7 +416,7 @@ const NIS2025Landing = () => {
                   className="text-lg px-8 py-4"
                   onClick={() => window.open('https://asesorsostenible.com/', '_blank')}
                 >
-                  Solicitar Evaluación
+                  Diagnostico Gratuito NIS
                   <ArrowRight className="h-5 w-5 ml-2" />
                 </Button>
                 <Button 

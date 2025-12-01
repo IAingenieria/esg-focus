@@ -13,6 +13,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import logoVideo from "@/assets/logo mov.mp4";
 
 const menuItems = [
   {
@@ -78,7 +79,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
             <video 
-              src="/src/assets/logo mov.mp4" 
+              src={logoVideo} 
               autoPlay 
               loop 
               muted 
@@ -106,7 +107,7 @@ const Header = () => {
                                   href={item.href}
                                 >
                                   <video 
-                                    src="/src/assets/logo mov.mp4" 
+                                    src={logoVideo} 
                                     autoPlay 
                                     loop 
                                     muted 
@@ -182,7 +183,7 @@ const Header = () => {
                   <SheetTitle>
                     <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center space-x-3">
                       <video 
-                        src="/src/assets/logo mov.mp4" 
+                        src={logoVideo} 
                         autoPlay 
                         loop 
                         muted 
