@@ -19,6 +19,7 @@ import {
   Lock,
   Star
 } from "lucide-react";
+import heroBg from "@/assets/sustainability-tech-bg.jpg";
 
 const CertificacionGRILanding = () => {
   const [formData, setFormData] = useState({
@@ -65,7 +66,15 @@ const CertificacionGRILanding = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-muted/30 to-background relative overflow-hidden">
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-muted/30 to-background overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-muted/40 to-background/40"></div>
+        </div>
+        
         <div className="absolute top-0 right-0 w-96 h-96 border border-border/30 rounded-full -translate-y-48 translate-x-48 opacity-50"></div>
         <div className="absolute bottom-0 left-0 w-64 h-64 border border-yellow-accent/20 rounded-full translate-y-32 -translate-x-32 opacity-30"></div>
         
@@ -81,7 +90,7 @@ const CertificacionGRILanding = () => {
                 Certifica tu empresa con estándares <span className="text-primary italic">GRI</span> internacionales
               </h1>
               
-              <p className="text-xl mb-8 text-muted-foreground">
+              <p className="text-xl mb-8 text-white">
                 Diferencia tu empresa de la competencia con reportes de sostenibilidad 
                 que cumplen los más altos estándares globales. Obtén credibilidad ante 
                 inversionistas, clientes y socios comerciales.
@@ -279,7 +288,7 @@ const CertificacionGRILanding = () => {
                   <Shield className="h-7 w-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-primary">Credibilidad Global</h3>
-                <p className="text-muted-foreground leading-relaxed">Los estándares GRI son reconocidos mundialmente. Tu reporte tendrá validez ante inversionistas internacionales y socios comerciales globales.</p>
+                <p className="text-muted-foreground leading-relaxed">Posiciona tu empresa en el escenario internacional con reportes reconocidos en más de 100 países. Los estándares GRI te abren las puertas para integrarte a cadenas de suministro globales y demostrar a inversionistas y socios comerciales que tu operación cumple con las mejores prácticas mundiales.</p>
               </CardContent>
             </Card>
 
@@ -289,7 +298,7 @@ const CertificacionGRILanding = () => {
                   <Users className="h-7 w-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-primary">Atrae Talento</h3>
-                <p className="text-muted-foreground leading-relaxed">Las nuevas generaciones prefieren trabajar en empresas sostenibles. Posiciónate como empleador de preferencia para el mejor talento.</p>
+                <p className="text-muted-foreground leading-relaxed">El 76% de los profesionales menores de 35 años prefiere trabajar en empresas con compromiso ambiental comprobable. Un reporte GRI no solo te posiciona como empleador de preferencia, sino que fortalece el orgullo de pertenencia y transforma el ambiente laboral de tu organización.</p>
               </CardContent>
             </Card>
 
@@ -309,7 +318,7 @@ const CertificacionGRILanding = () => {
                   <Monitor className="h-7 w-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-primary">Ventaja Competitiva</h3>
-                <p className="text-muted-foreground leading-relaxed">Diferénciate de competidores que aún no tienen reportes ESG. Gana licitaciones y contratos que exigen sostenibilidad.</p>
+                <p className="text-muted-foreground leading-relaxed">Mientras tus competidores aún evalúan si actuar, tú ya estarás un paso adelante. La certificación GRI te posiciona para ganar licitaciones privadas y gubernamentales que exigen criterios ESG, abriendo oportunidades de negocio que antes estaban fuera de alcance.</p>
               </CardContent>
             </Card>
 
@@ -319,7 +328,7 @@ const CertificacionGRILanding = () => {
                   <CheckCircle className="h-7 w-7" />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-primary">Cumplimiento Regulatorio</h3>
-                <p className="text-muted-foreground leading-relaxed">Anticípate a las regulaciones NIS 2025 y futuras normativas. Evita multas y sanciones por incumplimiento.</p>
+                <p className="text-muted-foreground leading-relaxed">Las regulaciones NIS 2024/2025 ya son una realidad en México. Adelantarte al cumplimiento no solo te protege de multas y sanciones, sino que te permite negociar desde una posición de fortaleza cuando las autoridades comiencen a fiscalizar a tu sector.</p>
               </CardContent>
             </Card>
 

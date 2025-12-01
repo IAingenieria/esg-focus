@@ -14,8 +14,11 @@ import {
   ArrowRight,
   Award,
   MessageCircle,
-  Lock
+  Lock,
+  DollarSign,
+  Star
 } from "lucide-react";
+import heroBg from "@/assets/sustainability-tech-bg.jpg";
 
 const NIS2025Landing = () => {
   const [countdown, setCountdown] = useState({
@@ -68,8 +71,8 @@ const NIS2025Landing = () => {
     e.preventDefault();
     
     // Create WhatsApp message
-    const message = `Hola, soy ${formData.nombre} de ${formData.empresa}. Me interesa la evaluación gratuita de cumplimiento NIS 2025. Mi correo es ${formData.email}`;
-    const whatsappUrl = `https://wa.me/5281802900061?text=${encodeURIComponent(message)}`;
+    const message = `Hola soy ${formData.nombre} de ${formData.empresa}. Me interesa la evaluación gratuita de cumplimiento NIS 2024. Mi correo es ${formData.email}`;
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=528180290061&text=${message.replace(/\s+/g, '%20')}`;
     
     window.open(whatsappUrl, '_blank');
   };
@@ -128,8 +131,16 @@ const NIS2025Landing = () => {
     <div className="min-h-screen bg-background">
 
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy-light">
-        <div className="container mx-auto px-4">
+      <section className="relative pt-32 pb-16 bg-gradient-to-br from-navy to-navy-light overflow-hidden">
+        {/* Background Image with Overlay */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-navy/40 to-navy-light/40"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Hero Content */}
             <div className="text-white">
@@ -139,7 +150,7 @@ const NIS2025Landing = () => {
               </Badge>
               
               <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                ¿Tu empresa está lista para <span className="text-yellow-accent">NIS 2025</span>?
+                ¿Tu empresa está lista para <span className="text-yellow-accent">NIS 2024</span>?
               </h1>
               
               <p className="text-xl mb-8 text-gray-light">
@@ -160,17 +171,17 @@ const NIS2025Landing = () => {
                   <div className="flex items-center gap-4">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">{countdown.days.toString().padStart(2, '0')}</div>
-                      <div className="text-xs text-muted-foreground uppercase">Días</div>
+                      <div className="text-xs text-yellow-accent uppercase font-medium">Días</div>
                     </div>
                     <span className="text-2xl text-muted-foreground">:</span>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">{countdown.hours.toString().padStart(2, '0')}</div>
-                      <div className="text-xs text-muted-foreground uppercase">Horas</div>
+                      <div className="text-xs text-yellow-accent uppercase font-medium">Horas</div>
                     </div>
                     <span className="text-2xl text-muted-foreground">:</span>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">{countdown.minutes.toString().padStart(2, '0')}</div>
-                      <div className="text-xs text-muted-foreground uppercase">Minutos</div>
+                      <div className="text-xs text-yellow-accent uppercase font-medium">Minutos</div>
                     </div>
                   </div>
                 </CardContent>
@@ -192,7 +203,7 @@ const NIS2025Landing = () => {
               <CardHeader className="border-b border-border bg-gradient-to-r from-primary/10 to-accent/10">
                 <CardTitle className="text-2xl">Evaluación de Cumplimiento</CardTitle>
                 <CardDescription>
-                  Descubre en qué posición está tu empresa frente a NIS 2025. Sin costo, sin compromiso.
+                  Descubre en qué posición está tu empresa frente a NIS 2024. Sin costo, sin compromiso.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-6">
@@ -271,7 +282,7 @@ const NIS2025Landing = () => {
           <div className="text-center mb-16">
             <Badge variant="outline" className="mb-4">El Riesgo Real</Badge>
             <h2 className="text-4xl font-bold text-foreground mb-6">
-              ¿Qué pasa si ignoras las regulaciones NIS 2025?
+              ¿Qué pasa si ignoras las regulaciones NIS 2024?
             </h2>
           </div>
           
@@ -291,6 +302,50 @@ const NIS2025Landing = () => {
         </div>
       </section>
 
+      {/* Advantages Section */}
+      <section className="py-20 bg-primary text-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <Badge variant="secondary" className="mb-4 bg-yellow-accent/20 text-yellow-accent border-yellow-accent/30">Nuestra Propuesta</Badge>
+            <h2 className="text-4xl font-bold mb-6">
+              Tu Ventaja con Nosotros
+            </h2>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="bg-white/10 border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-yellow-accent/20 rounded-lg flex items-center justify-center mb-4 text-yellow-accent">
+                  <CheckCircle className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-white">Cumplimiento Garantizado</h3>
+                <p className="text-white/80 leading-relaxed">Con el único consultor certificado GRI e IASE en Nuevo León, tu empresa cumple desde el primer día. Te entregamos la documentación completa y te preparamos para cualquier auditoría, eliminando el riesgo de multas y sanciones.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-yellow-accent/20 rounded-lg flex items-center justify-center mb-4 text-yellow-accent">
+                  <DollarSign className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-white">Acceso a Nuevos Negocios</h3>
+                <p className="text-white/80 leading-relaxed">Nuestros clientes se vuelven elegibles para licitaciones gubernamentales y contratos con corporativos que exigen reportes ESG. En lugar de perder oportunidades, las multiplicas con una certificación que te diferencia de tu competencia.</p>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/10 border-white/20 hover:bg-white/15 transition-all duration-300 hover:-translate-y-1">
+              <CardContent className="p-6">
+                <div className="w-12 h-12 bg-yellow-accent/20 rounded-lg flex items-center justify-center mb-4 text-yellow-accent">
+                  <Star className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-semibold mb-3 text-white">Reputación que Vende</h3>
+                <p className="text-white/80 leading-relaxed">Transforma la sostenibilidad en tu mejor argumento comercial. Te ayudamos a comunicar tu compromiso ambiental de forma profesional, posicionándote como líder responsable ante clientes, inversionistas y la comunidad.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Solution Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -299,7 +354,7 @@ const NIS2025Landing = () => {
             <div>
               <Badge variant="outline" className="mb-4">La Solución</Badge>
               <h2 className="text-4xl font-bold text-foreground mb-8">
-                Cumplimiento NIS 2025 en 3 pasos simples
+                Cumplimiento NIS 2024 en 3 pasos simples
               </h2>
               
               <div className="space-y-8">
@@ -353,7 +408,7 @@ const NIS2025Landing = () => {
                 No esperes a que sea tarde
               </h2>
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Agenda tu evaluación gratuita hoy y descubre exactamente qué necesita tu empresa para cumplir con NIS 2025.
+                Agenda tu evaluación gratuita hoy y descubre exactamente qué necesita tu empresa para cumplir con NIS 2024.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button 
@@ -382,7 +437,7 @@ const NIS2025Landing = () => {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/5281802900061?text=Hola,%20me%20interesa%20información%20sobre%20cumplimiento%20NIS%202025"
+        href="https://api.whatsapp.com/send?phone=528180290061&text=Hola%20me%20interesa%20información%20sobre%20cumplimiento%20NIS%202024"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50"

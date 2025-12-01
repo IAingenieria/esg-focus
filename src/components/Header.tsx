@@ -77,7 +77,15 @@ const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <img src="/assets/focus-logo-new.png" alt="Focus Coach & Consulting" className="h-12 w-auto" />
+            <video 
+              src="/src/assets/logo mov.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="h-12 w-auto"
+              style={{ objectFit: 'contain' }}
+            />
           </Link>
 
           {/* Navigation Menu */}
@@ -97,7 +105,15 @@ const Header = () => {
                                   className="flex h-full w-full select-none flex-col justify-between rounded-md bg-gradient-to-br from-navy to-navy/90 p-6 no-underline outline-none focus:shadow-md"
                                   href={item.href}
                                 >
-                                  <img src="/assets/focus-logo-new.png" alt="Focus Logo" className="h-10 w-auto" />
+                                  <video 
+                                    src="/src/assets/logo mov.mp4" 
+                                    autoPlay 
+                                    loop 
+                                    muted 
+                                    playsInline
+                                    className="h-10 w-auto"
+                                    style={{ objectFit: 'contain' }}
+                                  />
                                   <div>
                                     <div className="mb-2 mt-4 text-lg font-medium text-white">
                                       {item.title}
@@ -165,7 +181,15 @@ const Header = () => {
                 <SheetHeader className="p-6 border-b">
                   <SheetTitle>
                     <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center space-x-3">
-                      <img src="/assets/focus-logo-new.png" alt="Focus Coach & Consulting" className="h-10 w-auto" />
+                      <video 
+                        src="/src/assets/logo mov.mp4" 
+                        autoPlay 
+                        loop 
+                        muted 
+                        playsInline
+                        className="h-10 w-auto"
+                        style={{ objectFit: 'contain' }}
+                      />
                     </Link>
                   </SheetTitle>
                 </SheetHeader>
