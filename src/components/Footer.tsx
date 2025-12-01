@@ -67,10 +67,12 @@ const Footer = () => {
             </div>
             
             <div className="space-y-3 pt-4">
-              <Button variant="whatsapp" size="sm" className="w-full justify-start">
-                <MessageCircle className="h-4 w-4 mr-2" />
-                WhatsApp Directo
-              </Button>
+              <a href="https://wa.me/5281802900061?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20consultoría%20ESG" target="_blank" rel="noopener noreferrer" className="w-full">
+                <Button variant="whatsapp" size="sm" className="w-full justify-start">
+                  <MessageCircle className="h-4 w-4 mr-2" />
+                  WhatsApp Directo
+                </Button>
+              </a>
               <a href="https://mx.linkedin.com/in/olegario-rios" target="_blank" rel="noopener noreferrer" className="w-full">
                 <Button variant="outline" size="sm" className="w-full justify-start">
                   <Linkedin className="h-4 w-4 mr-2" />

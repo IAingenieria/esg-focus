@@ -8,6 +8,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import NIS2025Landing from "./pages/NIS2025Landing";
+import CertificacionGRILanding from "./pages/CertificacionGRILanding";
 
 // Consultoría ESG Pages
 import CumplimientoNIS2025 from "./pages/consultoria-esg/CumplimientoNIS2025";
@@ -51,6 +53,7 @@ const queryClient = new QueryClient();
 const AppContent = () => {
   const location = useLocation();
   const showFooter = location.pathname !== '/agendar';
+  const showHeader = true;
 
   useEffect(() => {
     const fixNavigation = (e: Event) => {
@@ -75,10 +78,12 @@ const AppContent = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Header />
-      <main className="flex-grow pt-20"> {/* pt-20 to offset fixed header */}
+      {showHeader && <Header />}
+      <main className={`flex-grow ${showHeader ? 'pt-20' : ''}`}> {/* pt-20 to offset fixed header */}
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/nis-2025-landing" element={<NIS2025Landing />} />
+          <Route path="/certificacion-gri-landing" element={<CertificacionGRILanding />} />
           <Route path="/consultoria-esg/cumplimiento-nis-2024" element={<CumplimientoNIS2025 />} />
           <Route path="/consultoria-esg/certificacion-gri" element={<CertificacionGRI />} />
           <Route path="/consultoria-esg/auditoria-sostenibilidad" element={<AuditoriaSostenibilidad />} />

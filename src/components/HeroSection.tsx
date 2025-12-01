@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Clock, CheckCircle, Award, Users, Calendar, Download, X } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/sustainability-tech-bg.jpg";
 
 const HeroSection = () => {
   const [daysLeft, setDaysLeft] = useState(0);
@@ -40,7 +40,7 @@ const HeroSection = () => {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: `url(${heroBg})` }}
       >
-        <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
+        <div className="absolute inset-0 bg-gradient-hero opacity-40"></div>
       </div>
 
       {/* Content */}
