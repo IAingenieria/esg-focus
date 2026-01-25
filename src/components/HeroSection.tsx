@@ -28,9 +28,8 @@ const HeroSection = () => {
 
   const stats = [
     { number: "300+", label: "Empresas Transformadas" },
-    { number: "14", label: "Años de Experiencia" },
+    { number: "16", label: "Años de Experiencia" },
     { number: "100%", label: "Garantía NIS" },
-    { number: "$580K", label: "Multa por Incumplimiento" },
   ];
 
   return (
@@ -49,30 +48,27 @@ const HeroSection = () => {
         <div className="mb-8 flex justify-center">
           <Badge variant="destructive" className="bg-yellow-accent text-navy font-bold text-lg px-6 py-3 rounded-full animate-pulse flex items-center space-x-2">
             <Clock className="h-5 w-5" />
-            <span>Faltan {daysLeft} días para tu declaración NIS 2024: ¿Tu empresa está preparada?</span>
+            <span>Faltan {daysLeft} días para tu declaración NIS 2026: ¿Tu empresa está preparada?</span>
           </Badge>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-        <span className="text-yellow-accent">Consultor ESG</span>
+          Cumplimiento NIS 2026 en México:
           <br />
-          Certificado Internacionalmente
-          <br />
-          <span className="text-green-success">en Nuevo León</span>
+          <span className="text-yellow-accent">De la Obligación a la Ventaja Competitiva</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl mb-8 text-white/90 max-w-4xl mx-auto leading-relaxed">
-          Cumple las nuevas regulaciones NIS 2024 y convierte la sostenibilidad en ventaja competitiva
+          Proteja su empresa de multas de hasta $580,000 MXN y asegure su lugar en la cadena de suministro global con el único consultor certificado GRI e IASE en Nuevo León.
         </p>
 
         {/* Urgency Section */}
         <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 mb-10 max-w-4xl mx-auto border border-white/20">
           <h2 className="text-2xl font-bold mb-4 text-yellow-accent">⚠️ REGULACIÓN OBLIGATORIA</h2>
           <div className="space-y-3 text-lg">
-            <p>• Desde el 1 de enero de 2024, las empresas mexicanas DEBEN reportar 30 indicadores ESG obligatorios</p>
-            <p>• Multas hasta <span className="font-bold text-yellow-accent">$580,000 MXN</span> por incumplimiento</p>
+            <p>• Desde el 1 de enero de 2026, las empresas mexicanas DEBEN reportar 30 indicadores ESG obligatorios</p>
             <p>• Exclusión de licitaciones públicas sin certificación ESG</p>
           </div>
         </div>

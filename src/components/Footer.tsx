@@ -18,7 +18,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Empresa */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-yellow-accent">FOCUS</h3>
+            <video 
+              src="/src/assets/logo mov.mp4" 
+              autoPlay 
+              loop 
+              muted 
+              playsInline 
+              className="h-12 w-auto"
+              style={{ objectFit: 'contain' }}
+            />
             <p className="text-sm text-white/80">coaching & consulting</p>
             <p className="text-white/80">
               El único consultor ESG certificado internacionalmente en Nuevo León.
@@ -86,7 +94,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-8 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center">
           <div className="text-sm text-white/60">
-            © 2025 Focus Coach & Consultoría. Todos los derechos reservados.
+            &copy; 2026 Focus Coach & Consultoría. Todos los derechos reservados.
           </div>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link to="/aviso-privacidad" className="text-sm text-white/60 hover:text-green-success transition-smooth">

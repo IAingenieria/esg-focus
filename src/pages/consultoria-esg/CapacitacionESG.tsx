@@ -6,50 +6,6 @@ import { Link } from "react-router-dom";
 import { GraduationCap, Users, Monitor, MapPin, CheckCircle, Phone, Calendar, ArrowRight, Award } from "lucide-react";
 
 const CapacitacionESG = () => {
-  const programs = [
-    {
-      type: "Directivos",
-      price: "45,000",
-      description: "Para alta dirección y C-Level",
-      duration: "16 horas",
-      modality: "Presencial/Virtual",
-      participants: "Hasta 12 ejecutivos",
-      features: ["Estrategia ESG", "Liderazgo sostenible", "Toma de decisiones", "Comunicación stakeholders"],
-      target: "CEOs, Directores, VPs"
-    },
-    {
-      type: "Operativo",
-      price: "35,000",
-      description: "Para mandos medios y supervisores",
-      duration: "12 horas", 
-      modality: "Presencial/Virtual",
-      participants: "Hasta 20 personas",
-      features: ["Implementación ESG", "Procesos sostenibles", "Indicadores clave", "Mejora continua"],
-      target: "Gerentes, Supervisores",
-      popular: true
-    },
-    {
-      type: "Ventas",
-      price: "25,000",
-      description: "Para equipos comerciales",
-      duration: "8 horas",
-      modality: "Presencial/Virtual", 
-      participants: "Hasta 25 personas",
-      features: ["Venta consultiva ESG", "Propuestas sostenibles", "Objeciones ESG", "Casos de éxito"],
-      target: "Vendedores, Account Managers"
-    },
-    {
-      type: "Integral Anual",
-      price: "120,000",
-      description: "Programa completo para toda la organización",
-      duration: "40 horas",
-      modality: "Híbrida",
-      participants: "Hasta 50 personas",
-      features: ["Todos los módulos", "Seguimiento mensual", "Evaluaciones", "Certificación avanzada"],
-      target: "Toda la organización",
-      premium: true
-    }
-  ];
 
   const modalities = [
     {
@@ -124,87 +80,6 @@ const CapacitacionESG = () => {
                 WhatsApp Directo
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Programs Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Programas de Capacitación</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Programas diseñados específicamente para diferentes niveles organizacionales
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {programs.map((program, index) => (
-              <Card key={index} className={`relative ${program.popular ? 'border-primary shadow-xl' : program.premium ? 'border-gold shadow-xl' : 'border-gray-light'}`}>
-                {program.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                    Más Popular
-                  </Badge>
-                )}
-                {program.premium && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gold text-white">
-                    Premium
-                  </Badge>
-                )}
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-xl text-navy">{program.type}</CardTitle>
-                  <CardDescription className="text-sm">{program.description}</CardDescription>
-                  <div className="mt-3">
-                    <span className="text-3xl font-bold text-navy">${program.price.toLocaleString()}</span>
-                    <span className="text-gray-text ml-1 text-sm">MXN</span>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="space-y-2 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-gray-text">Duración:</span>
-                      <span className="font-medium">{program.duration}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-text">Modalidad:</span>
-                      <span className="font-medium">{program.modality}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-text">Participantes:</span>
-                      <span className="font-medium">{program.participants}</span>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-2 border-t border-gray-light">
-                    <h4 className="font-semibold text-navy text-sm mb-2">Incluye:</h4>
-                    <ul className="space-y-1">
-                      {program.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-xs">
-                          <CheckCircle className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-gray-text">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  <div className="pt-2 border-t border-gray-light">
-                    <p className="text-xs text-gray-text mb-3">
-                      <strong>Dirigido a:</strong> {program.target}
-                    </p>
-                    <Link to="/diagnostico-esg" className="w-full">
-                      <Button 
-                        className="w-full" 
-                        variant={program.popular || program.premium ? "cta" : "outline"}
-                        size="sm"
-                      >
-                        Seleccionar
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

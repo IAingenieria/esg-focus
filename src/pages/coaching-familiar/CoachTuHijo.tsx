@@ -6,33 +6,6 @@ import { Link } from "react-router-dom";
 import { Heart, Users, Calendar as CalendarIcon, Smartphone, Target, CheckCircle, Phone, Calendar, ArrowRight, Clock } from "lucide-react";
 
 const CoachTuHijo = () => {
-  const modalities = [
-    {
-      type: "Individual",
-      price: "1,200",
-      description: "Sesiones personalizadas uno a uno con tu hijo/a",
-      duration: "60 minutos por sesión",
-      benefits: ["Atención personalizada", "Enfoque específico", "Flexibilidad total", "Resultados más rápidos"],
-      ideal: "Casos específicos o necesidades particulares"
-    },
-    {
-      type: "Familiar",
-      price: "1,500",
-      description: "Sesiones que incluyen a padres e hijos",
-      duration: "90 minutos por sesión",
-      benefits: ["Trabajo integral", "Mejora comunicación", "Dinámicas familiares", "Apoyo conjunto"],
-      ideal: "Problemas de comunicación familiar",
-      popular: true
-    },
-    {
-      type: "Intensivo Fin de Semana",
-      price: "15,000",
-      description: "Programa intensivo de 2 días completos",
-      duration: "16 horas totales",
-      benefits: ["Resultados inmediatos", "Inmersión total", "Técnicas intensivas", "Seguimiento incluido"],
-      ideal: "Situaciones que requieren intervención rápida"
-    }
-  ];
 
   const areas = [
     {
@@ -110,67 +83,6 @@ const CoachTuHijo = () => {
                 WhatsApp Directo
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Modalities Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Modalidades de Coaching</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Diferentes opciones para adaptarse a las necesidades específicas de tu familia
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {modalities.map((modality, index) => (
-              <Card key={index} className={`relative ${modality.popular ? 'border-primary shadow-xl scale-105' : 'border-gray-light'}`}>
-                {modality.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                    Más Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-xl text-navy">{modality.type}</CardTitle>
-                  <CardDescription className="text-sm">{modality.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-3xl font-bold text-navy">${modality.price.toLocaleString()}</span>
-                    <span className="text-gray-text ml-2">MXN</span>
-                  </div>
-                  <div className="text-sm text-gray-text mt-2">{modality.duration}</div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-navy text-sm mb-2">Beneficios:</h4>
-                    <ul className="space-y-1">
-                      {modality.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center text-xs">
-                          <CheckCircle className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-gray-text">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="pt-2 border-t border-gray-light">
-                    <p className="text-xs text-gray-text mb-3">
-                      <strong>Ideal para:</strong> {modality.ideal}
-                    </p>
-                    <Link to="/diagnostico-esg" className="w-full">
-                      <Button 
-                        className="w-full" 
-                        variant={modality.popular ? "cta" : "outline"}
-                        size="sm"
-                      >
-                        Seleccionar
-                        <ArrowRight className="h-3 w-3 ml-1" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

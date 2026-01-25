@@ -150,12 +150,7 @@ const AuditoriaComercial = () => {
                 <h2 className="text-4xl font-bold text-navy mb-6">
                   Auditoría Comercial Completa
                 </h2>
-                <div className="grid md:grid-cols-3 gap-8 mb-8">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">$75,000</div>
-                    <div className="text-gray-text">MXN</div>
-                    <div className="text-sm text-gray-text mt-2">Inversión total</div>
-                  </div>
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div className="text-center">
                     <div className="text-4xl font-bold text-navy mb-2">9</div>
                     <div className="text-gray-text">Semanas</div>

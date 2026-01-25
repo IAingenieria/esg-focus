@@ -5,27 +5,6 @@ import { Link } from "react-router-dom";
 import { Building2, BarChart3, Users, Cog, CheckCircle, Phone, Calendar, ArrowRight, Target } from "lucide-react";
 
 const GestionSucursales = () => {
-  const pricingTiers = [
-    {
-      range: "1-3 Sucursales",
-      price: "95,000",
-      description: "Para empresas con pocas ubicaciones",
-      features: ["Diagnóstico completo", "Estandarización básica", "Capacitación gerentes", "Seguimiento 3 meses"]
-    },
-    {
-      range: "4-8 Sucursales", 
-      price: "140,000",
-      description: "Para cadenas medianas",
-      features: ["Diagnóstico avanzado", "Estandarización completa", "Capacitación equipos", "Seguimiento 6 meses"],
-      popular: true
-    },
-    {
-      range: "9+ Sucursales",
-      price: "180,000",
-      description: "Para cadenas grandes",
-      features: ["Diagnóstico ejecutivo", "Estandarización premium", "Capacitación masiva", "Seguimiento 12 meses"]
-    }
-  ];
 
   const process = [
     {
@@ -142,58 +121,6 @@ const GestionSucursales = () => {
                   <div className="text-4xl font-bold text-primary mb-4">{result.metric}</div>
                   <h3 className="text-xl font-semibold text-navy mb-2">{result.description}</h3>
                   <p className="text-gray-text text-sm">{result.detail}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section className="py-20 bg-gray-light/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Inversión por Número de Sucursales</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Precios escalables según el tamaño de tu cadena de sucursales
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {pricingTiers.map((tier, index) => (
-              <Card key={index} className={`relative ${tier.popular ? 'border-primary shadow-xl scale-105' : 'border-gray-light'}`}>
-                {tier.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                    Más Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-xl text-navy">{tier.range}</CardTitle>
-                  <CardDescription className="text-sm">{tier.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-4xl font-bold text-navy">${tier.price.toLocaleString()}</span>
-                    <span className="text-gray-text ml-2">MXN</span>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3 mb-6">
-                    {tier.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center">
-                        <CheckCircle className="h-5 w-5 text-primary mr-3 flex-shrink-0" />
-                        <span className="text-gray-text text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/diagnostico-esg" className="w-full">
-                    <Button 
-                      className="w-full" 
-                      variant={tier.popular ? "cta" : "outline"}
-                      size="sm"
-                    >
-                      Seleccionar Plan
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                  </Link>
                 </CardContent>
               </Card>
             ))}

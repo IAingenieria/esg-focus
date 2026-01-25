@@ -4,41 +4,6 @@ import { Badge } from "@/components/ui/badge";
 import { FileText, CheckCircle, Clock, Phone, Calendar, ArrowRight, Star } from "lucide-react";
 
 const ReportesESG = () => {
-  const reportTypes = [
-    {
-      type: "NIS Básico",
-      price: "20,000",
-      description: "Cumplimiento básico de regulaciones mexicanas",
-      features: ["Reporte NIS estándar", "Métricas básicas", "Formato regulatorio", "Entrega digital"],
-      timeline: "8 semanas",
-      ideal: "PYMES que necesitan cumplir regulación"
-    },
-    {
-      type: "GRI Estándar", 
-      price: "50,000",
-      description: "Reporte internacional con estándares GRI",
-      features: ["Reporte GRI completo", "Análisis de materialidad", "Verificación externa", "Comunicación stakeholders"],
-      timeline: "12 semanas",
-      ideal: "Empresas con presencia internacional",
-      popular: true
-    },
-    {
-      type: "Integrado Premium",
-      price: "90,000", 
-      description: "Reporte integrado financiero y ESG",
-      features: ["Reporte integrado", "Análisis financiero ESG", "Dashboard ejecutivo", "Estrategia comunicación"],
-      timeline: "14 semanas",
-      ideal: "Corporativos y empresas públicas"
-    },
-    {
-      type: "Sectorial",
-      price: "120,000",
-      description: "Especializado por industria específica",
-      features: ["Enfoque sectorial", "Benchmarks industria", "KPIs especializados", "Mejores prácticas"],
-      timeline: "12 semanas", 
-      ideal: "Empresas con necesidades específicas"
-    }
-  ];
 
   const process = [
     {
@@ -94,69 +59,6 @@ const ReportesESG = () => {
                 WhatsApp Directo
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Report Types Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Tipos de Reportes ESG</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Elige el tipo de reporte que mejor se adapte a tus necesidades y objetivos
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {reportTypes.map((report, index) => (
-              <Card key={index} className={`relative ${report.popular ? 'border-primary shadow-xl' : 'border-gray-light'}`}>
-                {report.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                    <Star className="h-3 w-3 mr-1" />
-                    Popular
-                  </Badge>
-                )}
-                <CardHeader className="pb-4">
-                  <CardTitle className="text-xl text-navy">{report.type}</CardTitle>
-                  <CardDescription className="text-sm">{report.description}</CardDescription>
-                  <div className="mt-3">
-                    <span className="text-3xl font-bold text-navy">${report.price.toLocaleString()}</span>
-                    <span className="text-gray-text ml-1 text-sm">MXN</span>
-                  </div>
-                  <Badge variant="outline" className="w-fit text-xs">
-                    <Clock className="h-3 w-3 mr-1" />
-                    {report.timeline}
-                  </Badge>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-navy text-sm mb-2">Incluye:</h4>
-                    <ul className="space-y-1">
-                      {report.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-xs">
-                          <CheckCircle className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-gray-text">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="pt-2 border-t border-gray-light">
-                    <p className="text-xs text-gray-text mb-3">
-                      <strong>Ideal para:</strong> {report.ideal}
-                    </p>
-                    <Button 
-                      className="w-full" 
-                      variant={report.popular ? "cta" : "outline"}
-                      size="sm"
-                    >
-                      Seleccionar
-                      <ArrowRight className="h-3 w-3 ml-1" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

@@ -1,270 +1,168 @@
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { CheckCircle, Clock, Shield, TrendingUp, FileText, GraduationCap } from "lucide-react";
 
 const ConsultoriaESG = () => {
-  const services = [
-    {
-      id: "nis-2024",
-      title: "Cumplimiento NIS 2024",
-      description: "Implementación completa de las nuevas regulaciones mexicanas",
-      prices: {
-        pymes: "35,000",
-        medianas: "60,000",
-        corporativos: "180,000"
-      },
-      duration: "6 meses",
-      guarantee: "Si no pasas auditoría NIS, devuelvo 100% de inversión",
-      process: ["Diagnóstico", "Diseño", "Implementación", "Certificación"],
-      icon: Shield,
-      urgent: true
-    },
-    {
-      id: "gri",
-      title: "Certificación Internacional GRI",
-      description: "Acceso a mercados internacionales y tasas preferenciales",
-      prices: {
-        range: "20,000 - 180,000"
-      },
-      duration: "4-6 meses",
-      benefits: ["Acceso mercados internacionales", "Tasas preferenciales", "Credibilidad global"],
-      process: ["Evaluación", "Desarrollo", "Auditoría", "Comunicación"],
-      icon: TrendingUp,
-      premium: true
-    },
-    {
-      id: "auditoria",
-      title: "Auditoría de Sostenibilidad",
-      description: "Evaluación 360° integral de tu empresa",
-      prices: {
-        range: "20,000 - 65,000"
-      },
-      duration: "6-8 semanas",
-      deliverables: ["Reporte ejecutivo", "Dashboard interactivo", "Plan de mejora", "Benchmark sectorial"],
-      icon: CheckCircle
-    },
-    {
-      id: "reportes",
-      title: "Reportes ESG Corporativos",
-      description: "Reportes profesionales para diferentes necesidades",
-      options: [
-        { name: "NIS Básico", price: "20,000" },
-        { name: "GRI Estándar", price: "50,000" },
-        { name: "Integrado Premium", price: "90,000" },
-        { name: "Sectorial", price: "120,000" }
-      ],
-      duration: "12 semanas",
-      process: ["Recolección", "Análisis", "Redacción", "Publicación"],
-      icon: FileText
-    },
-    {
-      id: "capacitacion",
-      title: "Capacitación Empresarial ESG",
-      description: "Programas de formación especializados",
-      programs: [
-        { name: "Directivos", price: "45,000" },
-        { name: "Operativo", price: "35,000" },
-        { name: "Ventas", price: "25,000" },
-        { name: "Integral Anual", price: "120,000" }
-      ],
-      modalities: ["Presencial", "Virtual", "Híbrida"],
-      certification: true,
-      icon: GraduationCap
-    }
-  ];
-
   return (
-    <section id="consultoria-esg" className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-navy mb-6">
-            Consultoría ESG <span className="text-primary">Certificada</span>
-          </h2>
-          <p className="text-xl text-gray-text max-w-3xl mx-auto">
-            Servicios especializados para cumplir con las nuevas regulaciones y transformar tu empresa
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {services.map((service) => (
-                      <Card id={service.id} key={service.id} className={`h-full shadow-card hover:shadow-hero transition-all duration-300 transform hover:-translate-y-2 ${service.urgent ? 'border-yellow-accent border-2' : ''} ${service.premium ? 'border-primary border-2' : ''}`}>
-              <CardHeader className="relative">
-                {service.urgent && (
-                  <Badge className="absolute -top-3 -right-3 bg-yellow-accent text-navy font-bold animate-pulse">
-                    URGENTE
-                  </Badge>
-                )}
-                {service.premium && (
-                  <Badge className="absolute -top-3 -right-3 bg-gradient-primary text-white font-bold">
-                    PREMIUM
-                  </Badge>
-                )}
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <service.icon className="h-8 w-8 text-primary" />
+    <>
+      <section id="consultoria-esg-2" className="py-20 bg-gradient-subtle">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto space-y-16">
+            
+            {/* Bloque 2: El Problema (Urgencia Regulatoria) */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-yellow-accent">
+              <div className="flex items-start gap-4 mb-6">
+                <Clock className="h-12 w-12 text-yellow-accent flex-shrink-0" />
+                <h2 className="text-3xl md:text-4xl font-bold text-navy">
+                  ¿Por Qué la Gobernanza ESG es el Riesgo Crítico de su Empresa en 2026?
+                </h2>
+              </div>
+              <p className="text-lg md:text-xl text-gray-text leading-relaxed mb-6">
+                La verdadera sostenibilidad de una empresa se cimienta en una Gobernanza (G) robusta y a prueba de riesgos. Con la entrada en vigor de las Normas de Información de Sostenibilidad (NIS) del CINIF el 1 de enero de 2026, el reporte ESG dejó de ser una opción ética para convertirse en una obligación regulatoria para toda empresa que presente estados financieros bajo NIF. El incumplimiento se traduce directamente en un riesgo financiero inminente.
+              </p>
+              
+              {/* Elemento Visual: Multas */}
+              <div className="bg-yellow-accent/10 rounded-xl p-6 border border-yellow-accent/30">
+                <div className="flex items-center justify-between flex-wrap gap-4">
+                  <div className="text-center flex-1 min-w-[200px]">
+                    <div className="text-4xl md:text-5xl font-bold text-yellow-accent mb-2">$580,000</div>
+                    <div className="text-sm text-gray-text">Multa CNBV</div>
                   </div>
-                  <div>
-                    <CardTitle className="text-xl text-navy">{service.title}</CardTitle>
-                    <div className="flex items-center space-x-2 mt-1">
-                      <Clock className="h-4 w-4 text-gray-text" />
-                      <span className="text-sm text-gray-text">{service.duration}</span>
-                    </div>
+                  <div className="text-center flex-1 min-w-[200px]">
+                    <div className="text-4xl md:text-5xl font-bold text-navy mb-2">30</div>
+                    <div className="text-sm text-gray-text">Indicadores IBSO</div>
+                  </div>
+                  <div className="text-center flex-1 min-w-[200px]">
+                    <div className="text-4xl md:text-5xl font-bold text-primary mb-2">2026</div>
+                    <div className="text-sm text-gray-text">Vigencia NIS</div>
                   </div>
                 </div>
-                <CardDescription className="text-gray-text">
-                  {service.description}
-                </CardDescription>
-              </CardHeader>
-
-              <CardContent className="space-y-6">
-                {/* Pricing */}
-                <div className="space-y-3">
-                  {service.prices && (
-                    <div className="space-y-2">
-                      {service.prices.pymes && (
-                        <div className="grid grid-cols-3 gap-2">
-                          <div className="text-center p-2 bg-green-light rounded">
-                            <div className="text-sm text-gray-text">PYMES</div>
-                            <div className="font-bold text-primary">${service.prices.pymes}</div>
-                          </div>
-                          <div className="text-center p-2 bg-green-light rounded">
-                            <div className="text-sm text-gray-text">Medianas</div>
-                            <div className="font-bold text-primary">${service.prices.medianas}</div>
-                          </div>
-                          <div className="text-center p-2 bg-green-light rounded">
-                            <div className="text-sm text-gray-text">Corporativos</div>
-                            <div className="font-bold text-primary">${service.prices.corporativos}</div>
-                          </div>
-                        </div>
-                      )}
-                      {service.prices.range && (
-                        <div className="text-center p-4 bg-green-light rounded-lg">
-                          <div className="text-2xl font-bold text-primary">${service.prices.range} MXN</div>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {service.options && (
-                    <div className="space-y-2">
-                      {service.options.map((option) => (
-                        <div key={option.name} className="flex justify-between items-center p-3 bg-gray-light rounded">
-                          <span className="font-medium text-navy">{option.name}</span>
-                          <span className="font-bold text-primary">${option.price}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {service.programs && (
-                    <div className="space-y-2">
-                      {service.programs.map((program) => (
-                        <div key={program.name} className="flex justify-between items-center p-3 bg-gray-light rounded">
-                          <span className="font-medium text-navy">{program.name}</span>
-                          <span className="font-bold text-primary">${program.price}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                {/* Features */}
-                {service.process && (
-                  <div>
-                    <h4 className="font-semibold text-navy mb-2">Proceso:</h4>
-                    <div className="grid grid-cols-2 gap-2">
-                      {service.process.map((step, index) => (
-                        <div key={step} className="flex items-center space-x-2">
-                          <div className="w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-xs font-bold">
-                            {index + 1}
-                          </div>
-                          <span className="text-sm text-gray-text">{step}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {service.benefits && (
-                  <div>
-                    <h4 className="font-semibold text-navy mb-2">Beneficios:</h4>
-                    <ul className="space-y-1">
-                      {service.benefits.map((benefit) => (
-                        <li key={benefit} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-success" />
-                          <span className="text-sm text-gray-text">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {service.deliverables && (
-                  <div>
-                    <h4 className="font-semibold text-navy mb-2">Entregables:</h4>
-                    <ul className="space-y-1">
-                      {service.deliverables.map((deliverable) => (
-                        <li key={deliverable} className="flex items-center space-x-2">
-                          <CheckCircle className="h-4 w-4 text-green-success" />
-                          <span className="text-sm text-gray-text">{deliverable}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {service.guarantee && (
-                  <div className="p-4 bg-green-light border border-green-success rounded-lg">
-                    <div className="flex items-center space-x-2 mb-2">
-                      <Shield className="h-5 w-5 text-green-success" />
-                      <span className="font-semibold text-green-success">Garantía</span>
-                    </div>
-                    <p className="text-sm text-gray-text">{service.guarantee}</p>
-                  </div>
-                )}
-
-                <div className="flex flex-col gap-3">
-                  <Link to="/diagnostico-esg" className="w-full">
-                    <Button variant={service.urgent ? "urgent" : service.premium ? "cta" : "default"} className="w-full">
-                      Solicitar Información
-                    </Button>
-                  </Link>
-                  <Link to="/diagnostico-esg" className="w-full">
-                    <Button variant="outline" size="sm" className="w-full">
-                      Ver Detalles
-                    </Button>
-                  </Link>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="mt-16 text-center">
-          <div className="bg-gradient-hero rounded-2xl p-12 text-white">
-            <h3 className="text-3xl font-bold mb-4">¿Necesitas Asesoría Personalizada?</h3>
-            <p className="text-xl mb-8 opacity-90">
-              Agenda una consulta gratuita de 15 minutos y descubre cómo podemos ayudarte
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://asesorsostenible.com/" target="_blank" rel="noopener noreferrer">
-                <Button variant="urgent" size="lg">
-                  Diagnóstico ESG Gratuito
-                </Button>
-              </a>
-              <Link to="/agendar">
-                <Button variant="hero" size="lg">
-                  Agendar Consulta
-                </Button>
-              </Link>
+              </div>
             </div>
+
+            {/* Bloque 3: La Solución (Beneficios Tangibles) */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-8 text-center">
+                Mitigue el Riesgo de Multas y Sanciones Regulatorias
+              </h3>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-10">
+                <Card className="border-primary/20 hover:border-primary transition-all duration-300">
+                  <CardHeader>
+                    <div className="mb-4">
+                      <Shield className="h-12 w-12 text-primary mx-auto" />
+                    </div>
+                    <CardTitle className="text-center text-navy">Blindaje Legal</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-text text-center">
+                      Evite multas de la CNBV, SEMARNAT y SAT por reportes incorrectos de los 30 IBSO.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-primary/20 hover:border-primary transition-all duration-300">
+                  <CardHeader>
+                    <div className="mb-4">
+                      <TrendingUp className="h-12 w-12 text-primary mx-auto" />
+                    </div>
+                    <CardTitle className="text-center text-navy">Claridad Técnica</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-text text-center">
+                      Transformamos la complejidad de la norma NIS B-1 en un proceso paso a paso.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-primary/20 hover:border-primary transition-all duration-300">
+                  <CardHeader>
+                    <div className="mb-4">
+                      <CheckCircle className="h-12 w-12 text-primary mx-auto" />
+                    </div>
+                    <CardTitle className="text-center text-navy">Garantía de Cumplimiento</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-text text-center">
+                      Procesos validados que aseguran que su reporte sea inatacable.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center">
+                <Link to="/diagnostico-esg">
+                  <button className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Quiero blindar mi empresa ahora
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Bloque 4: Autoridad y Confianza (Prueba Social) */}
+            <div className="bg-gradient-to-br from-primary/10 to-green-success/10 rounded-2xl shadow-xl p-8 md:p-12 border border-primary/20">
+              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-6 text-center">
+                El Único Consultor Certificado para Liderar su Transformación
+              </h3>
+              
+              <p className="text-lg md:text-xl text-gray-text leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+                Somos el único consultor en Nuevo León con las certificaciones internacionales GRI e IASE, lo que garantiza que su cumplimiento no solo es localmente válido, sino globalmente reconocido. Esta credibilidad es su pasaporte para acceder a financiamiento verde y ser proveedor preferente de multinacionales.
+              </p>
+
+              {/* Sellos de Confianza */}
+              <div className="flex flex-wrap justify-center gap-6 mb-8">
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <GraduationCap className="h-5 w-5 mr-2" />
+                  GRI Certified
+                </Badge>
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <CheckCircle className="h-5 w-5 mr-2" />
+                  IASE Certified
+                </Badge>
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <FileText className="h-5 w-5 mr-2" />
+                  STPS Registered
+                </Badge>
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <Shield className="h-5 w-5 mr-2" />
+                  AIAC Master
+                </Badge>
+              </div>
+
+              {/* Dato de Impacto */}
+              <div className="bg-white rounded-xl p-6 text-center shadow-md">
+                <p className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                  16 años de experiencia y +300 empresas transformadas en Nuevo León
+                </p>
+              </div>
+            </div>
+
+            {/* Bloque 5: Cierre de Conversión (Footer CTA) */}
+            <div className="bg-navy rounded-2xl shadow-2xl p-8 md:p-12 text-center text-white">
+              <p className="text-2xl md:text-3xl font-bold mb-8">
+                No espere a 2027 para descubrir que su empresa no cumple. El momento de medir los 30 IBSO es hoy.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link to="/agendar">
+                  <button className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
+                    <span>Agendar Consulta Estratégica con Olegario Ríos</span>
+                  </button>
+                </Link>
+                <a href="https://wa.me/528180290061" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-green-success hover:bg-green-success/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                    WhatsApp Directo: +52 818 029 0061
+                  </button>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+    </>
   );
 };
 

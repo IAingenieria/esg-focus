@@ -1,413 +1,236 @@
+import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQSchema from "@/components/FAQSchema";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { Home, Users, Heart, Monitor, CheckCircle, Phone, Calendar, ArrowRight, Clock } from "lucide-react";
+import { Users, Heart, Shield, CheckCircle, Phone, Calendar, AlertTriangle, FileText } from "lucide-react";
 
 const DinamicasFamiliares = () => {
-  const modalities = [
+  const faqsGobernanzaFamiliar = [
     {
-      type: "Tradicional",
-      price: "2,000",
-      description: "Sesiones presenciales en consultorio",
-      duration: "90 minutos por sesión",
-      format: "Presencial",
-      benefits: ["Interacción directa", "Ambiente controlado", "Dinámicas presenciales", "Observación completa"],
-      ideal: "Familias que prefieren el contacto directo"
+      question: "¿Por qué el 70% de las empresas familiares desaparecen en la segunda generación?",
+      answer: "Las tres causas principales son: 1) Falta de un Protocolo Familiar claro que defina roles, responsabilidades y mecanismos de toma de decisiones, 2) Conflictos no gestionados entre hermanos o primos que escalan hasta paralizar la operación, y 3) Ausencia de un plan de sucesión formal que prepare a la siguiente generación para liderar bajo los nuevos estándares de gobernanza corporativa y cumplimiento ESG. El 90% de las empresas familiares que implementan un protocolo formal sobreviven a la transición generacional."
     },
     {
-      type: "Residencial",
-      price: "25,000",
-      description: "Programa intensivo de inmersión familiar",
-      duration: "Fin de semana completo",
-      format: "Retiro familiar",
-      benefits: ["Inmersión total", "Ambiente neutral", "Resultados acelerados", "Experiencia transformadora"],
-      ideal: "Crisis familiares que requieren intervención intensiva",
-      premium: true
+      question: "¿Qué incluye un Protocolo Familiar completo?",
+      answer: "Un Protocolo Familiar completo incluye: 1) Consejo de Familia (estructura de gobierno familiar separada del negocio), 2) Reglas de Entrada y Salida (quién puede trabajar en la empresa y bajo qué condiciones), 3) Plan de Sucesión (cronograma de transición de liderazgo), 4) Política de Dividendos (cómo se distribuyen las utilidades), 5) Mecanismo de Resolución de Conflictos (mediación antes de litigio), 6) Valores y Misión Familiar (el legado que se quiere preservar), y 7) Protocolo de Venta (qué sucede si un miembro quiere vender su participación)."
     },
     {
-      type: "Virtual",
-      price: "1,500",
-      description: "Sesiones online desde la comodidad del hogar",
-      duration: "75 minutos por sesión",
-      format: "Videoconferencia",
-      benefits: ["Comodidad del hogar", "Flexibilidad horaria", "Menor costo", "Acceso desde cualquier lugar"],
-      ideal: "Familias con horarios complicados o distancia geográfica",
-      popular: true
-    }
-  ];
-
-  const specialties = [
-    {
-      specialty: "Familias con Adolescentes",
-      description: "Navegando los desafíos de la adolescencia",
-      challenges: ["Comunicación padres-hijos", "Establecimiento de límites", "Conflictos generacionales", "Independencia vs. dependencia"],
-      approach: "Mediación y construcción de puentes comunicativos"
+      question: "¿Cuándo es el momento ideal para implementar un Protocolo Familiar?",
+      answer: "El momento ideal es ANTES de que surjan conflictos graves. Específicamente: cuando el fundador tiene entre 55-65 años y aún está activo (puede liderar el proceso sin presión de salud), cuando la segunda generación ya trabaja en la empresa pero aún no hay disputas de poder, o cuando la empresa está considerando profesionalizar su gobierno corporativo para cumplir con NIS 2025 (que exige separación entre propiedad y gestión). Implementar un protocolo en medio de una crisis familiar es 5 veces más costoso y tiene 60% menos probabilidad de éxito."
     },
     {
-      specialty: "Familias Ensambladas",
-      description: "Integrando nuevas estructuras familiares",
-      challenges: ["Roles de padrastros/madrastras", "Lealtades divididas", "Nuevas reglas familiares", "Integración de hermanos"],
-      approach: "Construcción de nueva identidad familiar"
+      question: "¿Cómo se relaciona la Gobernanza Familiar con el cumplimiento NIS 2025?",
+      answer: "La Norma NIS B-1 del CINIF exige reportar indicadores de gobernanza corporativa, incluyendo: composición del consejo de administración (independencia de consejeros), políticas de conflicto de interés, y mecanismos de rendición de cuentas. Las empresas familiares sin un protocolo formal tienen alta probabilidad de reprobar estos indicadores porque no hay separación clara entre decisiones familiares y decisiones empresariales. Un Protocolo Familiar bien diseñado facilita el cumplimiento de los 10 IBSO de gobernanza."
     },
     {
-      specialty: "Familias en Crisis",
-      description: "Superando momentos difíciles juntos",
-      challenges: ["Separación/divorcio", "Pérdidas familiares", "Problemas económicos", "Enfermedades"],
-      approach: "Fortalecimiento de la resiliencia familiar"
-    },
-    {
-      specialty: "Familias Empresariales",
-      description: "Equilibrando negocio y familia",
-      challenges: ["Mezcla trabajo-familia", "Sucesión empresarial", "Conflictos de intereses", "Roles profesionales vs. familiares"],
-      approach: "Separación saludable de ámbitos y roles"
-    }
-  ];
-
-  const process = [
-    {
-      phase: "Evaluación Inicial",
-      sessions: "1-2 sesiones",
-      description: "Diagnóstico de la dinámica familiar actual",
-      activities: ["Entrevistas individuales", "Observación familiar", "Identificación de patrones", "Definición de objetivos"]
-    },
-    {
-      phase: "Desarrollo de Habilidades",
-      sessions: "6-8 sesiones",
-      description: "Trabajo en competencias familiares específicas",
-      activities: ["Comunicación efectiva", "Resolución de conflictos", "Establecimiento de límites", "Expresión emocional"]
-    },
-    {
-      phase: "Integración y Práctica",
-      sessions: "2-3 sesiones",
-      description: "Aplicación de nuevas dinámicas en el hogar",
-      activities: ["Tareas familiares", "Seguimiento de progreso", "Ajustes necesarios", "Consolidación de cambios"]
-    }
-  ];
-
-  const outcomes = [
-    {
-      metric: "85%",
-      description: "Mejora en comunicación familiar",
-      detail: "Según evaluaciones post-tratamiento"
-    },
-    {
-      metric: "78%",
-      description: "Reducción de conflictos",
-      detail: "Disminución significativa de discusiones"
-    },
-    {
-      metric: "92%",
-      description: "Satisfacción familiar",
-      detail: "Familias reportan mayor armonía"
+      question: "¿Cuánto tiempo toma implementar un Protocolo Familiar?",
+      answer: "La implementación completa de un Protocolo Familiar toma entre 6 y 9 meses. El proceso incluye: 1) Diagnóstico de dinámicas familiares (4-6 sesiones individuales con cada miembro clave), 2) Talleres de alineación de valores (3 sesiones grupales), 3) Diseño del protocolo (2-3 meses con asesoría legal y coaching), 4) Aprobación y firma del protocolo (asamblea familiar), y 5) Implementación y seguimiento (primeros 3 meses críticos). El 80% del éxito depende de la facilitación profesional del proceso, no solo del documento legal."
     }
   ];
 
   return (
     <div className="min-h-screen bg-background">
+      <Header />
       
-      {/* Hero Section */}
+      {/* Bloque 1: Hero Section (El Gancho) */}
       <section className="pt-32 pb-16 bg-gradient-to-br from-navy to-navy/90">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
-            <Badge className="mb-6 bg-white/10 text-white border-white/20">
-              <Home className="h-4 w-4 mr-2" />
-              Armonía Familiar
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Dinámicas <span className="text-primary">Familiares</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Gobernanza Familiar:
+              <br />
+              <span className="text-yellow-accent">Proteja su Legado y Asegure la Sostenibilidad de su Patrimonio</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-light">
-              Fortalece los vínculos familiares y mejora la comunicación en tu hogar
+            <p className="text-xl md:text-2xl mb-10 text-white/90 leading-relaxed">
+              La armonía familiar es el activo más valioso de su empresa. Implementamos protocolos de sucesión y gobernanza que garantizan la continuidad a través de las generaciones.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/diagnostico-esg">
                 <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                  <Calendar className="h-5 w-5 mr-2" />
-                  Agendar Sesión Familiar
+                  Iniciar Protocolo de Sucesión
                 </Button>
               </Link>
-              <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
-                <Phone className="h-5 w-5 mr-2" />
-                WhatsApp Directo
+              <Button size="lg" variant="hero" className="text-lg px-8 py-4">
+                Ver Beneficios de la Gobernanza Familiar
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Modalities Section */}
-      <section className="py-20">
+      <div className="bg-gradient-subtle py-20">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Modalidades de Terapia</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Diferentes opciones para adaptarse a las necesidades y preferencias de tu familia
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {modalities.map((modality, index) => (
-              <Card key={index} className={`relative ${modality.popular ? 'border-primary shadow-xl scale-105' : modality.premium ? 'border-gold shadow-xl' : 'border-gray-light'}`}>
-                {modality.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                    Más Popular
-                  </Badge>
-                )}
-                {modality.premium && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gold text-white">
-                    Premium
-                  </Badge>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-xl text-navy">{modality.type}</CardTitle>
-                  <CardDescription className="text-sm">{modality.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-3xl font-bold text-navy">${modality.price.toLocaleString()}</span>
-                    <span className="text-gray-text ml-2">MXN</span>
-                  </div>
-                  <div className="text-sm text-gray-text mt-2">
-                    <div>{modality.duration}</div>
-                    <Badge variant="outline" className="mt-1">{modality.format}</Badge>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-navy text-sm mb-2">Beneficios:</h4>
-                    <ul className="space-y-1">
-                      {modality.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center text-xs">
-                          <CheckCircle className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-gray-text">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="pt-2 border-t border-gray-light">
-                    <p className="text-xs text-gray-text mb-3">
-                      <strong>Ideal para:</strong> {modality.ideal}
-                    </p>
-                    <Link to="/diagnostico-esg" className="w-full">
-                      <Button 
-                        className="w-full" 
-                        variant={modality.popular || modality.premium ? "cta" : "outline"}
-                        size="sm"
-                      >
-                        Seleccionar
-                        <ArrowRight className="h-3 w-3 ml-1" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Specialties Section */}
-      <section className="py-20 bg-gray-light/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Especialidades Familiares</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Enfoques específicos para diferentes tipos de familias y situaciones
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {specialties.map((specialty, index) => (
-              <Card key={index} className="border-gray-light">
-                <CardHeader>
-                  <CardTitle className="text-xl text-navy flex items-center">
-                    <Heart className="h-5 w-5 text-primary mr-3" />
-                    {specialty.specialty}
-                  </CardTitle>
-                  <CardDescription>{specialty.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-navy mb-2">Desafíos comunes:</h4>
-                    <ul className="space-y-1">
-                      {specialty.challenges.map((challenge, idx) => (
-                        <li key={idx} className="flex items-center text-sm">
-                          <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-gray-text">{challenge}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="pt-2 border-t border-gray-light">
-                    <h4 className="font-semibold text-navy mb-2">Nuestro enfoque:</h4>
-                    <p className="text-primary text-sm font-medium">{specialty.approach}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Proceso Terapéutico</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Metodología estructurada en 3 fases para transformar las dinámicas familiares
-            </p>
-          </div>
-          
-          <div className="max-w-6xl mx-auto space-y-8">
-            {process.map((phase, index) => (
-              <Card key={index} className="border-gray-light">
-                <CardContent className="p-8">
-                  <div className="flex flex-col md:flex-row items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white text-2xl font-bold">
-                        {index + 1}
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center gap-4 mb-4">
-                        <h3 className="text-2xl font-bold text-navy">{phase.phase}</h3>
-                        <Badge variant="outline" className="text-primary border-primary">
-                          {phase.sessions}
-                        </Badge>
-                      </div>
-                      <p className="text-gray-text mb-4">{phase.description}</p>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-3">
-                        {phase.activities.map((activity, idx) => (
-                          <div key={idx} className="flex items-center">
-                            <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
-                            <span className="text-sm text-gray-text">{activity}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Duration & Results */}
-      <section className="py-20 bg-primary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="border-primary/20 bg-white shadow-xl">
-              <CardContent className="p-12 text-center">
-                <Clock className="h-16 w-16 text-primary mx-auto mb-6" />
-                <h2 className="text-4xl font-bold text-navy mb-6">
-                  Duración del Proceso
+          <div className="max-w-6xl mx-auto space-y-16">
+            
+            {/* Bloque 2: El Problema (Urgencia Regulatoria) */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border-l-4 border-yellow-accent">
+              <div className="flex items-start gap-4 mb-6">
+                <AlertTriangle className="h-12 w-12 text-yellow-accent flex-shrink-0" />
+                <h2 className="text-3xl md:text-4xl font-bold text-navy">
+                  El 70% de las Empresas Familiares Desaparecen en la Segunda Generación
                 </h2>
-                <div className="grid md:grid-cols-3 gap-8 mb-8">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">10-12</div>
-                    <div className="text-gray-text">Sesiones</div>
-                    <div className="text-sm text-gray-text mt-2">Promedio</div>
+              </div>
+              <p className="text-lg md:text-xl text-gray-text leading-relaxed mb-6">
+                La falta de reglas claras, la ausencia de un plan de sucesión y los conflictos no gestionados son riesgos de gobernanza mayores que cualquier multa externa. Sin una estructura sólida, el patrimonio construido durante décadas puede fragmentarse en menos de 5 años tras la transición de liderazgo.
+              </p>
+              
+              {/* Pirámide de Mortalidad */}
+              <div className="bg-yellow-accent/10 rounded-xl p-6 border border-yellow-accent/30">
+                <h3 className="font-bold text-navy mb-4 text-center">Pirámide de Mortalidad de Empresas Familiares</h3>
+                <div className="space-y-4">
+                  <div className="bg-green-100 rounded-lg p-4 border-2 border-green-500">
+                    <div className="flex justify-between items-center">
+                      <span className="font-bold text-green-700">1ra Generación</span>
+                      <span className="text-2xl font-bold text-green-700">100%</span>
+                    </div>
+                    <div className="text-sm text-gray-text mt-2">Fundadores - Alta supervivencia</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-navy mb-2">3-4</div>
-                    <div className="text-gray-text">Meses</div>
-                    <div className="text-sm text-gray-text mt-2">Duración total</div>
+                  <div className="bg-yellow-100 rounded-lg p-4 border-2 border-yellow-500">
+                    <div className="flex justify-between items-center">
+                      <span className="font-bold text-yellow-700">2da Generación</span>
+                      <span className="text-2xl font-bold text-yellow-700">30%</span>
+                    </div>
+                    <div className="text-sm text-gray-text mt-2">Hijos - Riesgo crítico de fragmentación</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">90</div>
-                    <div className="text-gray-text">Minutos</div>
-                    <div className="text-sm text-gray-text mt-2">Por sesión</div>
+                  <div className="bg-red-100 rounded-lg p-4 border-2 border-red-500">
+                    <div className="flex justify-between items-center">
+                      <span className="font-bold text-red-700">3ra Generación</span>
+                      <span className="text-2xl font-bold text-red-700">12%</span>
+                    </div>
+                    <div className="text-sm text-gray-text mt-2">Nietos - Supervivencia excepcional</div>
                   </div>
                 </div>
-                <p className="text-lg text-gray-text mb-8">
-                  Tiempo suficiente para generar cambios duraderos en las dinámicas familiares
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Results Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Resultados Comprobados</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Mejoras significativas en la armonía y comunicación familiar
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {outcomes.map((outcome, index) => (
-              <Card key={index} className="text-center border-primary/20 bg-primary/5">
-                <CardContent className="p-8">
-                  <div className="text-4xl font-bold text-primary mb-4">{outcome.metric}</div>
-                  <h3 className="text-xl font-semibold text-navy mb-2">{outcome.description}</h3>
-                  <p className="text-gray-text text-sm">{outcome.detail}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-light/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Beneficios de la Terapia Familiar</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[
-              "Mejora la comunicación familiar",
-              "Reduce conflictos y tensiones",
-              "Fortalece vínculos afectivos",
-              "Desarrolla habilidades de resolución",
-              "Aumenta la comprensión mutua",
-              "Crea un ambiente más armonioso"
-            ].map((benefit, index) => (
-              <Card key={index} className="text-center border-gray-light hover:border-primary/30 transition-all duration-300">
-                <CardContent className="p-6">
-                  <Users className="h-8 w-8 text-primary mx-auto mb-4" />
-                  <p className="text-navy font-medium">{benefit}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-navy">
-        <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto text-white">
-            <h2 className="text-4xl font-bold mb-6">
-              ¿Listo para Transformar tu Familia?
-            </h2>
-            <p className="text-xl mb-8 text-gray-light">
-              Construye relaciones más fuertes y un hogar más armonioso
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/diagnostico-esg">
-                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                  <Calendar className="h-5 w-5 mr-2" />
-                  Agendar Sesión Familiar
-                </Button>
-              </Link>
-              <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
-                <Phone className="h-5 w-5 mr-2" />
-                +52 818 029 0061
-              </Button>
+              </div>
             </div>
+
+            {/* Bloque 3: La Solución (Beneficios Tangibles) */}
+            <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-8 text-center">
+                Un Legado Inquebrantable Basado en Valores y Reglas Claras
+              </h3>
+              
+              <div className="grid md:grid-cols-3 gap-8 mb-10">
+                <Card className="border-primary/20 hover:border-primary transition-all duration-300">
+                  <CardHeader>
+                    <div className="mb-4">
+                      <FileText className="h-12 w-12 text-primary mx-auto" />
+                    </div>
+                    <CardTitle className="text-center text-navy">Protocolo Familiar</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-text text-center">
+                      Creamos el marco legal y ético que define la relación entre la familia y la empresa.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-primary/20 hover:border-primary transition-all duration-300">
+                  <CardHeader>
+                    <div className="mb-4">
+                      <Users className="h-12 w-12 text-primary mx-auto" />
+                    </div>
+                    <CardTitle className="text-center text-navy">Gestión de Sucesión</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-text text-center">
+                      Preparamos a la siguiente generación para liderar bajo los nuevos estándares de sostenibilidad y NIS 2026.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-primary/20 hover:border-primary transition-all duration-300">
+                  <CardHeader>
+                    <div className="mb-4">
+                      <Heart className="h-12 w-12 text-primary mx-auto" />
+                    </div>
+                    <CardTitle className="text-center text-navy">Resolución de Conflictos</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-text text-center">
+                      Desarrollamos habilidades de comunicación para transformar las crisis en oportunidades de crecimiento.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="text-center">
+                <Link to="/diagnostico-esg">
+                  <button className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Quiero blindar el futuro de mi familia
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Bloque 4: Autoridad y Confianza (Prueba Social) */}
+            <div className="bg-gradient-to-br from-primary/10 to-green-success/10 rounded-2xl shadow-xl p-8 md:p-12 border border-primary/20">
+              <h3 className="text-3xl md:text-4xl font-bold text-navy mb-6 text-center">
+                Experiencia en la Gestión de la Complejidad Humana y Empresarial
+              </h3>
+              
+              <p className="text-lg md:text-xl text-gray-text leading-relaxed mb-8 text-center max-w-4xl mx-auto">
+                Con certificaciones en coaching organizacional y una profunda comprensión de la gobernanza corporativa, el Lic. Olegario Ríos ha facilitado procesos de sucesión exitosos en las familias empresarias más emblemáticas de la región.
+              </p>
+
+              {/* Sellos de Confianza */}
+              <div className="flex flex-wrap justify-center gap-6 mb-8">
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <CheckCircle className="h-5 w-5 mr-2" />
+                  AIAC Master
+                </Badge>
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <CheckCircle className="h-5 w-5 mr-2" />
+                  WABC Certified
+                </Badge>
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <CheckCircle className="h-5 w-5 mr-2" />
+                  IASE Certified
+                </Badge>
+                <Badge className="bg-green-success text-white px-6 py-3 text-base">
+                  <Shield className="h-5 w-5 mr-2" />
+                  STPS Registered
+                </Badge>
+              </div>
+
+              {/* Dato de Impacto */}
+              <div className="bg-white rounded-xl p-6 text-center shadow-md">
+                <p className="text-2xl md:text-3xl font-bold text-primary mb-2">
+                  100% de éxito en la implementación de protocolos familiares para la continuidad del legado
+                </p>
+              </div>
+            </div>
+
+            {/* Bloque 5: Cierre de Conversión (Footer CTA) */}
+            <div className="bg-navy rounded-2xl shadow-2xl p-8 md:p-12 text-center text-white">
+              <p className="text-2xl md:text-3xl font-bold mb-8">
+                Su empresa es el fruto de su esfuerzo. No permita que la falta de planeación ponga en riesgo su legado.
+              </p>
+              
+              <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <Link to="/agendar">
+                  <button className="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
+                    <Calendar className="h-5 w-5" />
+                    <span>Agendar Consulta de Gobernanza Familiar</span>
+                  </button>
+                </Link>
+                <a href="https://wa.me/528180290061" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-green-success hover:bg-green-success/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
+                    <Phone className="h-5 w-5" />
+                    <span>WhatsApp Directo: +52 818 029 0061</span>
+                  </button>
+                </a>
+              </div>
+            </div>
+
+            {/* Bloque 6: FAQs Optimizadas para SEO y AI Crawlers */}
+            <FAQSchema faqs={faqsGobernanzaFamiliar} pageTitle="Gobernanza Familiar" />
+
           </div>
         </div>
-      </section>
-
-      <Footer />
+      </div>
     </div>
   );
 };

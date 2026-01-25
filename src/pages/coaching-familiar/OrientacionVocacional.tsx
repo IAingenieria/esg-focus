@@ -5,36 +5,6 @@ import { Link } from "react-router-dom";
 import { Compass, Users, Zap, Search, Target, CheckCircle, Phone, Calendar, ArrowRight, Brain } from "lucide-react";
 
 const OrientacionVocacional = () => {
-  const options = [
-    {
-      type: "Completo Individual",
-      price: "18,000",
-      description: "Proceso completo personalizado uno a uno",
-      duration: "8-10 sesiones",
-      sessions: "Sesiones de 90 minutos",
-      benefits: ["Atención personalizada", "Ritmo adaptado", "Enfoque específico", "Seguimiento detallado"],
-      ideal: "Jóvenes con dudas profundas sobre su futuro"
-    },
-    {
-      type: "Grupal",
-      price: "8,000",
-      description: "Proceso en grupo con dinámicas colaborativas",
-      duration: "6-8 sesiones",
-      sessions: "Sesiones grupales de 2 horas",
-      benefits: ["Aprendizaje colaborativo", "Intercambio de experiencias", "Menor costo", "Dinámicas enriquecedoras"],
-      ideal: "Grupos de amigos o compañeros de clase",
-      popular: true
-    },
-    {
-      type: "Intensivo",
-      price: "12,000",
-      description: "Programa concentrado en fin de semana",
-      duration: "2 días intensivos",
-      sessions: "16 horas totales",
-      benefits: ["Resultados rápidos", "Inmersión total", "Técnicas intensivas", "Decisión acelerada"],
-      ideal: "Casos urgentes o con tiempo limitado"
-    }
-  ];
 
   const process = [
     {
@@ -147,70 +117,6 @@ const OrientacionVocacional = () => {
                 WhatsApp Directo
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Options Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Opciones de Orientación</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Diferentes modalidades para adaptarse a tus necesidades y preferencias
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {options.map((option, index) => (
-              <Card key={index} className={`relative ${option.popular ? 'border-primary shadow-xl scale-105' : 'border-gray-light'}`}>
-                {option.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-white">
-                    Más Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center pb-4">
-                  <CardTitle className="text-xl text-navy">{option.type}</CardTitle>
-                  <CardDescription className="text-sm">{option.description}</CardDescription>
-                  <div className="mt-4">
-                    <span className="text-3xl font-bold text-navy">${option.price.toLocaleString()}</span>
-                    <span className="text-gray-text ml-2">MXN</span>
-                  </div>
-                  <div className="text-sm text-gray-text mt-2">
-                    <div>{option.duration}</div>
-                    <div>{option.sessions}</div>
-                  </div>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-navy text-sm mb-2">Beneficios:</h4>
-                    <ul className="space-y-1">
-                      {option.benefits.map((benefit, idx) => (
-                        <li key={idx} className="flex items-center text-xs">
-                          <CheckCircle className="h-3 w-3 text-primary mr-2 flex-shrink-0" />
-                          <span className="text-gray-text">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="pt-2 border-t border-gray-light">
-                    <p className="text-xs text-gray-text mb-3">
-                      <strong>Ideal para:</strong> {option.ideal}
-                    </p>
-                    <Link to="/diagnostico-esg" className="w-full">
-                      <Button 
-                        className="w-full" 
-                        variant={option.popular ? "cta" : "outline"}
-                        size="sm"
-                      >
-                        Seleccionar
-                        <ArrowRight className="h-3 w-3 ml-1" />
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

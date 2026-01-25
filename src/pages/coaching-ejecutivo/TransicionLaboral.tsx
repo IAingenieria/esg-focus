@@ -33,26 +33,6 @@ const TransicionLaboral = () => {
     }
   ];
 
-  const salaryBenefits = [
-    {
-      position: "Sustainability Manager",
-      traditional: "$45,000 - $60,000",
-      esg: "$55,000 - $75,000",
-      increase: "15-25%"
-    },
-    {
-      position: "ESG Director",
-      traditional: "$80,000 - $100,000", 
-      esg: "$95,000 - $125,000",
-      increase: "18-25%"
-    },
-    {
-      position: "Chief Sustainability Officer",
-      traditional: "$120,000 - $150,000",
-      esg: "$140,000 - $190,000",
-      increase: "17-27%"
-    }
-  ];
 
   const guarantee = [
     {
@@ -103,47 +83,6 @@ const TransicionLaboral = () => {
         </div>
       </section>
 
-      {/* Salary Comparison */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-navy mb-6">Comparativo Salarial ESG</h2>
-            <p className="text-xl text-gray-text max-w-3xl mx-auto">
-              Las posiciones con responsabilidades ESG ofrecen salarios significativamente superiores
-            </p>
-          </div>
-          
-          <div className="max-w-6xl mx-auto">
-            <div className="overflow-x-auto">
-              <table className="w-full bg-white rounded-lg shadow-lg">
-                <thead className="bg-navy text-white">
-                  <tr>
-                    <th className="px-6 py-4 text-left">Posición</th>
-                    <th className="px-6 py-4 text-center">Tradicional</th>
-                    <th className="px-6 py-4 text-center">Con ESG</th>
-                    <th className="px-6 py-4 text-center">Incremento</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {salaryBenefits.map((position, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                      <td className="px-6 py-4 font-semibold text-navy">{position.position}</td>
-                      <td className="px-6 py-4 text-center text-gray-text">{position.traditional}</td>
-                      <td className="px-6 py-4 text-center font-semibold text-primary">{position.esg}</td>
-                      <td className="px-6 py-4 text-center">
-                        <Badge className="bg-primary/10 text-primary border-primary">
-                          +{position.increase}
-                        </Badge>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Program Overview */}
       <section className="py-20 bg-gray-light/30">
         <div className="container mx-auto px-4">
@@ -154,12 +93,7 @@ const TransicionLaboral = () => {
                 <h2 className="text-4xl font-bold text-navy mb-6">
                   Programa de Transición Laboral Ejecutiva
                 </h2>
-                <div className="grid md:grid-cols-3 gap-8 mb-8">
-                  <div className="text-center">
-                    <div className="text-4xl font-bold text-primary mb-2">$25,000</div>
-                    <div className="text-gray-text">MXN</div>
-                    <div className="text-sm text-gray-text mt-2">Inversión total</div>
-                  </div>
+                <div className="grid md:grid-cols-2 gap-8 mb-8">
                   <div className="text-center">
                     <div className="text-4xl font-bold text-navy mb-2">14</div>
                     <div className="text-gray-text">Sesiones</div>

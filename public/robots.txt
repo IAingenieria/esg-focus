@@ -1,14 +1,59 @@
+# Robots.txt optimizado para SEO y AI Crawlers (GEO Strategy 2026)
+# Focus Coach & Consulting - ESG Consultores México
+
+# Google Search
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
+# Bing Search
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0
 
+# AI Crawlers - ChatGPT (OpenAI)
+User-agent: GPTBot
+Allow: /
+Crawl-delay: 0
+
+User-agent: ChatGPT-User
+Allow: /
+
+# AI Crawlers - Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+Crawl-delay: 0
+
+User-agent: Claude-Web
+Allow: /
+
+# AI Crawlers - Google Gemini
+User-agent: Google-Extended
+Allow: /
+Crawl-delay: 0
+
+# AI Crawlers - Perplexity
+User-agent: PerplexityBot
+Allow: /
+Crawl-delay: 0
+
+# AI Crawlers - Common Crawl (used by many AI models)
+User-agent: CCBot
+Allow: /
+
+# Social Media Crawlers
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
 Allow: /
 
+User-agent: LinkedInBot
+Allow: /
+
+# Default for all other bots
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://esgconsultor.com.mx/sitemap.xml
