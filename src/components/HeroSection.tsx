@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { Clock, CheckCircle, Award, Users, Calendar, Download, X } from "lucide-react";
+import { PartyPopper, CheckCircle, Award, Users, Calendar, Download, X } from "lucide-react";
 import heroBg from "@/assets/sustainability-tech-bg.jpg";
 
 const HeroSection = () => {
@@ -24,6 +24,7 @@ const HeroSection = () => {
     { name: "IASE Certified", icon: CheckCircle, certificate: "/assets/certificado-iase.png" },
     { name: "WABC Coach", icon: Users, certificate: "/assets/master-coach.jpg" },
     { name: "AIAC Master", icon: Award, certificate: "/assets/master-coach.jpg" },
+    { name: "NIS 2024", icon: CheckCircle, certificate: "/assets/certificado-nis-2025.png" },
   ];
 
   const stats = [
@@ -47,14 +48,14 @@ const HeroSection = () => {
         {/* Urgency Alert */}
         <div className="mb-8 flex justify-center">
           <Badge variant="destructive" className="bg-yellow-accent text-navy font-bold text-lg px-6 py-3 rounded-full animate-pulse flex items-center space-x-2">
-            <Clock className="h-5 w-5" />
+            <PartyPopper className="h-5 w-5" />
             <span>Festejamos 16 años y te obsequiamos una conferencia sobre Sostenibilidad a los mandos intermedios de tu empresa</span>
           </Badge>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-          Cumplimiento NIS 2026 en México:
+          Cumplimiento NIS 2024 en México:
           <br />
           <span className="text-yellow-accent">De la Obligación a la Ventaja Competitiva</span>
         </h1>
@@ -107,7 +108,7 @@ const HeroSection = () => {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-3xl md:text-4xl font-bold text-yellow-accent mb-2">{stat.number}</div>

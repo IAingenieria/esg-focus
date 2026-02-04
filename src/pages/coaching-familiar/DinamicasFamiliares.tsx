@@ -19,10 +19,10 @@ const DinamicasFamiliares = () => {
     },
     {
       question: "¿Cuándo es el momento ideal para implementar un Protocolo Familiar?",
-      answer: "El momento ideal es ANTES de que surjan conflictos graves. Específicamente: cuando el fundador tiene entre 55-65 años y aún está activo (puede liderar el proceso sin presión de salud), cuando la segunda generación ya trabaja en la empresa pero aún no hay disputas de poder, o cuando la empresa está considerando profesionalizar su gobierno corporativo para cumplir con NIS 2025 (que exige separación entre propiedad y gestión). Implementar un protocolo en medio de una crisis familiar es 5 veces más costoso y tiene 60% menos probabilidad de éxito."
+      answer: "El momento ideal es ANTES de que surjan conflictos graves. Específicamente: cuando el fundador tiene entre 55-65 años y aún está activo (puede liderar el proceso sin presión de salud), cuando la segunda generación ya trabaja en la empresa pero aún no hay disputas de poder, o cuando la empresa está considerando profesionalizar su gobierno corporativo para cumplir con NIS 2024 (que exige separación entre propiedad y gestión). Implementar un protocolo en medio de una crisis familiar es 5 veces más costoso y tiene 60% menos probabilidad de éxito."
     },
     {
-      question: "¿Cómo se relaciona la Gobernanza Familiar con el cumplimiento NIS 2025?",
+      question: "¿Cómo se relaciona la Gobernanza Familiar con el cumplimiento NIS 2024?",
       answer: "La Norma NIS B-1 del CINIF exige reportar indicadores de gobernanza corporativa, incluyendo: composición del consejo de administración (independencia de consejeros), políticas de conflicto de interés, y mecanismos de rendición de cuentas. Las empresas familiares sin un protocolo formal tienen alta probabilidad de reprobar estos indicadores porque no hay separación clara entre decisiones familiares y decisiones empresariales. Un Protocolo Familiar bien diseñado facilita el cumplimiento de los 10 IBSO de gobernanza."
     },
     {
@@ -216,7 +216,7 @@ const DinamicasFamiliares = () => {
                     <span>Agendar Consulta de Gobernanza Familiar</span>
                   </button>
                 </Link>
-                <a href="https://wa.me/528180290061" target="_blank" rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
                   <button className="bg-green-success hover:bg-green-success/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <Phone className="h-5 w-5" />
                     <span>WhatsApp Directo: +52 818 029 0061</span>

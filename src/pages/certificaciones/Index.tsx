@@ -57,7 +57,7 @@ const certifications = [
     title: "NIS 2024 - Normas de Información de Sostenibilidad",
     subtitle: "Certificación Actualizada en Información Financiera y de Sostenibilidad",
     description: "Capacitación más reciente (enero 2024) en el marco regulatorio mexicano para integración de información financiera y de sostenibilidad, otorgada por el IMCP y CINIF.",
-    image: "/assets/certificado-nis-2024.png",
+    image: "/assets/certificado-nis-2025.png",
     points: [
       { title: "Marco Regulatorio Vigente", text: "Conocimiento de las normativas mexicanas más recientes en sostenibilidad" },
       { title: "Integración Financiera-Sostenibilidad", text: "Unificación de reportes bajo nuevos estándares" },

@@ -57,9 +57,6 @@ const AuditoriaSostenibilidad = () => {
                   Solicitar Auditoría Estratégica
                 </Button>
               </Link>
-              <Button size="lg" variant="hero" className="text-lg px-8 py-4">
-                Ver KPIs del Dashboard Ejecutivo
-              </Button>
             </div>
           </div>
         </div>
@@ -177,22 +174,30 @@ const AuditoriaSostenibilidad = () => {
 
               {/* Sellos de Confianza */}
               <div className="flex flex-wrap justify-center gap-6 mb-8">
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <CheckCircle className="h-5 w-5 mr-2" />
-                  IASE Certified
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <CheckCircle className="h-5 w-5 mr-2" />
-                  GRI Standards
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <Shield className="h-5 w-5 mr-2" />
-                  WABC Coach
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <FileText className="h-5 w-5 mr-2" />
-                  AIAC Master
-                </Badge>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    IASE Certified
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    GRI Standards
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <Shield className="h-5 w-5 mr-2" />
+                    WABC Coach
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <FileText className="h-5 w-5 mr-2" />
+                    AIAC Master
+                  </Badge>
+                </Link>
               </div>
 
               {/* Dato de Impacto */}
@@ -216,7 +221,7 @@ const AuditoriaSostenibilidad = () => {
                     <span>Agendar Auditoría 360°</span>
                   </button>
                 </Link>
-                <a href="https://wa.me/528180290061" target="_blank" rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
                   <button className="bg-green-success hover:bg-green-success/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <Phone className="h-5 w-5" />
                     <span>WhatsApp Directo: +52 818 029 0061</span>

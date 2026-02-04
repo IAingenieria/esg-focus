@@ -50,7 +50,6 @@ const menuItems = [
     subItems: [
       { title: "Coach de Tu Hijo", href: "/coaching-familiar/coach-tu-hijo", description: "Herramientas para el desarrollo de tus hijos.", },
       { title: "Orientación Vocacional", href: "/coaching-familiar/orientacion-vocacional", description: "Descubre la profesión ideal para tu futuro.", },
-      { title: "Dinámicas Familiares", href: "/coaching-familiar/dinamicas-familiares", description: "Fortalece los lazos y la comunicación en familia.", },
     ],
   },
   /* OCULTO TEMPORALMENTE - Sin información

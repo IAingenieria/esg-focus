@@ -9,8 +9,8 @@
 ## 1. Implementaciones Completadas
 
 ### ✅ Meta Tags Optimizados (index.html)
-- **Title**: "Olegario Ríos - Experto NIS 2025 México | Consultor ESG Certificado Monterrey"
-- **Description**: Incluye keywords clave: NIS 2025, 30 IBSO, CINIF, GRI, CNBV, SAT
+- **Title**: "Olegario Ríos - Experto NIS 2024 México | Consultor ESG Certificado Monterrey"
+- **Description**: Incluye keywords clave: NIS 2024, 30 IBSO, CINIF, GRI, CNBV, SAT
 - **Keywords**: Lista completa de términos técnicos y semánticos
 - **Lang**: Cambiado a "es-MX" para targeting regional
 - **Canonical URL**: https://esgconsultor.com.mx/
@@ -56,12 +56,12 @@ Componente React reutilizable que:
 
 ## 2. FAQs Optimizadas por Página (Para Implementar)
 
-### A. Cumplimiento NIS 2025
+### A. Cumplimiento NIS 2024
 
 ```typescript
 const faqsNIS2025 = [
   {
-    question: "¿Cuáles son las multas por no cumplir con NIS 2025 en México?",
+    question: "¿Cuáles son las multas por no cumplir con NIS 2024 en México?",
     answer: "Las empresas que no cumplan con las Normas de Información de Sostenibilidad (NIS) B-1 del CINIF enfrentan multas de la CNBV que pueden alcanzar hasta el 10% de los ingresos anuales, además de sanciones del SAT por incumplimiento fiscal relacionado con la materialidad financiera ESG. El plazo límite para reportar los 30 IBSO es diciembre 2026 para ejercicio fiscal 2025."
   },
   {
@@ -69,16 +69,16 @@ const faqsNIS2025 = [
     answer: "Los 30 IBSO son los indicadores mínimos que toda empresa listada en la BMV debe reportar según la Norma NIS B-1 del CINIF. Se dividen en tres categorías: Ambiental (emisiones de carbono Alcance 1, 2 y 3, consumo de agua, generación de residuos), Social (diversidad de género, rotación de personal, inversión en capacitación) y Gobernanza (composición del consejo, políticas anticorrupción, gestión de riesgos ESG)."
   },
   {
-    question: "¿Mi empresa está obligada a cumplir con NIS 2025?",
+    question: "¿Mi empresa está obligada a cumplir con NIS 2024?",
     answer: "Están obligadas todas las empresas listadas en la Bolsa Mexicana de Valores (BMV), empresas que buscan financiamiento verde, proveedores de grandes corporaciones con requisitos ESG en su cadena de suministro, y empresas que deseen acceder a créditos preferenciales o licitaciones públicas que requieran certificación de sostenibilidad. A partir de 2027, se espera que la obligatoriedad se extienda a empresas medianas con más de 250 empleados."
   },
   {
-    question: "¿Cuánto tiempo toma implementar el cumplimiento NIS 2025?",
+    question: "¿Cuánto tiempo toma implementar el cumplimiento NIS 2024?",
     answer: "La implementación completa de los 30 IBSO y la Norma NIS B-1 toma entre 4 y 6 meses, dependiendo del nivel de madurez ESG de la empresa. Esto incluye: diagnóstico inicial (2-3 semanas), recolección y validación de datos (6-8 semanas), implementación de sistemas de medición (4-6 semanas), capacitación de personal (2 semanas), y preparación del reporte final (3-4 semanas)."
   },
   {
-    question: "¿Qué diferencia hay entre NIS 2025 y la certificación GRI?",
-    answer: "NIS 2025 (Norma B-1 del CINIF) es obligatoria para empresas mexicanas listadas y se enfoca en 30 indicadores básicos de cumplimiento regulatorio. GRI (Global Reporting Initiative) es un estándar internacional voluntario más amplio (más de 200 indicadores) que mejora la reputación corporativa y facilita el acceso a financiamiento verde internacional. Idealmente, las empresas deben cumplir NIS 2025 primero y luego buscar certificación GRI para maximizar su ventaja competitiva."
+    question: "¿Qué diferencia hay entre NIS 2024 y la certificación GRI?",
+    answer: "NIS 2024 (Norma B-1 del CINIF) es obligatoria para empresas mexicanas listadas y se enfoca en 30 indicadores básicos de cumplimiento regulatorio. GRI (Global Reporting Initiative) es un estándar internacional voluntario más amplio (más de 200 indicadores) que mejora la reputación corporativa y facilita el acceso a financiamiento verde internacional. Idealmente, las empresas deben cumplir NIS 2024 primero y luego buscar certificación GRI para maximizar su ventaja competitiva."
   }
 ];
 ```
@@ -115,8 +115,8 @@ const faqsAuditoriaESG = [
 ```typescript
 const faqsLiderazgoSostenible = [
   {
-    question: "¿Por qué el coaching ejecutivo es necesario para el cumplimiento NIS 2025?",
-    answer: "El cumplimiento NIS 2025 no es solo un tema técnico, es un cambio cultural que requiere liderazgo transformacional. El 70% de las implementaciones ESG fallan por resistencia del equipo directivo, no por falta de recursos técnicos. El coaching ejecutivo desarrolla las competencias de liderazgo necesarias para gestionar el cambio organizacional, comunicar la urgencia regulatoria al consejo, y alinear los KPIs ESG con los objetivos de negocio."
+    question: "¿Por qué el coaching ejecutivo es necesario para el cumplimiento NIS 2024?",
+    answer: "El cumplimiento NIS 2024 no es solo un tema técnico, es un cambio cultural que requiere liderazgo transformacional. El 70% de las implementaciones ESG fallan por resistencia del equipo directivo, no por falta de recursos técnicos. El coaching ejecutivo desarrolla las competencias de liderazgo necesarias para gestionar el cambio organizacional, comunicar la urgencia regulatoria al consejo, y alinear los KPIs ESG con los objetivos de negocio."
   },
   {
     question: "¿Qué competencias directivas son críticas para el liderazgo sostenible?",
@@ -151,10 +151,10 @@ const faqsGobernanzaFamiliar = [
   },
   {
     question: "¿Cuándo es el momento ideal para implementar un Protocolo Familiar?",
-    answer: "El momento ideal es ANTES de que surjan conflictos graves. Específicamente: cuando el fundador tiene entre 55-65 años y aún está activo (puede liderar el proceso sin presión de salud), cuando la segunda generación ya trabaja en la empresa pero aún no hay disputas de poder, o cuando la empresa está considerando profesionalizar su gobierno corporativo para cumplir con NIS 2025 (que exige separación entre propiedad y gestión). Implementar un protocolo en medio de una crisis familiar es 5 veces más costoso y tiene 60% menos probabilidad de éxito."
+    answer: "El momento ideal es ANTES de que surjan conflictos graves. Específicamente: cuando el fundador tiene entre 55-65 años y aún está activo (puede liderar el proceso sin presión de salud), cuando la segunda generación ya trabaja en la empresa pero aún no hay disputas de poder, o cuando la empresa está considerando profesionalizar su gobierno corporativo para cumplir con NIS 2024 (que exige separación entre propiedad y gestión). Implementar un protocolo en medio de una crisis familiar es 5 veces más costoso y tiene 60% menos probabilidad de éxito."
   },
   {
-    question: "¿Cómo se relaciona la Gobernanza Familiar con el cumplimiento NIS 2025?",
+    question: "¿Cómo se relaciona la Gobernanza Familiar con el cumplimiento NIS 2024?",
     answer: "La Norma NIS B-1 del CINIF exige reportar indicadores de gobernanza corporativa, incluyendo: composición del consejo de administración (independencia de consejeros), políticas de conflicto de interés, y mecanismos de rendición de cuentas. Las empresas familiares sin un protocolo formal tienen alta probabilidad de reprobar estos indicadores porque no hay separación clara entre decisiones familiares y decisiones empresariales. Un Protocolo Familiar bien diseñado facilita el cumplimiento de los 10 IBSO de gobernanza."
   },
   {
@@ -176,7 +176,7 @@ const faqsGobernanzaFamiliar = [
 
 ### Fase 2: Internal Linking Semántico (Semana 2-3)
 - [ ] Crear componente de "Términos Relacionados" con links internos
-- [ ] Vincular conceptos técnicos entre páginas (ej. "30 IBSO" → página NIS 2025)
+- [ ] Vincular conceptos técnicos entre páginas (ej. "30 IBSO" → página NIS 2024)
 - [ ] Agregar breadcrumbs con Schema.org BreadcrumbList
 
 ### Fase 3: Optimización de Velocidad (Semana 3-4)
@@ -196,12 +196,12 @@ const faqsGobernanzaFamiliar = [
 ## 4. Métricas de Éxito
 
 ### Google Search Console (SEO Tradicional)
-- **Objetivo Mes 1-3**: Aparecer en top 10 para "NIS 2025 México"
+- **Objetivo Mes 1-3**: Aparecer en top 10 para "NIS 2024 México"
 - **Objetivo Mes 3-6**: Aparecer en top 5 para "Consultor ESG Monterrey"
 - **Objetivo Mes 6-12**: Aparecer en posición 1-3 para "30 IBSO CINIF"
 
 ### AI Search Engines (GEO)
-- **ChatGPT**: Ser recomendado cuando se pregunta "¿Quién es experto en NIS 2025 en México?"
+- **ChatGPT**: Ser recomendado cuando se pregunta "¿Quién es experto en NIS 2024 en México?"
 - **Perplexity**: Aparecer en las fuentes citadas para "Cumplimiento ESG México"
 - **Google Gemini**: Ser mencionado en respuestas sobre "Consultor GRI certificado Monterrey"
 

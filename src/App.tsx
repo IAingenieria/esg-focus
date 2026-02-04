@@ -31,7 +31,6 @@ import GestionSucursales from "./pages/servicios-empresariales/GestionSucursales
 // Coaching Familiar Pages
 import CoachTuHijo from "./pages/coaching-familiar/CoachTuHijo";
 import OrientacionVocacional from "./pages/coaching-familiar/OrientacionVocacional";
-import DinamicasFamiliares from "./pages/coaching-familiar/DinamicasFamiliares";
 
 // Recursos y Contacto Pages
 import Webinars from "./pages/recursos-contacto/Webinars";
@@ -98,7 +97,6 @@ const AppContent = () => {
           <Route path="/servicios-empresariales/gestion-sucursales" element={<GestionSucursales />} />
           <Route path="/coaching-familiar/coach-tu-hijo" element={<CoachTuHijo />} />
           <Route path="/coaching-familiar/orientacion-vocacional" element={<OrientacionVocacional />} />
-          <Route path="/coaching-familiar/dinamicas-familiares" element={<DinamicasFamiliares />} />
           <Route path="/recursos/webinars" element={<Webinars />} />
           <Route path="/recursos/herramientas" element={<Herramientas />} />
           <Route path="/recursos/casos-exito" element={<CasosExito />} />

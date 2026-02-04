@@ -150,7 +150,7 @@ const ConsultoriaESG = () => {
                     <span>Agendar Consulta Estratégica con Olegario Ríos</span>
                   </button>
                 </Link>
-                <a href="https://wa.me/528180290061" target="_blank" rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
                   <button className="bg-green-success hover:bg-green-success/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl">
                     WhatsApp Directo: +52 818 029 0061
                   </button>

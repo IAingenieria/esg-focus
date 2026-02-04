@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { FileText, CheckCircle, Clock, Phone, Calendar, ArrowRight, Star } from "lucide-react";
 
 const ReportesESG = () => {
@@ -50,14 +51,18 @@ const ReportesESG = () => {
               Reportes profesionales de sostenibilidad para diferentes necesidades empresariales
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Consulta Especializada
-              </Button>
-              <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
-                <Phone className="h-5 w-5 mr-2" />
-                WhatsApp Directo
-              </Button>
+              <Link to="/diagnostico-esg">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Consulta Especializada
+                </Button>
+              </Link>
+              <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
+                  <Phone className="h-5 w-5 mr-2" />
+                  WhatsApp Directo
+                </Button>
+              </a>
             </div>
           </div>
         </div>
@@ -138,10 +143,12 @@ const ReportesESG = () => {
                 <p className="text-lg text-gray-text mb-8">
                   Cada reporte es desarrollado con los más altos estándares de calidad y profesionalismo
                 </p>
-                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                  Iniciar mi Reporte ESG
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </Button>
+                <a href="https://asesorsostenible.com/" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                    Iniciar mi Reporte ESG
+                    <ArrowRight className="h-5 w-5 ml-2" />
+                  </Button>
+                </a>
               </CardContent>
             </Card>
           </div>
@@ -200,10 +207,12 @@ const ReportesESG = () => {
               Comunica tu compromiso con la sostenibilidad de manera profesional y efectiva
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" variant="cta" className="text-lg px-8 py-4">
-                <Calendar className="h-5 w-5 mr-2" />
-                Consulta Especializada
-              </Button>
+              <Link to="/agendar">
+                <Button size="lg" variant="cta" className="text-lg px-8 py-4">
+                  <Calendar className="h-5 w-5 mr-2" />
+                  Consulta Especializada
+                </Button>
+              </Link>
               <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
                 <Phone className="h-5 w-5 mr-2" />
                 +52 818 029 0061

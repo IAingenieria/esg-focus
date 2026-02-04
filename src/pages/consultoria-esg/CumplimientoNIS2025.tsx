@@ -10,7 +10,7 @@ import { Shield, CheckCircle, Clock, Phone, Calendar, ArrowRight } from "lucide-
 const CumplimientoNIS2024 = () => {
   const faqsNIS2025 = [
     {
-      question: "¿Cuáles son las multas por no cumplir con NIS 2025 en México?",
+      question: "¿Cuáles son las multas por no cumplir con NIS 2024 en México?",
       answer: "Las empresas que no cumplan con las Normas de Información de Sostenibilidad (NIS) B-1 del CINIF enfrentan multas de la CNBV que pueden alcanzar hasta el 10% de los ingresos anuales, además de sanciones del SAT por incumplimiento fiscal relacionado con la materialidad financiera ESG. El plazo límite para reportar los 30 IBSO es diciembre 2026 para ejercicio fiscal 2025."
     },
     {
@@ -18,16 +18,16 @@ const CumplimientoNIS2024 = () => {
       answer: "Los 30 IBSO son los indicadores mínimos que toda empresa listada en la BMV debe reportar según la Norma NIS B-1 del CINIF. Se dividen en tres categorías: Ambiental (emisiones de carbono Alcance 1, 2 y 3, consumo de agua, generación de residuos), Social (diversidad de género, rotación de personal, inversión en capacitación) y Gobernanza (composición del consejo, políticas anticorrupción, gestión de riesgos ESG)."
     },
     {
-      question: "¿Mi empresa está obligada a cumplir con NIS 2025?",
+      question: "¿Mi empresa está obligada a cumplir con NIS 2024?",
       answer: "Están obligadas todas las empresas listadas en la Bolsa Mexicana de Valores (BMV), empresas que buscan financiamiento verde, proveedores de grandes corporaciones con requisitos ESG en su cadena de suministro, y empresas que deseen acceder a créditos preferenciales o licitaciones públicas que requieran certificación de sostenibilidad. A partir de 2027, se espera que la obligatoriedad se extienda a empresas medianas con más de 250 empleados."
     },
     {
-      question: "¿Cuánto tiempo toma implementar el cumplimiento NIS 2025?",
+      question: "¿Cuánto tiempo toma implementar el cumplimiento NIS 2024?",
       answer: "La implementación completa de los 30 IBSO y la Norma NIS B-1 toma entre 4 y 6 meses, dependiendo del nivel de madurez ESG de la empresa. Esto incluye: diagnóstico inicial (2-3 semanas), recolección y validación de datos (6-8 semanas), implementación de sistemas de medición (4-6 semanas), capacitación de personal (2 semanas), y preparación del reporte final (3-4 semanas)."
     },
     {
-      question: "¿Qué diferencia hay entre NIS 2025 y la certificación GRI?",
-      answer: "NIS 2025 (Norma B-1 del CINIF) es obligatoria para empresas mexicanas listadas y se enfoca en 30 indicadores básicos de cumplimiento regulatorio. GRI (Global Reporting Initiative) es un estándar internacional voluntario más amplio (más de 200 indicadores) que mejora la reputación corporativa y facilita el acceso a financiamiento verde internacional. Idealmente, las empresas deben cumplir NIS 2025 primero y luego buscar certificación GRI para maximizar su ventaja competitiva."
+      question: "¿Qué diferencia hay entre NIS 2024 y la certificación GRI?",
+      answer: "NIS 2024 (Norma B-1 del CINIF) es obligatoria para empresas mexicanas listadas y se enfoca en 30 indicadores básicos de cumplimiento regulatorio. GRI (Global Reporting Initiative) es un estándar internacional voluntario más amplio (más de 200 indicadores) que mejora la reputación corporativa y facilita el acceso a financiamiento verde internacional. Idealmente, las empresas deben cumplir NIS 2024 primero y luego buscar certificación GRI para maximizar su ventaja competitiva."
     }
   ];
 
@@ -40,7 +40,7 @@ const CumplimientoNIS2024 = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center text-white">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Implementación Garantizada NIS 2026:
+              Implementación Garantizada NIS 2024:
               <br />
               <span className="text-yellow-accent">Asegure sus 30 IBSO y Evite Multas</span>
             </h1>
@@ -53,9 +53,6 @@ const CumplimientoNIS2024 = () => {
                   Iniciar Diagnóstico de Brechas
                 </Button>
               </Link>
-              <Button size="lg" variant="hero" className="text-lg px-8 py-4">
-                Ver Metodología de 6 Meses
-              </Button>
             </div>
           </div>
         </div>
@@ -123,11 +120,11 @@ const CumplimientoNIS2024 = () => {
                     <div className="mb-4">
                       <CheckCircle className="h-12 w-12 text-primary mx-auto" />
                     </div>
-                    <CardTitle className="text-center text-navy">Garantía de Auditoría</CardTitle>
+                    <CardTitle className="text-center text-navy">Tasa de Éxito de Clientes</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="text-gray-text text-center">
-                      Si su empresa no pasa la revisión NIS, devolvemos el 100% de su inversión.
+                      100% de nuestros clientes han aprobado la auditoría NIS en su primera revisión oficial.
                     </p>
                   </CardContent>
                 </Card>
@@ -168,22 +165,30 @@ const CumplimientoNIS2024 = () => {
 
               {/* Sellos de Confianza */}
               <div className="flex flex-wrap justify-center gap-6 mb-8">
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <CheckCircle className="h-5 w-5 mr-2" />
-                  GRI Certified
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <CheckCircle className="h-5 w-5 mr-2" />
-                  IASE Certified
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <Shield className="h-5 w-5 mr-2" />
-                  CINIF Compliant
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <Shield className="h-5 w-5 mr-2" />
-                  STPS Registered
-                </Badge>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    GRI Certified
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    IASE Certified
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <Shield className="h-5 w-5 mr-2" />
+                    CINIF Compliant
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <Shield className="h-5 w-5 mr-2" />
+                    STPS Registered
+                  </Badge>
+                </Link>
               </div>
 
               {/* Dato de Impacto */}
@@ -207,7 +212,7 @@ const CumplimientoNIS2024 = () => {
                     <span>Agendar Sesión de Diagnóstico NIS</span>
                   </button>
                 </Link>
-                <a href="https://wa.me/528180290061" target="_blank" rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
                   <button className="bg-green-success hover:bg-green-success/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <Phone className="h-5 w-5" />
                     <span>WhatsApp Directo: +52 818 029 0061</span>
@@ -217,7 +222,7 @@ const CumplimientoNIS2024 = () => {
             </div>
 
             {/* Bloque 6: FAQs Optimizadas para SEO y AI Crawlers */}
-            <FAQSchema faqs={faqsNIS2025} pageTitle="Cumplimiento NIS 2025" />
+            <FAQSchema faqs={faqsNIS2025} pageTitle="Cumplimiento NIS 2024" />
 
           </div>
         </div>

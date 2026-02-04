@@ -75,7 +75,7 @@ const Footer = () => {
             </div>
             
             <div className="space-y-3 pt-4">
-              <a href="https://wa.me/5281802900061?text=Hola,%20me%20interesa%20información%20sobre%20sus%20servicios%20de%20consultoría%20ESG" target="_blank" rel="noopener noreferrer" className="w-full">
+              <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="w-full">
                 <Button variant="whatsapp" size="sm" className="w-full justify-start">
                   <MessageCircle className="h-4 w-4 mr-2" />
                   WhatsApp Directo

@@ -58,7 +58,7 @@ const CertificacionGRILanding = () => {
     
     const cargoText = cargoLabels[formData.cargo] || formData.cargo;
     const message = `Hola, soy ${formData.nombre}, ${cargoText} de ${formData.empresa}. Me interesa información sobre Certificación GRI. Mi correo es ${formData.email}`;
-    const whatsappUrl = `https://wa.me/5281802900061?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://api.whatsapp.com/send/?phone=5218180290061&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`;
     
     window.open(whatsappUrl, '_blank');
   };
@@ -495,7 +495,7 @@ const CertificacionGRILanding = () => {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/5281802900061?text=Hola,%20me%20interesa%20información%20sobre%20Certificación%20GRI%20para%20mi%20empresa"
+        href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+Certificaci%C3%B3n+GRI+para+mi+empresa&type=phone_number&app_absent=0"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 z-50"

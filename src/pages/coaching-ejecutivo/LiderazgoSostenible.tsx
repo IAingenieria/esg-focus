@@ -10,8 +10,8 @@ import { Target, Brain, Shield, Users, CheckCircle, Phone, Calendar, AlertTriang
 const LiderazgoSostenible = () => {
   const faqsLiderazgoSostenible = [
     {
-      question: "¿Por qué el coaching ejecutivo es necesario para el cumplimiento NIS 2025?",
-      answer: "El cumplimiento NIS 2025 no es solo un tema técnico, es un cambio cultural que requiere liderazgo transformacional. El 70% de las implementaciones ESG fallan por resistencia del equipo directivo, no por falta de recursos técnicos. El coaching ejecutivo desarrolla las competencias de liderazgo necesarias para gestionar el cambio organizacional, comunicar la urgencia regulatoria al consejo, y alinear los KPIs ESG con los objetivos de negocio."
+      question: "¿Por qué el coaching ejecutivo es necesario para el cumplimiento NIS 2024?",
+      answer: "El cumplimiento NIS 2024 no es solo un tema técnico, es un cambio cultural que requiere liderazgo transformacional. El 70% de las implementaciones ESG fallan por resistencia del equipo directivo, no por falta de recursos técnicos. El coaching ejecutivo desarrolla las competencias de liderazgo necesarias para gestionar el cambio organizacional, comunicar la urgencia regulatoria al consejo, y alinear los KPIs ESG con los objetivos de negocio."
     },
     {
       question: "¿Qué competencias directivas son críticas para el liderazgo sostenible?",
@@ -45,7 +45,7 @@ const LiderazgoSostenible = () => {
               <span className="text-yellow-accent">Transformando Directivos en Guardianes del Cumplimiento y el ROI</span>
             </h1>
             <p className="text-xl md:text-2xl mb-10 text-white/90 leading-relaxed">
-              Desarrolle las competencias C-Level necesarias para navegar la era NIS 2026. El único coaching en México que integra estrategia ESG con alto desempeño directivo.
+              Desarrolle las competencias C-Level necesarias para navegar la era NIS 2024. El único coaching en México que integra estrategia ESG con alto desempeño directivo.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link to="/diagnostico-esg">
@@ -53,9 +53,11 @@ const LiderazgoSostenible = () => {
                   Iniciar Programa de Liderazgo Sostenible
                 </Button>
               </Link>
-              <Button size="lg" variant="hero" className="text-lg px-8 py-4">
-                Ver Perfil del Master Coach
-              </Button>
+              <Link to="/certificaciones">
+                <Button size="lg" variant="hero" className="text-lg px-8 py-4">
+                  Ver Perfil del Master Coach
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -174,22 +176,30 @@ const LiderazgoSostenible = () => {
 
               {/* Sellos de Confianza */}
               <div className="flex flex-wrap justify-center gap-6 mb-8">
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <CheckCircle className="h-5 w-5 mr-2" />
-                  WABC Certified
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <CheckCircle className="h-5 w-5 mr-2" />
-                  AIAC Master
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <CheckCircle className="h-5 w-5 mr-2" />
-                  IASE Certified
-                </Badge>
-                <Badge className="bg-green-success text-white px-6 py-3 text-base">
-                  <Brain className="h-5 w-5 mr-2" />
-                  Master Coach Organizational
-                </Badge>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    WABC Certified
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    AIAC Master
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <CheckCircle className="h-5 w-5 mr-2" />
+                    IASE Certified
+                  </Badge>
+                </Link>
+                <Link to="/certificaciones">
+                  <Badge className="bg-green-success text-white px-6 py-3 text-base cursor-pointer hover:bg-green-success/90 transition-colors">
+                    <Brain className="h-5 w-5 mr-2" />
+                    Master Coach Organizational
+                  </Badge>
+                </Link>
               </div>
 
               {/* Dato de Impacto */}
@@ -213,7 +223,7 @@ const LiderazgoSostenible = () => {
                     <span>Agendar Sesión de Coaching Estratégico</span>
                   </button>
                 </Link>
-                <a href="https://wa.me/528180290061" target="_blank" rel="noopener noreferrer">
+                <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
                   <button className="bg-green-success hover:bg-green-success/90 text-white font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2">
                     <Phone className="h-5 w-5" />
                     <span>WhatsApp Directo: +52 818 029 0061</span>

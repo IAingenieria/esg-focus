@@ -99,10 +99,12 @@ const CoachingFamiliar = () => {
                 <Calendar className="h-5 w-5 mr-2" />
                 Sesión de Evaluación
               </Button>
-              <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
-                <Phone className="h-5 w-5 mr-2" />
-                WhatsApp Directo
-              </Button>
+              <a href="https://api.whatsapp.com/send/?phone=5218180290061&text=Hola%2C+me+interesa+informaci%C3%B3n+sobre+sus+servicios+de+consultor%C3%ADa+ESG&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" variant="whatsapp" className="text-lg px-8 py-4">
+                  <Phone className="h-5 w-5 mr-2" />
+                  WhatsApp Directo
+                </Button>
+              </a>
             </div>
           </div>
         </div>
