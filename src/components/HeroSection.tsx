@@ -48,7 +48,7 @@ const HeroSection = () => {
         <div className="mb-8 flex justify-center">
           <Badge variant="destructive" className="bg-yellow-accent text-navy font-bold text-lg px-6 py-3 rounded-full animate-pulse flex items-center space-x-2">
             <Clock className="h-5 w-5" />
-            <span>Faltan {daysLeft} días para tu declaración NIS 2026: ¿Tu empresa está preparada?</span>
+            <span>Festejamos 16 años y te obsequiamos una conferencia sobre Sostenibilidad a los mandos intermedios de tu empresa</span>
           </Badge>
         </div>
 
