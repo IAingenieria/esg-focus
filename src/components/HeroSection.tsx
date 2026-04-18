@@ -47,10 +47,12 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-4 py-16 text-center text-white">
         {/* Urgency Alert */}
         <div className="mb-8 flex justify-center">
-          <Badge variant="destructive" className="bg-yellow-accent text-navy font-bold text-lg px-6 py-3 rounded-full animate-pulse flex items-center space-x-2">
-            <PartyPopper className="h-5 w-5" />
-            <span>Festejamos 16 años y te obsequiamos una conferencia sobre Sostenibilidad a los mandos intermedios de tu empresa</span>
-          </Badge>
+          <a href="https://asesorsostenible.com/" target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+            <Badge variant="destructive" className="bg-yellow-accent text-navy font-bold text-lg px-6 py-3 rounded-full animate-pulse flex items-center space-x-2 hover:bg-yellow-accent/90 transition-all">
+              <PartyPopper className="h-5 w-5" />
+              <span>Diagnostico ESG gratuito on line, Haz click aqui !</span>
+            </Badge>
+          </a>
         </div>
 
         {/* Main Headline */}
