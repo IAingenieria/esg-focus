@@ -1,6 +1,6 @@
 # Estrategia SEO & AI SEO (GEO) 2026 - Implementación Técnica
 
-## Proyecto: esgconsultor.com.mx - Focus Coach & Consulting
+## Proyecto: esgconsultores.com.mx - Focus Coach & Consulting
 
 ### Fecha de Implementación: Enero 2026
 
@@ -13,7 +13,7 @@
 - **Description**: Incluye keywords clave: NIS 2024, 30 IBSO, CINIF, GRI, CNBV, SAT
 - **Keywords**: Lista completa de términos técnicos y semánticos
 - **Lang**: Cambiado a "es-MX" para targeting regional
-- **Canonical URL**: https://esgconsultor.com.mx/
+- **Canonical URL**: https://esgconsultores.com.mx/
 - **Robots**: Configurado para máxima indexación
 
 ### ✅ Schema.org JSON-LD (index.html)

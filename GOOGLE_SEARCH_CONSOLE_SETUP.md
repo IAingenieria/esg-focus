@@ -4,7 +4,7 @@
 
 Tu sitio web ya tiene configurado un **sitemap.xml** optimizado con todas las páginas del sitio.
 
-**URL del Sitemap**: `https://esgconsultor.com.mx/sitemap.xml`
+**URL del Sitemap**: `https://esgconsultores.com.mx/sitemap.xml`
 
 ---
 
@@ -111,7 +111,7 @@ Tu archivo `robots.txt` ya está optimizado para:
 - ✅ Social Media Crawlers (Twitter, Facebook, LinkedIn)
 - ✅ Referencia al sitemap
 
-**Ubicación**: `https://esgconsultor.com.mx/robots.txt`
+**Ubicación**: `https://esgconsultores.com.mx/robots.txt`
 
 ---
 
@@ -176,7 +176,7 @@ Antes de enviar a Google Search Console, verifica:
 ### Error: "No se pudo obtener el sitemap"
 - Verifica que el archivo esté en la carpeta `public/`
 - Confirma que el sitio esté desplegado
-- Verifica que la URL sea accesible: `https://esgconsultor.com.mx/sitemap.xml`
+- Verifica que la URL sea accesible: `https://esgconsultores.com.mx/sitemap.xml`
 
 ### Error: "Formato de sitemap no válido"
 - El sitemap ya está en formato XML válido

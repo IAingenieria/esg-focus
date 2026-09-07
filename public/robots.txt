@@ -56,4 +56,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://esgconsultor.com.mx/sitemap.xml
+Sitemap: https://esgconsultores.com.mx/sitemap.xml
