@@ -202,4 +202,12 @@
     <priority>0.3</priority>
   </url>
 
+  <!-- Landing SIPE (pagina independiente) -->
+  <url>
+    <loc>https://esgconsultores.com.mx/SIPE</loc>
+    <lastmod>2026-10-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

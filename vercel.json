@@ -10,6 +10,30 @@
   ],
   "rewrites": [
     {
+      "source": "/SIPE",
+      "destination": "/SIPE/index.html"
+    },
+    {
+      "source": "/SIPE/",
+      "destination": "/SIPE/index.html"
+    },
+    {
+      "source": "/sipe",
+      "destination": "/SIPE/index.html"
+    },
+    {
+      "source": "/sipe/",
+      "destination": "/SIPE/index.html"
+    },
+    {
+      "source": "/Sipe",
+      "destination": "/SIPE/index.html"
+    },
+    {
+      "source": "/Sipe/",
+      "destination": "/SIPE/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
